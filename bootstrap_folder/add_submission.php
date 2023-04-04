@@ -5,7 +5,7 @@
     error_reporting(E_ALL);
 
     //Connect to the database
-    $con = mysqli_connect("localhost","root","wWpmX3wgUpArsP","mercoder");
+    $con = mysqli_connect("localhost","root","Rayr3qNxsYT3iG","mercoder");
 
     //Check the connection
     if(isset($_POST['submit'])) {
