@@ -29,5 +29,5 @@
             echo "please submit a link";
         }
     }
-    header("index.php");    
+    header("Location: index.php");    
 ?>
