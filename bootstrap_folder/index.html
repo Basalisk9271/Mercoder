@@ -1,5 +1,3 @@
-<?php include ("./PHP/auth.php"); ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,7 +23,7 @@
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>
+                <li class="sidebar-nav-item"><a href="login.html">Login</a></li>
                 <li class="sidebar-nav-item"><a href="#about">About</a></li>
                 <li class="sidebar-nav-item"><a href="#portfolio">Problems</a></li>
             </ul>
@@ -34,7 +32,7 @@
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
                 <h1 class="mb-1">Welcome to MERCODER!</h1>
-                <h2 class="mb-5"><?php echo $_SESSION['username'];?></h2> <!-- Funnel from database -->
+                <h2 class="mb-5">Username</h2> <!-- Funnel from database -->
                 <h3 class="mb-5"><em> </em></h3>
                 <a class="btn btn-primary btn-xl" href="#problems">Problems</a>
             </div>
@@ -50,17 +48,17 @@
                     <h2 class="mb-5">What is MERCODER and what does it provide?</h2>
                 </div>
                 <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
                         <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
                         <h4><strong>For Students:</strong></h4>
                         <p class="text-faded mb-0">Students are able to find coding problems and solve them using their problem-solving skills.</p>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
                         <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
                         <h4><strong>For Teachers:</strong></h4>
                         <p class="text-faded mb-0">Teachers are also able to find coding problems on this site, in addition to having the ability to publish their own coding assignments.</p>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
                         <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
                         <h4><strong>For Everyone:</strong></h4>
                         <p class="text-faded mb-0">
@@ -68,21 +66,15 @@
                             Start Bootstrap!
                         </p>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
-                        <h4><strong>Question</strong></h4>
-                        <p class="text-faded mb-0">I mustache you a question...</p>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio-->
+        <!-- Problems -->
         <section class="content-section" id="problems">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">Problems</h3>
-                    <h2 class="mb-5">Recent Projects</h2>
+                    <h2 class="mb-5">Problems</h2>
                 </div>
                 <div class="row gx-0">
                     <!-- Add php code to insert problems from database here with a loop -->
@@ -102,16 +94,9 @@
             </div>
         </section>
 
-        <!-- Map-->
-        <div class="map" id="contact">
-            <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-            <br />
-            <small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
-        </div>
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
-                <p><?php echo $_SESSION['username'];?><p>
                 <p class="text-muted small mb-0">Copyright &copy; Table of Lords</p>
             </div>
         </footer>
@@ -121,7 +106,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-
-        
     </body>
 </html>
