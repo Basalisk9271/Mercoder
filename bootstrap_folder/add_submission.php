@@ -12,11 +12,11 @@
         if(!empty($_POST['link'])) {
             //setting link to a variable
             $link = $_POST['link'];
-            //Find a way to get the session username / date
+            //Find a way to get the session username 
             $placeholder_username = 'TEST';
-            $placeholder_date = 'TEST';
+            $date = date('Y-m-d H:i:s');
             $query = "INSERT into 'problem_attempts' (user_name, date, submission_link) 
-                      VALUES ('$placeholder_username','$placeholder_date','$link')";
+                      VALUES ('$placeholder_username','$date','$link')";
 
             echo $placeholder_date;
             echo $placeholder_username;
