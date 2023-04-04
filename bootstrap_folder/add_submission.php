@@ -14,9 +14,14 @@
             $link = $_POST['link'];
             //Find a way to get the session username / date
             $placeholder_username = 'TEST';
-            $placeholder_date = '1/1/2023';
+            $placeholder_date = 'TEST';
             $query = "insert into 'problem_attempts' (user_name, date, submission_link) values ('$placeholder_username','$placeholder_date','$link')";
             //Run or cancel
+
+            echo $placeholder_date;
+            echo $placeholder_username;
+            echo $link;
+
             $run = mysqli_query($con,$query);
                 if($run){
                     echo " Form submission successful";
