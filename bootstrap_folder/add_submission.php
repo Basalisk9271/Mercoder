@@ -4,6 +4,8 @@
     ini_set("display_startup_errors", 1);
     error_reporting(E_ALL);
 
+    echo "THIS IS A TEST STATEMENT 1";
+
     //Connect to the database
     $con = mysqli_connect("localhost","root","Rayr3qNxsYT3iG","mercoder");
 
@@ -17,7 +19,7 @@
             $placeholder_username = 'TEST';
             $placeholder_date = '1/1/2023';
             $query = "insert into 'problem_attempts' (user_name, date, submission_link) values ('$placeholder_username','$placeholder_date','$link')";
-            echo "THIS IS A TEST STATEMENT 1";
+            
             //Run or cancel
             $run = mysqli_query($conn,$query);
 
