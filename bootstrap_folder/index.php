@@ -1,3 +1,5 @@
+<?php include ("./PHP/auth.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,7 +25,7 @@
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="login.html">Login</a></li>
+                <li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>
                 <li class="sidebar-nav-item"><a href="#about">About</a></li>
                 <li class="sidebar-nav-item"><a href="#portfolio">Problems</a></li>
             </ul>
@@ -108,7 +110,7 @@
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
-
+                <p><?php echo $_SESSION['username'];?><p>
                 <p class="text-muted small mb-0">Copyright &copy; Table of Lords</p>
             </div>
         </footer>
@@ -118,5 +120,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        
     </body>
 </html>
