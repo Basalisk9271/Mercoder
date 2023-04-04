@@ -20,7 +20,7 @@
     <body id="page-top">
 
         <?php
-        $con = new mysqli('localhost','root','YOURMYSQLPASSWORD','YOURDBNAME');
+        $con = new mysqli('localhost','root','wWpmX3wgUpArsP','mercoder');
         if ($con->connect_error)
         {
             die('Could not connect to mySQL: ' . $con->connect_error);
@@ -87,18 +87,26 @@
                 </div>
                 <div class="row gx-0">
                     <!-- Add php code to insert problems from database here with a loop -->
-                    <div class="col-lg-4">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Problem title</div> <!-- Title insert -->
-                                    <p class="mb-0">Problem description</p> <!-- Description insert -->
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                        </a>
-                    </div>
+                    <?php
+                    $result = $con->query("SELECT * FROM problems");
+
+                    if($result)
+                    while($row = $result->fetch_assoc()) {
                     
+                    echo '<div class="col-lg-4">';
+                        echo '<a class="portfolio-item" href="#!">';
+                            echo '<div class="caption">';
+                                echo '<div class="caption-content">';
+                                    echo '<div class="h2">' . $row["title"] . '</div>';
+                                    echo '<p class="mb-0">' . $row["description"] . '</p>'; 
+                                echo '</div>';
+                            echo '</div>'
+                            echo '<img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />';
+                        echo '</a>'
+                    echo '</div>'
+                    }
+                    $con->close();
+                    ?>
                 </div>
             </div>
         </section>
