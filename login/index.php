@@ -262,7 +262,7 @@
                             <div class="content stuRegisterBox" style="display:none;">
                              <div class="form">
                                 <form method="POST" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
-                                <input id="Username" class="form-control" type="text" placeholder="Username" name="useriname" required>
+                                <input id="Username" class="form-control" type="text" placeholder="Username" name="username" required>
                                 <input id="password" class="form-control" type="password" placeholder="Password" name="password" required>
                                 <input id="City" class="form-control" type="text" placeholder="City" name="city" required>
                                 <input id="School" class="form-control" type="text" placeholder="School" name="school">

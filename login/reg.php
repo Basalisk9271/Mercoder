@@ -2,41 +2,32 @@
 	require('database_op.php');
 
     if (isset($_REQUEST['username']) && !isset($_REQUEST['name'])){ 
-        $username = stripslashes($_REQUEST['username']);
-        $username = mysqli_real_escape_string($con, $username);
-        $password = stripslashes($_REQUEST['password']);
-	$password = mysqli_real_escape_string($con, $password);
-	$school = stripslashes($_REQUEST['school']);
-	if (empty($school)){
-		$school = "";
+	$username = $_REQUEST['username'];
+        $password = $_REQUEST['password'];
+	$school = $_REQUEST['school'];
+	if(empty($school)){
+		$school = NULL;
 	}
-	$city = stripslashes($_REQUEST['city']);
-	$city = mysqli_real_escape_string($con, $school);
+	$city = $_REQUEST['city'];
         $query    = "INSERT into `student_login` (username, password, school, city)
                      VALUES ('$username', '" . md5($password) . "', '$school', '$city')";
 	$result   = mysqli_query($con, $query);	
-
-    } else {
-	$name = stripslashes($_REQUEST['name']);
-        $name = mysqli_real_escape_string($con, $name);
-        $username    = stripslashes($_REQUEST['username']);
-	$username    = mysqli_real_escape_string($con, $username);
-	$school = stripslashes($_REQUEST['school']);
-	$school = mysqli_real_escape_string($con, $school);
-	$classCode = stripslashes($_REQUEST['classcode']);
-	if (empty($classCode)){
-		$classCode = "";
+	
+    } elseif(isset($_REQUEST['name'])) {
+	$name = $_REQUEST['name'];
+        $username    = $_REQUEST['username'];
+	$school = $_REQUEST['school'];
+	$classCode = $_REQUEST['classcode'];
+	if(empty($classCode)){
+		$classCode = NULL;
 	}
-	$classCode = mysqli_real_escape_string($con, $classCode);
-        $password = stripslashes($_REQUEST['password']);
-	$password = mysqli_real_escape_string($con, $password);
-	$city = stripslashes($_REQUEST['city']);
-	$city = mysqli_real_escape_string($con, $city);
+        $password = $_REQUEST['password'];
+	$city = $_REQUEST['city'];
 
         $query    = "INSERT into `teacher_login` (name, username, school, classcode, password, city)
                      VALUES ('$name', '$username', '$school', '$classCode', '" . md5($password) . "', '$city')";
 	$result   = mysqli_query($con, $query);
-
+	
 
 	   }
 ?>
