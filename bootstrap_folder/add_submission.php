@@ -15,8 +15,8 @@
             //Find a way to get the session username / date
             $placeholder_username = 'TEST';
             $placeholder_date = 'TEST';
-            $query = "insert into 'problem_attempts' (user_name, date, submission_link) values ('$placeholder_username','$placeholder_date','$link')";
-            //Run or cancel
+            $query = "INSERT into 'problem_attempts' (user_name, date, submission_link) 
+                      VALUES ('$placeholder_username','$placeholder_date','$link')";
 
             echo $placeholder_date;
             echo $placeholder_username;
