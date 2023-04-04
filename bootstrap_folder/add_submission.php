@@ -18,7 +18,7 @@
             $query = "INSERT into 'problem_attempts' (user_name, date, submission_link) 
                       VALUES ('$placeholder_username','$date','$link')";
 
-            echo $placeholder_date;
+            echo $date;
             echo $placeholder_username;
             echo $link;
 
