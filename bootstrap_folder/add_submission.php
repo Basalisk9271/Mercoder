@@ -13,13 +13,17 @@ echo "THIS IS A TEST STATEMENT 2";
 
     //Check the connection
     if(isset($_POST['submit'])) {
+        echo "THIS IS A TEST STATEMENT a";
         //Check if the link box is empty
         if(!empty($_POST['link'])) {
+            echo "THIS IS A TEST STATEMENT b";
             //setting link to a variable
             $link = $_POST['link'];
+            echo "THIS IS A TEST STATEMENT c";
             //Find a way to get the session username / date
             $placeholder_username = 'TEST';
             $placeholder_date = '1/1/2023';
+            echo "THIS IS A TEST STATEMENT d";
             $query = "insert into 'problem_attempts' (user_name, date, submission_link) values ('$placeholder_username','$placeholder_date','$link')";
 echo "THIS IS A TEST STATEMENT 3";
             //Run or cancel
