@@ -12,9 +12,12 @@
             $placeholder_username = 'TEST';
             $placeholder_date = '1/1/2023';
             $query = "insert into 'problem_attempts' values('$placeholder_username','$placeholder_date','$link')";
-            
+            echo "THIS IS A TEST STATEMENT 1";
             //Run or cancel
             $run = mysqli_query($conn,$query);
+
+            echo "THIS IS A TEST STATEMENT 2";
+            
                 if($run){
                     echo " Form submission successful";
                 } else {

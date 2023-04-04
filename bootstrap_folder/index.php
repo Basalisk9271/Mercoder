@@ -144,13 +144,12 @@
             <div class="container px-4 px-lg-5 text-center">
                 <button class="open-button" onclick="openForm()">Submit Assignment</button>
                 <div class="form-popup" id="myForm">
-
-                <form action="add_submission.php" method="post">
-                    <label for="email"><b>URL</b></label>
-                    <input type="text" placeholder="Enter Link" name="link" required>
-                    <button type="submit" class="btn" name=submit">Upload</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                </form>
+                    <form action="add_submission.php" method="post">
+                        <label for="email"><b>URL</b></label>
+                        <input type="text" placeholder="Enter Link" name="link" required>
+                        <button type="submit" class="btn" name=submit">Upload</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                    </form>
                 </div>
                 <script>
                 function openForm() {
