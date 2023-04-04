@@ -65,13 +65,7 @@
                         <h4><strong>For Everyone:</strong></h4>
                         <p class="text-faded mb-0">
                        Everyone has access to a map that shows which problems are being solved, along with where, and by whom.
-                            Start Bootstrap!
                         </p>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
-                        <h4><strong>Question</strong></h4>
-                        <p class="text-faded mb-0">I mustache you a question...</p>
                     </div>
                 </div>
             </div>
@@ -101,13 +95,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- Map-->
-        <div class="map" id="contact">
-            <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-            <br />
-            <small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
-        </div>
+        
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
