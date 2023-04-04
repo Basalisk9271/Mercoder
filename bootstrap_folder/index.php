@@ -100,10 +100,10 @@
                                     echo '<div class="h2">' . $row["title"] . '</div>';
                                     echo '<p class="mb-0">' . $row["description"] . '</p>'; 
                                 echo '</div>';
-                            echo '</div>'
+                            echo '</div>';
                             echo '<img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />';
-                        echo '</a>'
-                    echo '</div>'
+                        echo '</a>';
+                    echo '</div>';
                     }
                     $con->close();
                     ?>
