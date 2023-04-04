@@ -11,10 +11,10 @@
             //Find a way to get the session username / date
             $placeholder_username = 'TEST';
             $placeholder_date = '1/1/2023';
-            $query = "inser into problem_attempts values('$placeholder_username','$placeholder_date','$link')";
+            $query = "insert into 'problem_attempts' values('$placeholder_username','$placeholder_date','$link')";
             
             //Run or cancel
-            $run = mysqli_query($conn,$query) or die(mysqli_error());
+            $run = mysqli_query($conn,$query);
                 if($run){
                     echo " Form submission successful";
                 } else {
