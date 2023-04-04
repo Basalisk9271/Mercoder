@@ -142,9 +142,31 @@
         <!-- Call to Action-->
         <section class="content-section bg-primary text-white">
             <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-                <a class="btn btn-xl btn-light me-4" href="#!">Click Me!</a>
-                <a class="btn btn-xl btn-dark" href="#!">Look at Me!</a>
+                <button class="open-button" onclick="openForm()">Submit Assignment</button>
+                <div class="form-popup" id="myForm">
+
+                <form action="add_submission.php" method="post">
+                    <h1>Copy/Paste the URL</h1>
+                    <label for="email"><b>URL</b></label>
+                    <input type="text" placeholder="Enter Link" name="link" required>
+                    <button type="submit" class="btn" name=submit">Upload</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+                </div>
+                <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
+
+                function insertDatabase() {
+                    
+                    
+                }
+                </script>
             </div>
         </section>
         <!-- Map-->
