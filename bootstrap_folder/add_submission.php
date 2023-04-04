@@ -17,11 +17,7 @@
             $date = date('d-m-Y');
             $query = "INSERT into problem_attempts (user_name, submission_date, submission_link) 
                       VALUES ('$placeholder_username','$date','$link')";
-
-            echo $placeholder_username;
-            echo $date;
-            echo $link;
-
+            //Run query
             $run = mysqli_query($con,$query);
                 if($run){
                     echo " Form submission successful";
@@ -33,5 +29,5 @@
             echo "please submit a link";
         }
     }
+    header("index.php");    
 ?>
-
