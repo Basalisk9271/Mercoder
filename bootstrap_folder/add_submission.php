@@ -14,12 +14,12 @@
             $link = $_POST['link'];
             //Find a way to get the session username 
             $placeholder_username = 'TEST';
-            $date = date('Y-m-d H:i:s');
+            $date = date('d-m-y');
             $query = "INSERT into 'problem_attempts' (user_name, submission_date, submission_link) 
                       VALUES ('$placeholder_username','$date','$link')";
 
-            echo $date;
             echo $placeholder_username;
+            echo $date;
             echo $link;
 
             $run = mysqli_query($con,$query);
