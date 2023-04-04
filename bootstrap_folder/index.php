@@ -146,7 +146,6 @@
                 <div class="form-popup" id="myForm">
 
                 <form action="add_submission.php" method="post">
-                    <h1>Copy/Paste the URL</h1>
                     <label for="email"><b>URL</b></label>
                     <input type="text" placeholder="Enter Link" name="link" required>
                     <button type="submit" class="btn" name=submit">Upload</button>
@@ -160,11 +159,6 @@
 
                 function closeForm() {
                     document.getElementById("myForm").style.display = "none";
-                }
-
-                function insertDatabase() {
-                    
-                    
                 }
                 </script>
             </div>
