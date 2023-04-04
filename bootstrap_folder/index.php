@@ -42,7 +42,6 @@
 
         </header>
 
-        <!-- About -->
         <section class="content-section bg-primary text-white text-center" id="about">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
@@ -50,17 +49,17 @@
                     <h2 class="mb-5">What is MERCODER and what does it provide?</h2>
                 </div>
                 <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
                         <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
                         <h4><strong>For Students:</strong></h4>
                         <p class="text-faded mb-0">Students are able to find coding problems and solve them using their problem-solving skills.</p>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
                         <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
                         <h4><strong>For Teachers:</strong></h4>
                         <p class="text-faded mb-0">Teachers are also able to find coding problems on this site, in addition to having the ability to publish their own coding assignments.</p>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
                         <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
                         <h4><strong>For Everyone:</strong></h4>
                         <p class="text-faded mb-0">
