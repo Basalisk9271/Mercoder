@@ -5,8 +5,7 @@
     error_reporting(E_ALL);
 
     //Connect to the database
-    $pwd = "";
-    $con = mysqli_connect("localhost","root", $pwd,"mercoder");
+    $con = mysqli_connect("localhost","root","wWpmX3wgUpArsP","mercoder");
 
     //Check the connection
     if(isset($_POST['submit'])) {
@@ -17,7 +16,7 @@
             //Find a way to get the session username / date
             $placeholder_username = 'TEST';
             $placeholder_date = '1/1/2023';
-            $query = "insert into 'problem_attempts' values('$placeholder_username','$placeholder_date','$link')";
+            $query = "insert into 'problem_attempts' (user_name, date, submission_link) values ('$placeholder_username','$placeholder_date','$link')";
             echo "THIS IS A TEST STATEMENT 1";
             //Run or cancel
             $run = mysqli_query($conn,$query);
