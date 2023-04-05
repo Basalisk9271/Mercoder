@@ -4,7 +4,6 @@ if(!isset($_SESSION['loggedin'])) {
     $_SESSION['loggedin'] = 0;
     header('Location: index.php'); // don't redirect same page
 } 
-
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +31,7 @@ if(!isset($_SESSION['loggedin'])) {
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>
+                <li class="sidebar-nav-item"><a href="./PHP/logout.php">Logout</a></li>
                 <li class="sidebar-nav-item"><a href="#about">About</a></li>
                 <li class="sidebar-nav-item"><a href="#portfolio">Problems</a></li>
             </ul>
@@ -41,6 +40,7 @@ if(!isset($_SESSION['loggedin'])) {
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
                 <h1 class="mb-1">Welcome to MERCODER!</h1>
+                <h2 class="mb-5"><?php echo $_SESSION['username'];?></h2> <!-- Funnel from database -->
                 <h3 class="mb-5"><em> </em></h3>
                 <a class="btn btn-primary btn-xl" href="#problems">Problems</a>
                 <!-- <a href='./PHP/logout.php.php?action=logout'>Logout</a> -->
@@ -105,6 +105,7 @@ if(!isset($_SESSION['loggedin'])) {
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
+                <p><?php echo $_SESSION['username'];?><p>
                 <p class="text-muted small mb-0">Copyright &copy; Table of Lords</p>
             </div>
         </footer>
@@ -117,4 +118,4 @@ if(!isset($_SESSION['loggedin'])) {
 
         
     </body>
-</html>
+</html> 
