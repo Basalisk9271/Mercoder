@@ -16,7 +16,7 @@
                                 }
                                 /* Track */
                                 ::-webkit-scrollbar-track {
-                                  background: <a href="../home.php">;
+                                  background: <a href="../index.php">;
                                 }
 
                                 /* Handle */
