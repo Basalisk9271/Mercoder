@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['loggedin'])) {
     $_SESSION['loggedin'] = 0;
-    header('Location: index.php'); // don't redirect same page
+    header('Location: home.php'); // don't redirect same page
 } 
 
 if ($_SESSION['loggedin'] == 0){
