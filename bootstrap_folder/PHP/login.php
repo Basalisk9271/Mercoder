@@ -18,8 +18,9 @@
 	$rows2 = mysqli_num_rows($result2);
         if ($rows == 1 || $rows2 == 1) {
             $_SESSION['username'] = $username;
+            $_SESSION['loggedin'] = 1;
             // Redirect to user dashboard page
-            header("Location: ../index.php");
+            header("Location: ../home.php");
         } else {
             echo "error";
             header("Location: index.php");

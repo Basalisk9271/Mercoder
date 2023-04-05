@@ -1,6 +1,7 @@
 <?php
     session_start();
     if(session_destroy()) {
-        header("Location: index.php");
+        $_SESSION['loggedin'] = 0;
+        header("Location: ../home.php");
     }
 ?>

@@ -1,4 +1,4 @@
-<?php include ("auth.php"); ?>
+
 <!doctype html>
 
 			
@@ -16,7 +16,7 @@
                                 }
                                 /* Track */
                                 ::-webkit-scrollbar-track {
-                                  background: <a href="../index.php">;
+                                  background: <a href="../home.php">;
                                 }
 
                                 /* Handle */
