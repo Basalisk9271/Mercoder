@@ -1,3 +1,12 @@
+<?php 
+session_start();
+if(!isset($_SESSION['loggedin'])) {
+    $_SESSION['loggedin'] = 0;
+    header('Location: index.php'); // don't redirect same page
+} 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,7 +32,7 @@
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="login.html">Login</a></li>
+                <li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>
                 <li class="sidebar-nav-item"><a href="#about">About</a></li>
                 <li class="sidebar-nav-item"><a href="#portfolio">Problems</a></li>
             </ul>
@@ -35,12 +44,12 @@
                 <h2 class="mb-5">Username</h2> <!-- Funnel from database -->
                 <h3 class="mb-5"><em> </em></h3>
                 <a class="btn btn-primary btn-xl" href="#problems">Problems</a>
+                <!-- <a href='./PHP/logout.php.php?action=logout'>Logout</a> -->
             </div>
 
 
         </header>
 
-        <!-- About -->
         <section class="content-section bg-primary text-white text-center" id="about">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
@@ -63,7 +72,6 @@
                         <h4><strong>For Everyone:</strong></h4>
                         <p class="text-faded mb-0">
                        Everyone has access to a map that shows which problems are being solved, along with where, and by whom.
-                            Start Bootstrap!
                         </p>
                     </div>
                 </div>
@@ -93,7 +101,7 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
@@ -106,5 +114,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        
     </body>
 </html>

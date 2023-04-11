@@ -1,10 +1,10 @@
+
 <!doctype html>
 
-
+			
 
                         <html>
-			    									<head>
-
+			    <head>
                                 <meta charset='utf-8'>
                                 <meta name='viewport' content='width=device-width, initial-scale=1'>
                                 <title>Login page</title>
@@ -16,7 +16,7 @@
                                 }
                                 /* Track */
                                 ::-webkit-scrollbar-track {
-                                  background: <a href="index.html">;
+                                  background: <a href="../index.php">;
                                 }
 
                                 /* Handle */
@@ -106,7 +106,7 @@
 /*     padding: 11px 15px; */
 }
 .login .modal-body{
-     background-color: #yellow;
+/*     background-color: #eeeeee; */
 }
 .login .division {
     float: none;
@@ -231,13 +231,13 @@
 .big-register:hover{
     border-color: #00A4E4;
     color:  #00A4E4;
-}		</style>
+}</style>
                                 </head>
+				<body className='snippet-body'>
+				<?php require "reg.php"; 
+				      require "login.php"; ?>
 
-		<img class="img-fluid" src="assets/img/bg-callout.jpg" alt="..." />
-
-		<body className='snippet-body'>
-        <div class="modal fade login" id="loginModal">
+                                <div class="modal fade login" id="loginModal">
 		      <div class="modal-dialog login animated">
     		      <div class="modal-content">
     		         <div class="modal-header">
@@ -249,9 +249,9 @@
                              <div class="content">
 
 
-
+                              
                                 <div class="form loginBox">
-                                    <form method="POST" action="index.html"  accept-charset="UTF-8">
+                                    <form method="POST" action="login.php"  accept-charset="UTF-8">
                                     <input id="loginusername" class="form-control" type="text" placeholder="Username" name="loginusername">
                                     <input id="loginpassword" class="form-control" type="password" placeholder="Password" name="loginpassword">
                                     <input class="btn btn-default btn-login" type="submit" value="Login">
@@ -262,8 +262,8 @@
                         <div class="box">
                             <div class="content stuRegisterBox" style="display:none;">
                              <div class="form">
-                                <form method="POST" html="{:multipart=>true}" data-remote="true" action="index.html" accept-charset="UTF-8">
-                                <input id="Username" class="form-control" type="text" placeholder="Username" name="useriname" required>
+                                <form method="POST" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
+                                <input id="Username" class="form-control" type="text" placeholder="Username" name="username" required>
                                 <input id="password" class="form-control" type="password" placeholder="Password" name="password" required>
                                 <input id="City" class="form-control" type="text" placeholder="City" name="city" required>
                                 <input id="School" class="form-control" type="text" placeholder="School" name="school">
@@ -273,13 +273,13 @@
                             </div>
                             <div class="content teaRegisterBox" style="display:none;">
                              <div class="form">
-                                <form method="POST" html="{:multipart=>true}" data-remote="true" action="index.html" accept-charset="UTF-8">
+                                <form method="POST" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
                                   <input id="Username" class="form-control" type="text" placeholder="Username" name="username" required>
                                   <input id="password" class="form-control" type="password" placeholder="Password" name="password" required>
                                   <input id="Name" class="form-control" type="text" placeholder="Name" name="name" required>
                                   <input id="City" class="form-control" type="text" placeholder="City" name="city" required>
-				  										 	<input id="School" class="form-control" type="text" placeholder="School" name="school" required>
-				  										  <input id="ClassCode" class="form-control" type="text" placeholder="Class Code" name="classcode">
+				  <input id="School" class="form-control" type="text" placeholder="School" name="school" required>
+				  <input id="ClassCode" class="form-control" type="text" placeholder="Class Code" name="classcode">
                                 <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
                                 </form>
                                 </div>
@@ -383,7 +383,7 @@ function loginAjax(){
                  shakeModal();
             }
         });
-
+    
 }
 
 function shakeModal(){
@@ -403,3 +403,5 @@ function shakeModal(){
 
                                 </body>
                             </html>
+
+
