@@ -241,7 +241,7 @@
 		      <div class="modal-dialog login animated">
     		      <div class="modal-content">
     		         <div class="modal-header">
-                        <a href="" button type="button" class="close" data-dismiss="modal" aria-hidden="true" action=../index.php>&times;</a>
+                        <a href="" button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:window.location.href = '../index.php'">&times;</a>
                         <h4 class="modal-title">Login with</h4>
                     </div>
                     <div class="modal-body">
