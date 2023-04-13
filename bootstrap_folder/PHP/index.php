@@ -241,7 +241,11 @@
 		      <div class="modal-dialog login animated">
     		      <div class="modal-content">
     		         <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+
+		<a href="" button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="javascript:window.location='http://34.75.152.62/mercoder/bootstrap_folder/home.php'">&times;</a>
+
+
                         <h4 class="modal-title">Login with</h4>
                     </div>
                     <div class="modal-body">
