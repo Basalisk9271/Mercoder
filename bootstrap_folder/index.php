@@ -139,7 +139,7 @@
                 </div>
             </div>
         </section>
-        <!-- Call to Action-->
+        <!-- Submission Button Addition-->
         <section class="content-section bg-primary text-white">
             <div class="container px-4 px-lg-5 text-center">
                 <button class="open-button" onclick="openForm()">Submit Assignment</button>
