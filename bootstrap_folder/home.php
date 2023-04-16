@@ -90,16 +90,9 @@ if(!isset($_SESSION['loggedin'])) {
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <script> 
-                                       fetch('prob_population.php')
-                                        .then(response => response.json())
-                                        .then(data => {
-                                        document.getElementById('title-div').innerHTML = data.title;
-                                        })
-                                        .catch(error => console.error(error));
-                                    </script>
+                                    
                                     <!-- <div class="h2">Problem title</div> -->
-                                    <div class="h2"id="title-div"></div> <!-- Title insert -->
+                                    <?php require('get_title.php'); ?> <!-- Title insert -->
                                     <p class="mb-0">Problem description</p> <!-- Description insert -->
                                 </div>
                             </div>
