@@ -92,7 +92,7 @@ if(!isset($_SESSION['loggedin'])) {
                                 <div class="caption-content">
                                     
                                     <!-- <div class="h2">Problem title</div> -->
-                                    <?php require('get_title.php'); ?> <!-- Title insert -->
+                                    <?php require('prob_population.php'); ?> <!-- Title insert -->
                                     <p class="mb-0">Problem description</p> <!-- Description insert -->
                                 </div>
                             </div>
