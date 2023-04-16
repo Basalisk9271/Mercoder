@@ -102,7 +102,7 @@ if(!isset($_SESSION['loggedin'])) {
                                      });
                                     </script>
                                     <!-- <div class="h2">Problem title</div> -->
-                                    <div class="title"></div> <!-- Title insert -->
+                                    <div class="h2"></div> <!-- Title insert -->
                                     <p class="mb-0">Problem description</p> <!-- Description insert -->
                                 </div>
                             </div>

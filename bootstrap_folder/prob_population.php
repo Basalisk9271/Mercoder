@@ -1,11 +1,7 @@
 <?php
 
     include 'error_handling.php';
-
-    //Error catching
-    ini_set("display_errors", "1");
-    ini_set("display_startup_errors", 1);
-    error_reporting(E_ALL);
+    
     //Connect to the database
     $con = mysqli_connect("localhost","root","Rayr3qNxsYT3iG","mercoder");
     // Check connection
@@ -17,7 +13,7 @@
 
     // Retrieve the PROBLEM TITLE from the database
     $query = "SELECT title FROM `problems` WHERE title = '(SAMPLE). An Hour Away'";
-    $result = mysqli_query($conn, $query);
+    $result = mysqli_query($con, $query);
     $title = mysqli_fetch_assoc($result);
 
     // display the title in html format
