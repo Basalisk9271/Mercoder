@@ -14,10 +14,20 @@
     // Retrieve the PROBLEM TITLE from the database
     $query = "SELECT title FROM `problems` WHERE title = '(SAMPLE). An Hour Away'";
     $result = mysqli_query($con, $query);
-    $title = mysqli_fetch_assoc($result);
-
-    // display the title in html format
-    echo "<div class='title'>$title</div>";
+    
+    if (mysqli_num_rows($result) > 0) {
+        // Output the title in a div object
+        while($row = mysqli_fetch_assoc($result)) {
+            ob_start();
+            echo $row["title"];
+            $title = ob_get_clean();
+        }
+      } else {
+        echo "0 results";
+      }
+      
+      echo json_encode(array('title' => $title));
+      mysqli_close($con);
 
     /*
     while ($row = $result->fetch_assoc()) {

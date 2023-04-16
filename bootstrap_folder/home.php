@@ -90,19 +90,16 @@ if(!isset($_SESSION['loggedin'])) {
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <!-- Importing the JQuery Library for data insertion -->
-                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-                                        $(function() {
-                                            $.ajax({
-                                            url: "prob_population.php",
-                                            success: function(data) {
-                                            $(".title").html(data);
-                                            }
-                                        });
-                                     });
+                                    <script> 
+                                       fetch('prob_population.php')
+                                        .then(response => response.json())
+                                        .then(data => {
+                                        document.getElementById('title-div').innerHTML = data.title;
+                                        })
+                                        .catch(error => console.error(error));
                                     </script>
                                     <!-- <div class="h2">Problem title</div> -->
-                                    <div class="h2"></div> <!-- Title insert -->
+                                    <div class="h2"id="title-div"></div> <!-- Title insert -->
                                     <p class="mb-0">Problem description</p> <!-- Description insert -->
                                 </div>
                             </div>
