@@ -90,7 +90,19 @@ if(!isset($_SESSION['loggedin'])) {
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h2">Problem title</div> <!-- Title insert -->
+                                    <!-- Importing the JQuery Library for data insertion -->
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+                                        $(function() {
+                                            $.ajax({
+                                            url: "prob_population.php",
+                                            success: function(data) {
+                                            $(".title").html(data);
+                                            }
+                                        });
+                                     });
+                                    </script>
+                                    <!-- <div class="h2">Problem title</div> -->
+                                    <div class="title"></div> <!-- Title insert -->
                                     <p class="mb-0">Problem description</p> <!-- Description insert -->
                                 </div>
                             </div>
