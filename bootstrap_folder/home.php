@@ -90,7 +90,9 @@ if(!isset($_SESSION['loggedin'])) {
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h2">Problem title</div> <!-- Title insert -->
+                                    
+                                    <!-- <div class="h2">Problem title</div> -->
+                                    <?php require('prob_population.php'); ?> <!-- Title insert -->
                                     <p class="mb-0">Problem description</p> <!-- Description insert -->
                                 </div>
                             </div>
