@@ -19,10 +19,10 @@
         if ($rows == 1 || $rows2 == 1) {
             $_SESSION['username'] = $username;
             // Redirect to user dashboard page
-            header("Location: ../index.php");
+           header("Location: ../index.php");
         } else {
             echo "error";
-            header("Location: index.php");
+            header("Location: loginWidget.php");
 	}
     }
 ?>

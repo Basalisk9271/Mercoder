@@ -1,7 +1,8 @@
-<?php include ("./PHP/auth.php"); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
+<?include "./PHP/auth.php"?>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -25,9 +26,10 @@
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>
+                <li class="sidebar-nav-item"><a href="./PHP/loginWidget.php">Login</a></li>
                 <li class="sidebar-nav-item"><a href="#about">About</a></li>
-                <li class="sidebar-nav-item"><a href="#portfolio">Problems</a></li>
+		<li class="sidebar-nav-item"><a href="#portfolio">Problems</a></li>
+		<li class="sidebar-nav-item"><a href="./PHP/logout.php">Logout</a></li>
             </ul>
         </nav>
         <!-- Header-->
@@ -110,7 +112,7 @@
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
-                <p><?php echo $_SESSION['username'];?><p>
+             
                 <p class="text-muted small mb-0">Copyright &copy; Table of Lords</p>
             </div>
         </footer>
