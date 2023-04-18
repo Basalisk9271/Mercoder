@@ -142,8 +142,8 @@
     width: 100%;
 }
 .login .btn-login, .teaRegisterBox .btn-register{
-    background-color: #00BBFF;
-    border-color: #00BBFF;
+    background-color:#ff8413;
+    border-color:#ff8413;
     border-width: 0;
     color: #FFFFFF;
     display: block;
@@ -154,8 +154,8 @@
 }
 
 .login .btn-login, .stuRegisterBox .btn-register{
-    background-color: #00BBFF;
-    border-color: #00BBFF;
+    background-color:#ff8413;
+    border-color:#ff8413;
     border-width: 0;
     color: #FFFFFF;
     display: block;
@@ -166,12 +166,12 @@
 }
 
 .login .btn-login:hover, .teaRegisterBox .btn-register:hover{
-    background-color: #00A4E4;
+    background-color: #cc6600;
     color: #FFFFFF;
 }
 
 .login .btn-login:hover, .stuRegisterBox .btn-register:hover{
-    background-color: #00A4E4;
+    background-color: #cc6600;
     color: #FFFFFF;
 }
 
@@ -220,19 +220,32 @@
     transition: all 0.3s ease 0s;
 }
 .big-login:hover{
-    background-color: #00A4E4;
+    background-color: #cc6600;
     color: #FFFFFF;
 }
 .big-register{
     background-color: rgba(0,0,0,.0);
-    color: #00bbff;
-    border-color: #00bbff;
+    color: #ff8413;
+    border-color: #ff8413;
 }
 .big-register:hover{
-    border-color: #00A4E4;
-    color:  #00A4E4;
-}</style>
+    border-color: #cc6600;
+    color:  #cc6600;
+}
+img{
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    object-fit:cover;
+}
+</style>
                                 </head>
+
+                <div class="img">
+                    <img src="/mercoder/bootstrap_folder/assets/img/campus.jpeg" class="mx-auto d-block" alt="Your image">
+                </div>
 				<body className='snippet-body'>
 				<?php require "reg.php"; 
 				      require "login.php"; ?>
@@ -288,17 +301,17 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <div class="forgot login-footer">
+                        <div class="forgot login-footer" style="color:#212529">
                             <span>Create a:
-                                 <a href="javascript: showTeacherRegisterForm();">Teacher account  </a>
+                                 <a href="javascript: showTeacherRegisterForm();"style="color:#ff8413">Teacher account  </a>
                            or    </span>
                             <span>
-                                 <a href="javascript: showStudentRegisterForm();">  Student account</a>
+                                 <a href="javascript: showStudentRegisterForm();" style="color:#ff8413">  Student account</a>
                              </span>
                         </div>
-                        <div class="forgot register-footer" style="display:none">
+                        <div class="forgot register-footer">
                              <span>Already have an account?</span>
-                             <a href="javascript: showLoginForm();">Login</a>
+                             <a href="javascript: showLoginForm();" style="color:#ff8413" >Login</a>
                         </div>
                     </div>
     		      </div>
