@@ -83,8 +83,7 @@ if(!isset($_SESSION['loggedin'])) {
                 <div class="content-section-heading text-center">
                     <h3 class="text-secondary mb-0">Problems</h3>
                 </div>
-                <div class="row" id="problems-row">
-                </div>
+                    <div class="row" id="problems-row"></div>
             </div>
         </section>
                                     
