@@ -301,15 +301,15 @@ img{
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <div class="forgot login-footer">
+                        <div class="forgot login-footer" style="color:#212529">
                             <span>Create a:
-                                 <a href="javascript: showTeacherRegisterForm();">Teacher account  </a>
+                                 <a href="javascript: showTeacherRegisterForm();"style="color:#ff8413">Teacher account  </a>
                            or    </span>
                             <span>
-                                 <a href="javascript: showStudentRegisterForm();">  Student account</a>
+                                 <a href="javascript: showStudentRegisterForm();" style="color:#ff8413">  Student account</a>
                              </span>
                         </div>
-                        <div class="forgot register-footer" style="display:none">
+                        <div class="forgot register-footer">
                              <span>Already have an account?</span>
                              <a href="javascript: showLoginForm();">Login</a>
                         </div>

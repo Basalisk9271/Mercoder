@@ -5571,6 +5571,7 @@ textarea.form-control-lg {
 }
 
 .modal-title {
+  color: #00bbff;
   margin-bottom: 0;
   line-height: 1.5;
 }
@@ -5583,6 +5584,7 @@ textarea.form-control-lg {
 
 .modal-footer {
   display: flex;
+  color: #13653f;
   flex-wrap: wrap;
   flex-shrink: 0;
   align-items: center;
@@ -11476,7 +11478,7 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-masthead.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
