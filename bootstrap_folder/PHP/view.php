@@ -1,9 +1,9 @@
 <?php 
 // Include the database configuration file  
-require_once 'dbConfig.php'; 
+require_once 'database_op.php'; 
  
 // Get image data from database 
-$result = $db->query("SELECT image FROM images ORDER BY id DESC"); 
+$result = $con->query("SELECT image FROM images ORDER BY id DESC"); 
 ?>
 
 <?php if($result->num_rows > 0){ ?> 

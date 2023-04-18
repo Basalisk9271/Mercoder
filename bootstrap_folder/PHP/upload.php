@@ -1,6 +1,6 @@
 <?php 
 // Include the database configuration file  
-require_once 'dbConfig.php'; 
+require_once 'database_op.php'; 
  
 // If file upload form is submitted 
 $status = $statusMsg = ''; 
@@ -18,11 +18,12 @@ if(isset($_POST["submit"])){
             $imgContent = addslashes(file_get_contents($image)); 
          
             // Insert image content into database 
-            $insert = $db->query("INSERT into images (image, created) VALUES ('$imgContent', NOW())"); 
+            $insert = $con->query("INSERT into images (image, created) VALUES ('$imgContent', NOW())"); 
              
             if($insert){ 
                 $status = 'success'; 
-                $statusMsg = "File uploaded successfully."; 
+                //$statusMsg = "File uploaded successfully."; 
+                header("Location: view.php");
             }else{ 
                 $statusMsg = "File upload failed, please try again."; 
             }  

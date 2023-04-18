@@ -93,7 +93,7 @@ if(!isset($_SESSION['loggedin'])) {
                                     <div class="h2">Problem title</div> <!-- Title insert -->
                                     <p class="mb-0">Problem description</p> <!-- Description insert -->
                                 </div>
-								<form action="upload.php" method="post" enctype="multipart/form-data">
+								<form action="PHP/upload.php" method="post" enctype="multipart/form-data">
 									<label>Select Image File:</label>
 									<input type="file" name="image">
 									<input type="submit" name="submit" value="Upload">
