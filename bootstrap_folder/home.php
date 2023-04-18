@@ -91,15 +91,13 @@ if(!isset($_SESSION['loggedin'])) {
                             <div class="caption">
                                 <div class="caption-content">
                                     
-                                    <!-- <div class="h2">Problem title</div> -->
                                     <?php require('prob_population.php'); ?> <!-- Title insert -->
-                                    <p class="mb-0">Problem description</p> <!-- Description insert -->
+                                    <!-- <p class="mb-0">Problem description</p> -->
                                 </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
                         </a>
                     </div>
-                    
                 </div>
             </div>
         </section>
