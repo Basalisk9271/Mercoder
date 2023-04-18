@@ -82,26 +82,38 @@ if(!isset($_SESSION['loggedin'])) {
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
                     <h3 class="text-secondary mb-0">Problems</h3>
-                    <h2 class="mb-5">Recent Projects</h2>
                 </div>
-                <div class="row gx-0">
-                    <!-- Add php code to insert problems from database here with a loop -->
-                    <div class="col-lg-4">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    
-                                    <?php require('prob_population.php'); ?> <!-- Title insert -->
-                                    <!-- <p class="mb-0">Problem description</p> -->
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                        </a>
-                    </div>
+                <div class="row" id="problems-row">
                 </div>
             </div>
         </section>
+                                    
+        <?php require('prob_population.php'); ?> 
+        var problems = <?php echo $problems_json; ?>;
+
+        <script>
+            const problemsRow = document.getElementById("problems-row");
+            for (let i = 0; i < problems.length; i++) {
+                const problem = problems[i];
+                const problemCard = 
+                    <div class="col-lg-6 col-md-6 mb-4">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                        <div class="caption-content">
+                            <div class="h2">${problem.title}</div>
+                            <p class="mb-0">${problem.description}</p>
+                        </div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                    </a>
+                    </div>
+                ;
+                problemsRow.insertAdjacentHTML("beforeend", problemCard);
+                }
+        </script>
         
+        <div id="content-1"></div>
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
