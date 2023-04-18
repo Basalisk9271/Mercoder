@@ -78,44 +78,43 @@ if(!isset($_SESSION['loggedin'])) {
         </section>
 
         <!-- Portfolio-->
-        <section class="content-section" id="problems">
-            <div class="container px-4 px-lg-5">
-                <div class="content-section-heading text-center">
-                    <h2 class="mb-5">Problems</h2>
-                </div>
-                    <div class="row" id="problems-row">
-                </div>
-            </div>
-        </section>
-                                    
-        <?php require 'prob_population.php'; ?> 
+<section class="content-section" id="problems">
+    <div class="container px-4 px-lg-5">
+        <div class="content-section-heading text-center">
+            <h2 class="mb-5">Problems</h2>
+        </div>
+        <div class="row" id="problems-row">
+        </div>
+    </div>
+</section>
 
-    <script>
-        
-        var problems = <?php echo $problems_json; ?>;
-        console.log(problems);
-    </script>
+<?php require 'prob_population.php'; ?> 
 
-        <script>
-            const problemsRow = document.getElementById("problems-row");
-            for (let i = 0; i < problems.length; i++) {
-                const problem = problems[i];
-                const problemCard = 
-                    <div class="col-lg-6 col-md-6 mb-4">
-                    <a class="portfolio-item" href="#!">
-                        <div class="caption">
-                        <div class="caption-content">
-                            <div class="h2">${problem.title}</div>
-                            <p class="mb-0">${problem.description}</p>
-                        </div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                    </a>
+<script>
+    var problems = <?php echo $problems_json; ?>;
+    console.log(problems);
+</script>
+
+<script>
+    const problemsRow = document.getElementById("problems-row");
+    for (let i = 0; i < problems.length; i++) {
+        const problem = problems[i];
+        const problemCard = document.createElement("div");
+        problemCard.classList.add("col-lg-6", "col-md-6", "mb-4");
+        problemCard.innerHTML = `
+            <a class="portfolio-item" href="#!">
+                <div class="caption">
+                    <div class="caption-content">
+                        <div class="h2">${problem.title}</div>
+                        <p class="mb-0">${problem.description}</p>
                     </div>
-                ;
-                problemsRow.insertAdjacentHTML("beforeend", problemCard);
-            }
-        </script>
+                </div>
+                <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+            </a>
+        `;
+        problemsRow.appendChild(problemCard);
+    }
+</script>
 
         <div id="content-1"></div>
 
