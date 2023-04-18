@@ -14,7 +14,7 @@
 
     // Select the titles and descriptions from the database
     $sql = "SELECT title, description FROM problems";
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($con, $sql);
 
     // Loop through the results and add them to the array
     while ($row = mysqli_fetch_assoc($result)) {
@@ -23,7 +23,7 @@
 
     // Encode the array as a JSON string
     $problems_json = json_encode($problems);
-    
+
     // Close the database connection
     mysqli_close($con);
 
