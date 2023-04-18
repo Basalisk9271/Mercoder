@@ -88,8 +88,10 @@ if(!isset($_SESSION['loggedin'])) {
             </div>
         </section>
                                     
-        <?php require('prob_population.php'); ?> 
+        <?php require 'prob_population.php'; ?> 
+
     <script>
+        
         var problems = <?php echo $problems_json; ?>;
         console.log(problems);
     </script>
@@ -112,7 +114,7 @@ if(!isset($_SESSION['loggedin'])) {
                     </div>
                 ;
                 problemsRow.insertAdjacentHTML("beforeend", problemCard);
-                }
+            }
         </script>
 
         <div id="content-1"></div>
