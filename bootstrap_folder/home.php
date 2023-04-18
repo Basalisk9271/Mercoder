@@ -42,7 +42,7 @@ if(!isset($_SESSION['loggedin'])) {
             <div class="container px-4 px-lg-5 text-center">
                 <img class="img-fluid" src="assets/img/logo-no-background.png">
                 <h3 class="mb-5"><em> </em></h3>
-                <a class="btn btn-primary btn-xl" href="#problems">Problems</a>
+                <a class="btn btn-primary btn-xl" href="PHP/index.php">Login</a>
                 <!-- <a href='./PHP/logout.php.php?action=logout'>Logout</a> -->
             </div>
 
