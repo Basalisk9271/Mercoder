@@ -89,9 +89,10 @@ if(!isset($_SESSION['loggedin'])) {
         </section>
                                     
         <?php require('prob_population.php'); ?> 
-
+    <script>
         var problems = <?php echo $problems_json; ?>;
         console.log(problems);
+    </script>
 
         <script>
             const problemsRow = document.getElementById("problems-row");
