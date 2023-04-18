@@ -231,8 +231,21 @@
 .big-register:hover{
     border-color: #00A4E4;
     color:  #00A4E4;
-}</style>
+}
+img{
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    object-fit:cover;
+}
+</style>
                                 </head>
+
+                <div class="img">
+                    <img src="/mercoder/bootstrap_folder/assets/img/campus.jpeg" class="mx-auto d-block" alt="Your image">
+                </div>
 				<body className='snippet-body'>
 				<?php require "reg.php"; 
 				      require "login.php"; ?>
