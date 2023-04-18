@@ -142,8 +142,8 @@
     width: 100%;
 }
 .login .btn-login, .teaRegisterBox .btn-register{
-    background-color: #00BBFF;
-    border-color: #00BBFF;
+    background-color:#ff8413;
+    border-color:#ff8413;
     border-width: 0;
     color: #FFFFFF;
     display: block;
@@ -154,8 +154,8 @@
 }
 
 .login .btn-login, .stuRegisterBox .btn-register{
-    background-color: #00BBFF;
-    border-color: #00BBFF;
+    background-color:#ff8413;
+    border-color:#ff8413;
     border-width: 0;
     color: #FFFFFF;
     display: block;
@@ -166,12 +166,12 @@
 }
 
 .login .btn-login:hover, .teaRegisterBox .btn-register:hover{
-    background-color: #00A4E4;
+    background-color: #cc6600;
     color: #FFFFFF;
 }
 
 .login .btn-login:hover, .stuRegisterBox .btn-register:hover{
-    background-color: #00A4E4;
+    background-color: #cc6600;
     color: #FFFFFF;
 }
 
@@ -220,17 +220,17 @@
     transition: all 0.3s ease 0s;
 }
 .big-login:hover{
-    background-color: #00A4E4;
+    background-color: #cc6600;
     color: #FFFFFF;
 }
 .big-register{
     background-color: rgba(0,0,0,.0);
-    color: #00bbff;
-    border-color: #00bbff;
+    color: #ff8413;
+    border-color: #ff8413;
 }
 .big-register:hover{
-    border-color: #00A4E4;
-    color:  #00A4E4;
+    border-color: #cc6600;
+    color:  #cc6600;
 }
 img{
     position: fixed;
@@ -311,7 +311,7 @@ img{
                         </div>
                         <div class="forgot register-footer">
                              <span>Already have an account?</span>
-                             <a href="javascript: showLoginForm();">Login</a>
+                             <a href="javascript: showLoginForm();" style="color:#ff8413" >Login</a>
                         </div>
                     </div>
     		      </div>

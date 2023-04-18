@@ -52,7 +52,6 @@ if(!isset($_SESSION['loggedin'])) {
         <section class="content-section bg-primary text-white text-center" id="about">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
-                    <h3 class="text-secondary mb-0">About</h3>
                     <h2 class="mb-5">What is MERCODER and what does it provide?</h2>
                 </div>
                 <div class="row gx-4 gx-lg-5">
@@ -81,7 +80,6 @@ if(!isset($_SESSION['loggedin'])) {
         <section class="content-section" id="problems">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">Problems</h3>
                     <h2 class="mb-5">Recent Projects</h2>
                 </div>
                 <div class="row gx-0">
