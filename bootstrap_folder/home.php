@@ -89,7 +89,9 @@ if(!isset($_SESSION['loggedin'])) {
         </section>
                                     
         <?php require('prob_population.php'); ?> 
+
         var problems = <?php echo $problems_json; ?>;
+        console.log(problems);
 
         <script>
             const problemsRow = document.getElementById("problems-row");
@@ -111,7 +113,7 @@ if(!isset($_SESSION['loggedin'])) {
                 problemsRow.insertAdjacentHTML("beforeend", problemCard);
                 }
         </script>
-        
+
         <div id="content-1"></div>
 
         <!-- Footer-->
