@@ -38,7 +38,8 @@ if(!isset($_SESSION['loggedin'])) {
         </nav>
         <!-- Header-->
         <header class="masthead d-flex align-items-center">
-            <div class="container px-4 px-lg-5 text-center">
+	    <div class="container px-4 px-lg-5 text-center">
+		<img class="img-fluid" src="assets/img/logo-no-background.png">
                 <h1 class="mt-5" style="font-family: Rufina "><?php echo $_SESSION['username'];?></h1> <!-- Funnel from database -->
                 <h3 class="mb-5"><em> </em></h3>
                 <a class="btn btn-primary btn-xl" href="#problems">Problems</a>
