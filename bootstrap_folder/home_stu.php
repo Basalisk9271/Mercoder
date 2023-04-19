@@ -39,8 +39,7 @@ if(!isset($_SESSION['loggedin'])) {
         <!-- Header-->
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">Welcome to MERCODER!</h1>
-                <h2 class="mb-5"><?php echo $_SESSION['username'];?></h2> <!-- Funnel from database -->
+                <h1 class="mt-5" style="font-family: Rufina "><?php echo $_SESSION['username'];?></h1> <!-- Funnel from database -->
                 <h3 class="mb-5"><em> </em></h3>
                 <a class="btn btn-primary btn-xl" href="#problems">Problems</a>
                 <!-- <a href='./PHP/logout.php.php?action=logout'>Logout</a> -->
