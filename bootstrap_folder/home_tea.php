@@ -39,8 +39,8 @@ if(!isset($_SESSION['loggedin'])) {
         <!-- Header-->
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">Welcome to MERCODER!</h1>
-                <h2 class="mb-5"><?php echo $_SESSION['username'];?></h2> <!-- Funnel from database -->
+                <img class="img-fluid" src="assets/img/logo-no-background.png">
+                <h1 class="mt-5" style="font-family: Rufina "><?php echo $_SESSION['username'];?></h1> <!-- Funnel from database -->
                 <h3 class="mb-5"><em> </em></h3>
                 <a class="btn btn-primary btn-xl" href="#problems">Problems</a>
                 <!-- <a href='./PHP/logout.php.php?action=logout'>Logout</a> -->
@@ -52,7 +52,6 @@ if(!isset($_SESSION['loggedin'])) {
         <section class="content-section bg-primary text-white text-center" id="about">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
-                    <h3 class="text-secondary mb-0">About</h3>
                     <h2 class="mb-5">What is MERCODER and what does it provide?</h2>
                 </div>
                 <div class="row gx-4 gx-lg-5">
@@ -81,7 +80,6 @@ if(!isset($_SESSION['loggedin'])) {
         <section class="content-section" id="problems">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">Problems</h3>
                     <h2 class="mb-5">Recent Projects</h2>
                 </div>
                 <div class="row gx-0">
