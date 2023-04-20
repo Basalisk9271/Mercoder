@@ -110,7 +110,7 @@ if(!isset($_SESSION['loggedin'])) {
                 </div>
                 <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
             </a>
-        `;
+        `
         problemsRow.appendChild(problemCard);
     }
 </script>
