@@ -40,9 +40,10 @@ if(!isset($_SESSION['loggedin'])) {
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
                 <img class="img-fluid" src="assets/img/logo-no-background.png">
-                <h1 class="mt-5" style="font-family: Rufina "><?php echo $_SESSION['username'];?></h1> <!-- Funnel from database -->
+                <h1 class="mt-5" style="font-family: Rufina ">Welcome, <?php echo $_SESSION['username'];?></h1> <!-- Funnel from database -->
                 <h3 class="mb-5"><em> </em></h3>
-                <a class="btn btn-primary btn-xl" href="#problems">Problems</a>
+                <a class="btn btn-primary btn-xl" href="#problems">View Problems</a>
+                <a class="btn btn-secondary btn-xl ms-3" href="PHP/problem_form.php">New Problem</a>
                 <!-- <a href='./PHP/logout.php.php?action=logout'>Logout</a> -->
             </div>
 
@@ -104,7 +105,7 @@ if(!isset($_SESSION['loggedin'])) {
                 </div>
             </div>
         </section>
-        
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
