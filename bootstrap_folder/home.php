@@ -95,7 +95,7 @@ if(!isset($_SESSION['loggedin'])) {
 -->
 
     <?php 
-        require 'prob_population.php'; 
+        include 'prob_population.php'; 
     ?> 
 
 <script>
