@@ -27,6 +27,8 @@
     // Close the database connection
     mysqli_close($con);
 
+    echo '<script>const item = ' . $problems_json . ';</script>';
+
  /*   
     // Retrieve the PROBLEM TITLE from the database
     $query = "SELECT title FROM `problems` WHERE title = '(SAMPLE). An Hour Away'";
