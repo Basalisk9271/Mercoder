@@ -77,78 +77,34 @@ if(!isset($_SESSION['loggedin'])) {
             </div>
         </section>
 
- 
-
-        <!-- Portfolio
-<section class="content-section" id="problems">
-    <div class="container px-4 px-lg-5">
-        <div class="content-section-heading text-center">
-            <h2 class="mb-5">Problems</h2>
-        </div>
-        <div class="row" id="problems-row"></div>
-    </div>
-</section>
-
--->
-
-    <?php 
-        require 'prob_population.php'; 
-    ?> 
-
-<script>
-     var items = <?php echo $problems_json; ?>;
-    // Get a reference to the element on the page that will contain the items
-const itemsContainer = document.getElementById('items-container');
-
-// Loop through the array of items and create a new element for each one
-items.forEach(item => {
-  // Create a new element to contain the item
-  const itemElement = document.createElement('div');
-  itemElement.classList.add('item');
-
-  // Create a new heading element for the item's title
-  const titleElement = document.createElement('h2');
-  titleElement.innerText = item.title;
-  itemElement.appendChild(titleElement);
-
-  // Create a new paragraph element for the item's description
-  const descriptionElement = document.createElement('p');
-  descriptionElement.innerText = item.description;
-  itemElement.appendChild(descriptionElement);
-
-  // Add the new item element to the container on the page
-  itemsContainer.appendChild(itemElement);
-});
-
-</script>
-
-
-<!-- 
-<script>
-    var problems = <?php echo $problems_json; ?>;
-    const problemsRow = document.getElementById("problems-row");
-    for (let i = 0; i < problems.length; i++) {
-        const problem = problems[i];
-        const problemCard = document.createElement("div");
-        problemCard.classList.add("col-lg-6", "col-md-6", "mb-4");
-        problemCard.innerHTML = `
-            <a class="portfolio-item" href="#!">
-                <div class="caption">
-                    <div class="caption-content">
-                        <div class="h2">${problem.title}</div>
-                        <p class="mb-0">${problem.description}</p>
-                    </div>
+        <!-- Portfolio-->
+        <section class="content-section" id="problems">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading text-center">
+                    <h3 class="text-secondary mb-0">Problems</h3>
+                    <h2 class="mb-5">Recent Projects</h2>
                 </div>
-                <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-            </a>
-        `;
-        problemsRow.appendChild(problemCard);
-    }
-</script>
--->
-
-        <div id="content-1"></div>
-
+                <div class="row gx-0">
+                    <!-- Add php code to insert problems from database here with a loop -->
+                    <div class="col-lg-4">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <!-- Importing the JQuery Library for data insertion -->
+                                   
+                                    <div class="h2">Problem title</div> 
+                                    <div class="title"></div> <!-- Title insert -->
+                                    <p class="mb-0">Problem description</p> <!-- Description insert -->
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
