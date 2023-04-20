@@ -93,6 +93,35 @@ if(!isset($_SESSION['loggedin'])) {
     ?> 
 
 <script>
+     var items = <?php echo $problems_json; ?>;
+    // Get a reference to the element on the page that will contain the items
+const itemsContainer = document.getElementById('items-container');
+
+// Loop through the array of items and create a new element for each one
+items.forEach(item => {
+  // Create a new element to contain the item
+  const itemElement = document.createElement('div');
+  itemElement.classList.add('item');
+
+  // Create a new heading element for the item's title
+  const titleElement = document.createElement('h2');
+  titleElement.innerText = item.title;
+  itemElement.appendChild(titleElement);
+
+  // Create a new paragraph element for the item's description
+  const descriptionElement = document.createElement('p');
+  descriptionElement.innerText = item.description;
+  itemElement.appendChild(descriptionElement);
+
+  // Add the new item element to the container on the page
+  itemsContainer.appendChild(itemElement);
+});
+
+</script>
+
+
+<!-- 
+<script>
     var problems = <?php echo $problems_json; ?>;
     const problemsRow = document.getElementById("problems-row");
     for (let i = 0; i < problems.length; i++) {
@@ -113,6 +142,7 @@ if(!isset($_SESSION['loggedin'])) {
         problemsRow.appendChild(problemCard);
     }
 </script>
+-->
 
         <div id="content-1"></div>
 
