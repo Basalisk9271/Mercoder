@@ -95,9 +95,6 @@ if(!isset($_SESSION['loggedin'])) {
 <script>
     var problems = <?php echo $problems_json; ?>;
     console.log(problems);
-</script>
-
-<script>
     const problemsRow = document.getElementById("problems-row");
     for (let i = 0; i < problems.length; i++) {
         const problem = problems[i];
