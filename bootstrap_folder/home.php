@@ -94,9 +94,7 @@ if(!isset($_SESSION['loggedin'])) {
 
 -->
 
-    <?php 
-        include 'prob_population.php'; 
-    ?> 
+    
 
 <script>
      var items = <?php echo $problems_json; ?>;
