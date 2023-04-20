@@ -1,9 +1,9 @@
-<?php 
+<?php
 session_start();
 if(!isset($_SESSION['loggedin'])) {
     $_SESSION['loggedin'] = 0;
     header('Location: index.php'); // don't redirect same page
-} 
+}
 
 ?>
 
@@ -38,108 +38,66 @@ if(!isset($_SESSION['loggedin'])) {
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#page-top">Problems</a></li>
-		<li class="sidebar-nav-item"><a href="http://34.75.152.62/mercoder/bootstrap_folder/home.php">Home</a></li>
+        <li class="sidebar-nav-item"><a href="http://34.75.152.62/mercoder/bootstrap_folder/home.php">Home</a></li>
                
-		<!-- I don't think this is needed 
-		 <li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>	
+        <!-- I don't think this is needed
+         <li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>
                 -->
-		
-		<li class="sidebar-nav-item"><a href="./PHP/index.php">Logout</a></li>
+        
+        <li class="sidebar-nav-item"><a href="./PHP/index.php">Logout</a></li>
             </ul>
         </nav>
         </header>
 
 
-        <!-- Portfolio-->
-        <section class="content-section" id="problems">
-            <div class="container px-4 px-xl-5">
-                <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">Problems</h3>
-                    <h2 class="mb-5">All currently available problems:</h2>
-                </div>
-                <div class="row gx-3">
-                    <div class="row gy-3">
-                        
-                    
-                    
-                   
-                    
-                    
-                    
-                    <!-- Add php code to insert problems from database here with a loop -->
-                    
-                    
-                    <div class="col-lg-6">
-                        
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    
-                                    
-                                    <div class="h2">Problem 1 title</div>  <!-- Title insert -->
-                                    <p class="mb-0">Problem 1 description</p> <!-- Description insert -->
-                                
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                        </a>
-                    </div>
-                    
-                    
-                    
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    
-                                    
-                                    <div class="h2">Problem 2 title</div>  <!-- Title insert -->
-                                    <p class="mb-0">Problem 2 description</p> <!-- Description insert -->
-                                    
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                        </a>
-                    </div>
-                    
-                    
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    
-                                    
-                                    <div class="h2">Problem 3 title</div>  <!-- Title insert -->
-                                    <p class="mb-0">Problem 3 description</p> <!-- Description insert -->
-                                    
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                        </a>
-                    </div>
-                    
-                   
-                   <div class="col-lg-6">
-                       <a class="portfolio-item" href="#!">
-                           <div class="caption">
-                               <div class="caption-content">
-                                   
-                                   
-                                   <div class="h2">Problem 4 title</div>  <!-- Title insert -->
-                                   <p class="mb-0">Problem 4 description</p> <!-- Description insert -->
-                                   
+                           <!-- Portfolio-->
+                           <section class="content-section" id="problems">
+                               <div class="container px-4 px-xl-5">
+                                   <div class="content-section-heading text-center">
+                                       <h3 class="text-secondary mb-0">Problems</h3>
+                                       <h2 class="mb-5">All currently available problems:</h2>
+                                   </div>
+                                   <div id="probs">
+                                   <div class="row gx-3">
+                                       <div class="row gy-3">
+                           
+                                <div id="loop"></div>
+                         
+                         
+                         <script>
+                           const probDesc =  [
+                                             { problem: "Problem 1", desc: "Description for Problem 1" },
+                                             { problem: "Problem 2", desc: "Description for Problem 2" },
+                                             { problem: "Problem 3", desc: "Description for Problem 3" },
+                                             { problem: "Problem 4", desc: "Description for Problem 4" }
+                                             ];
+                           const length = probDesc.length;
+
+                          
+
+                           for (let i = 0; i < length; i++) {
+                             const div = document.createElement('div');
+                             const htmlCode = `
+                               <div class="col-lg-6">
+                                 <a class="portfolio-item" href="#!">
+                                   <div class="caption">
+                                     <div class="caption-content">
+                                       <div class="h2">${probDesc[i].problem} </div>
+                                       <p class="mb-0">${probDesc[i].desc}</p>
+                                     </div>
+                                   </div>
+                                   <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                                 </a>
                                </div>
-                           </div>
-                           <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                       </a>
-                   </div>
-                   
-                    
-                    
-                </div>
-            </div>
-        </section>
-        
+                             `;
+                             div.innerHTML = htmlCode;
+                             document.getElementById('loop').appendChild(div);
+                           }
+                         </script>
+                       </section>
+                       
+                       
+                       
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
