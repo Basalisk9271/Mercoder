@@ -77,19 +77,23 @@ if(!isset($_SESSION['loggedin'])) {
             </div>
         </section>
 
-        <!-- Portfolio-->
+ 
+
+        <!-- Portfolio
 <section class="content-section" id="problems">
     <div class="container px-4 px-lg-5">
         <div class="content-section-heading text-center">
             <h2 class="mb-5">Problems</h2>
         </div>
 
-    <!--  
+    
         <div class="row" id="problems-row">
         </div>
-    -->
+    
     </div>
 </section>
+
+-->
 
     <?php 
         require 'prob_population.php'; 
