@@ -87,8 +87,7 @@ if(!isset($_SESSION['loggedin'])) {
         </div>
 
     
-        <div class="row" id="problems-row">
-        </div>
+        <div class="row" id="problems-row"></div>
     
     </div>
 </section>
@@ -129,7 +128,7 @@ items.forEach(item => {
 
 <!-- 
 <script>
-    
+    var problems = <?php echo $problems_json; ?>;
     const problemsRow = document.getElementById("problems-row");
     for (let i = 0; i < problems.length; i++) {
         const problem = problems[i];
