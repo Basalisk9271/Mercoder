@@ -57,7 +57,9 @@ if(!isset($_SESSION['loggedin'])) {
                     <h3 class="text-secondary mb-0">Problems</h3>
                     <h2 class="mb-5">All currently available problems:</h2>
                 </div>
-                <div class="row gx-0">
+                <div class="row gx-3">
+                    <div class="row gy-3">
+                        
                     
                     
                    
