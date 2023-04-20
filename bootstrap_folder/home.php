@@ -84,9 +84,10 @@ if(!isset($_SESSION['loggedin'])) {
             <h2 class="mb-5">Problems</h2>
         </div>
 
-        
+    <!--  
         <div class="row" id="problems-row">
         </div>
+    -->
     </div>
 </section>
 
