@@ -88,7 +88,9 @@ if(!isset($_SESSION['loggedin'])) {
     </div>
 </section>
 
-<?php require 'prob_population.php'; ?> 
+    <?php 
+        require 'prob_population.php'; 
+    ?> 
 
 <script>
     var problems = <?php echo $problems_json; ?>;
