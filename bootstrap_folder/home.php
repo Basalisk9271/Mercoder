@@ -105,6 +105,16 @@ if(!isset($_SESSION['loggedin'])) {
             </div>
         </section>
         
+    <?php 
+        include 'prob_population.php'; 
+    ?> 
+    
+    <script>
+     var problems = <?php echo $problems_json; ?>;
+    </script>
+
+
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
