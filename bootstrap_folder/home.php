@@ -94,7 +94,6 @@ if(!isset($_SESSION['loggedin'])) {
 
 <script>
     var problems = <?php echo $problems_json; ?>;
-    console.log(problems);
     const problemsRow = document.getElementById("problems-row");
     for (let i = 0; i < problems.length; i++) {
         const problem = problems[i];
@@ -110,7 +109,7 @@ if(!isset($_SESSION['loggedin'])) {
                 </div>
                 <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
             </a>
-        `
+        `;
         problemsRow.appendChild(problemCard);
     }
 </script>
