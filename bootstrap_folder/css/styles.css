@@ -11530,7 +11530,8 @@ footer.footer .social-link:hover {
     margin: 0;
   }
   .portfolio-item .caption {
-    transition: background-color 0.7s, -webkit-clip-path 0.25s ease-out;
+      background-color: rgba(255, 125, 0);
+    transition: background-color 1.0s, -webkit-clip-path 0.25s ease-out;
     transition: clip-path 0.25s ease-out, background-color 0.7s;
     transition: clip-path 0.25s ease-out, background-color 0.7s, -webkit-clip-path 0.25s ease-out;
     -webkit-clip-path: inset(0px);
@@ -11554,7 +11555,7 @@ footer.footer .social-link:hover {
             clip-path: inset(2rem);
   }
   .portfolio-item:hover .caption {
-    background-color: rgba(29, 128, 159, 0.9);
+    background-color: rgba(255, 125, 0);
     -webkit-clip-path: inset(2rem);
             clip-path: inset(2rem);
   }
