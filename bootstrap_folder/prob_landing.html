@@ -36,8 +36,9 @@ if(!isset($_SESSION['loggedin'])) {
                   margin-left: auto;
                   margin-right: auto;
                   width: 60%;
-                  
             }
+         
+              
      </style>
        
         

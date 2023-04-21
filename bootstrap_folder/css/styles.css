@@ -11502,6 +11502,7 @@ footer.footer .social-link:hover {
   max-width: 530px;
   margin: auto auto 1rem;
 }
+
 .portfolio-item .caption {
   display: flex;
   height: 100%;
@@ -11511,6 +11512,7 @@ footer.footer .social-link:hover {
   top: 0;
   bottom: 0;
   z-index: 1;
+  border: 10px solid #000000;
 }
 .portfolio-item .caption .caption-content {
   color: #fff;
