@@ -26,12 +26,23 @@ if(!isset($_SESSION['loggedin'])) {
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         
-        
      
-        
-        
+     
+     
+     <style>
+            #loop
+            {
+                display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  width: 60%;
+                  
+            }
+     </style>
+       
         
     </head>
+    
     <body id="page-top">
         <!-- Navigation-->
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
@@ -57,44 +68,53 @@ if(!isset($_SESSION['loggedin'])) {
                                        <h3 class="text-secondary mb-0">Problems</h3>
                                        <h2 class="mb-5">All currently available problems:</h2>
                                    </div>
-                                   <div id="probs">
-                                   <div class="row gx-3">
-                                       <div class="row gy-3">
+                                 
+                                 
+                    
+                            <div id="loop"></div>
+                            
+                       
+                       <script>
+                         var probs =  [
+                                           { problem: "Problem 1", desc: "Description for Problem 1" },
+                                           { problem: "Problem 2", desc: "Description for Problem 2" },
+                                           { problem: "Problem 3", desc: "Description for Problem 3" },
+                                           { problem: "Problem 4", desc: "Description for Problem 4" },
+                                           { problem: "Problem 5", desc: "Description for Problem 5" },
+                                            
+                                           ];
+                        
+
+                         for (let i = 0; i < probs.length; i++)
+                         {
+                           const div = document.createElement('div');
                            
-                                <div id="loop"></div>
-                         
-                         
-                         <script>
-                           const probDesc =  [
-                                             { problem: "Problem 1", desc: "Description for Problem 1" },
-                                             { problem: "Problem 2", desc: "Description for Problem 2" },
-                                             { problem: "Problem 3", desc: "Description for Problem 3" },
-                                             { problem: "Problem 4", desc: "Description for Problem 4" }
-                                             ];
-                           const length = probDesc.length;
-
-                          
-
-                           for (let i = 0; i < length; i++) {
-                             const div = document.createElement('div');
-                             const htmlCode = `
-                               <div class="col-lg-6">
-                                 <a class="portfolio-item" href="#!">
-                                   <div class="caption">
-                                     <div class="caption-content">
-                                       <div class="h2">${probDesc[i].problem} </div>
-                                       <p class="mb-0">${probDesc[i].desc}</p>
-                                     </div>
+                           const htmlCode = `
+                            
+                            <div class="row gx-5">
+                            <div class="row gy-5">
+                           <div class="col-lg-12">
+                            <a class="portfolio-item" href="#!">
+                                 <div class="caption">
+                                   <div class="caption-content">
+                                     <div class="h2">${probs[i].problem} </div>
+                                     <p class="mb-0">${probs[i].desc}</p>
                                    </div>
-                                   <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                                 </a>
-                               </div>
-                             `;
-                             div.innerHTML = htmlCode;
-                             document.getElementById('loop').appendChild(div);
-                           }
-                         </script>
-                       </section>
+                                 </div>
+                                 <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                               </a>
+                             </div>
+                    
+                           `;
+                           div.innerHTML = htmlCode;
+                           document.getElementById("loop").appendChild(div);
+                         }
+                       </script>
+                       
+                       
+                       
+                    </section>
+                       
                        
                        
                        
