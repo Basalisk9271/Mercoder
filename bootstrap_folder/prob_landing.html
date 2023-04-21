@@ -28,19 +28,9 @@ if(!isset($_SESSION['loggedin'])) {
         
      
      
+   
      
-     <style>
-            #loop
-            {
-                display: block;
-                  margin-left: auto;
-                  margin-right: auto;
-                  width: 60%;
-            }
-         
-              
-     </style>
-       
+    
         
     </head>
     
@@ -69,11 +59,10 @@ if(!isset($_SESSION['loggedin'])) {
                                        <h3 class="text-secondary mb-0">Problems</h3>
                                        <h2 class="mb-5">All currently available problems:</h2>
                                    </div>
-                                 
-                                 
-                    
+                         
+                         
                             <div id="loop"></div>
-                            
+                           
                        
                        <script>
                          var probs =  [
@@ -82,39 +71,42 @@ if(!isset($_SESSION['loggedin'])) {
                                            { problem: "Problem 3", desc: "Description for Problem 3" },
                                            { problem: "Problem 4", desc: "Description for Problem 4" },
                                            { problem: "Problem 5", desc: "Description for Problem 5" },
-                                            
-                                           ];
-                        
-
-                         for (let i = 0; i < probs.length; i++)
-                         {
-                           const div = document.createElement('div');
-                           
-                           const htmlCode = `
+                                           { problem: "Problem 6", desc: "Description for Problem 6" },
+                                           { problem: "Problem 7", desc: "Description for Problem 7" },
+                                           { problem: "Problem 8", desc: "Description for Problem 8" },
+                                           { problem: "Problem 9", desc: "Description for Problem 9" },
+                                           { problem: "Problem 10", desc: "Description for Problem 10" },
+                                           
+                                       ];
+                       
+                       
+                       
+                        //initialize variable htmlCode with Bootstrap Grid row gutters
+                        let htmlCode = `<div class="row gx-5">
+                                            <div class="row gy-5">` ;
                             
-                            <div class="row gx-5">
-                            <div class="row gy-5">
-                           <div class="col-lg-12">
-                            <a class="portfolio-item" href="#!">
-                                 <div class="caption">
-                                   <div class="caption-content">
-                                     <div class="h2">${probs[i].problem} </div>
-                                     <p class="mb-0">${probs[i].desc}</p>
-                                   </div>
-                                 </div>
-                                 <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                               </a>
-                             </div>
-                    
-                           `;
-                           div.innerHTML = htmlCode;
-                           document.getElementById("loop").appendChild(div);
+                        const div = document.createElement('div');
+                       
+                        for (let i = 0; i < probs.length; i++)
+                         {
+                             htmlCode += ` <div class="col-lg-6">
+                                                    <a class="portfolio-item" href="#!">
+                                                        <div class="caption">
+                                                            <div class="caption-content">
+                                                                <div class="h2">${probs[i].problem}</div>
+                                                                 <p class="mb-0">${probs[i].desc}</p>
+                                                            </div>
+                                                        </div>
+                                                        <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                                                    </a>
+                                                </div>                     `;
+                           
+                           div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
+                           document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
                          }
+                         
                        </script>
-                       
-                       
-                       
-                    </section>
+                   </section>
                        
                        
                        
@@ -135,3 +127,4 @@ if(!isset($_SESSION['loggedin'])) {
         
     </body>
 </html>
+
