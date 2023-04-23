@@ -23,9 +23,10 @@
     echo "test4";
 
     
-    $_SESSION["problems"] = $problems;
+    #$_SESSION["problems"] = $problems;
     echo "test5";
     //var_dump($problems); this is working
     // Close the database connection
     mysqli_close($con);
+    echo json_encode($problems);
 ?>

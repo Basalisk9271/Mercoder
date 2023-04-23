@@ -87,15 +87,45 @@ if(!isset($_SESSION['loggedin'])) {
                             <div id="loop"></div>
 
             <?php 
-                include 'prob_population.php';
-                $problems = $_SESSION["problems"];
-                var_dump($problems);
+                //  include 'prob_population.php';
+                //$problems = $_SESSION["problems"];
+                //var_dump($problems);
             ?>
             <script>
+            // Make an AJAX call to retrieve the PHP array
+            $.ajax({
+            url: "prob_population.php",
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+                // Create a JavaScript array and fill it with the data from the PHP array
+                var probs = [];
+                for (var i = 0; i < data.length; i++) {
+                probs.push({
+                    title: data[i].title,
+                    description: data[i].description
+                });
+                }
+                // Use the JavaScript array as needed
+                console.log(probs);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+            });
+
+
+
+
+
+
+
+
+
                 console.log("testing");
                 console.log("testing2");
-                var probs = <?php echo json_encode($problems); ?>
-                console.log(probs);
+             
+                //console.log(probs);
             
             //initialize variable htmlCode with Bootstrap Grid row gutters
          let htmlCode = `
