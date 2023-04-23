@@ -100,40 +100,39 @@ if(!isset($_SESSION['loggedin'])) {
                 url: "prob_population.php",
                 type: "GET",
                 dataType: "json",
-                success: function(data) {
+                success: function(problems) {
                     // Create a JavaScript array and fill it with the data from the PHP array
                     var probs = [];
-                    for (var i = 0; i < data.length; i++) {
-                    probs.push({
-                        title: data[i].title,
-                        description: data[i].description
+                    for (var i = 0; i < problems.length; i++) {
+                        probs.push({
+                            title: problems[i].title,
+                            description: problems[i].description
                     });
                     }
-                    // Use the JavaScript array as needed
-                    console.log(probs);
-                    let htmlCode = `
-                            <div class="row gx-5 justify-content-center">
-                                <div class="row gy-4">` ;
+                        console.log(probs);
+                        let htmlCode = `
+                                <div class="row gx-5 justify-content-center">
+                                    <div class="row gy-4">` ;
 
-                     const div = document.createElement('div');
-            
-                    for (let i = 0; i < probs.length; i++)
-                        {
-                            htmlCode += `<div class="col-lg-6">
-                                                <a class="portfolio-item" href="#!">
-                                                    <div class="caption">
-                                                        <div class="caption-content">
-                                                            <div class="h2">${probs[i].title}</div>
-                                                                <p class="mb-0">${probs[i].description}</p>
+                        const div = document.createElement('div');
+                
+                        for (let i = 0; i < probs.length; i++)
+                            {
+                                htmlCode += `<div class="col-lg-6">
+                                                    <a class="portfolio-item" href="#!">
+                                                        <div class="caption">
+                                                            <div class="caption-content">
+                                                                <div class="h2">${probs[i].title}</div>
+                                                                    <p class="mb-0">${probs[i].description}</p>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                                                </a>
-                                            </div>`;
-                        
-                        div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
-                        document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
-                        }
+                                                        <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                                                    </a>
+                                                </div>`;
+                            
+                            div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
+                            document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
+                            }
 
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
