@@ -84,49 +84,45 @@ if(!isset($_SESSION['loggedin'])) {
                                        <h3 class="text-secondary mb-0">Problems</h3>
                                        <h2 class="mb-5">All currently available problems:</h2>
                                    </div>
-                         
-                         
                             <div id="loop"></div>
-                           
                        
-                       <script>
-
-                            <?php 
-                                include 'prob_population.php'; 
-                                session_start();
-                                $problems = $_SESSION["problems"];
-                                var_dump($problems);
-                            ?>
-                             var probs = <?php echo json_encode($problems); ?>;
-                             console.log(probs);
-                       
-                        //initialize variable htmlCode with Bootstrap Grid row gutters
-                        let htmlCode = `
-                                        <div class="row gx-5 justify-content-center">
-                                            <div class="row gy-4">` ;
-                            
-                        const div = document.createElement('div');
-                       
-                        for (let i = 0; i < probs.length; i++)
-                         {
-                             htmlCode += `<div class="col-lg-6">
-                                                    <a class="portfolio-item" href="#!">
-                                                        <div class="caption">
-                                                            <div class="caption-content">
-                                                                <div class="h2">${probs[i].problem}</div>
-                                                                 <p class="mb-0">${probs[i].desc}</p>
-                                                            </div>
-                                                        </div>
-                                                        <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                                                    </a>
-                                                </div>`;
-                           
-                           div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
-                           document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
-                         }
-                         
-                       </script>
-                   </section>
+            <script>
+                <?php 
+                    session_start();
+                    include 'prob_population.php'; 
+                    $problems = $_SESSION["problems"];
+                    var_dump($problems);
+                ?>
+                    var probs = <?php echo json_encode($problems); ?>;
+                    console.log(probs);
+            
+            //initialize variable htmlCode with Bootstrap Grid row gutters
+         let htmlCode = `
+                            <div class="row gx-5 justify-content-center">
+                                <div class="row gy-4">` ;
+                
+            const div = document.createElement('div');
+            
+            for (let i = 0; i < probs.length; i++)
+                {
+                    htmlCode += `<div class="col-lg-6">
+                                        <a class="portfolio-item" href="#!">
+                                            <div class="caption">
+                                                <div class="caption-content">
+                                                    <div class="h2">${probs[i].problem}</div>
+                                                        <p class="mb-0">${probs[i].desc}</p>
+                                                </div>
+                                            </div>
+                                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                                        </a>
+                                    </div>`;
+                
+                div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
+                document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
+                }
+                
+            </script>
+        </section>
     
         <!-- Footer-->
         <footer class="footer text-center">

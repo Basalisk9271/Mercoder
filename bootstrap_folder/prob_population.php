@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     include 'error_handling.php';
     
     //Connect to the database
@@ -21,12 +21,10 @@
         $problems[] = array("problem" => $row["title"], "desc" => $row["description"]);
     }
     echo "test4";
-    print_r($problems);
 
-    session_start();
+    
     $_SESSION["problems"] = $problems;
     echo "test5";
-    var_dump($problems);
 
     // Close the database connection
     mysqli_close($con);
