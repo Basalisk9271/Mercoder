@@ -91,38 +91,30 @@ if(!isset($_SESSION['loggedin'])) {
                 //$problems = $_SESSION["problems"];
                 //var_dump($problems);
             ?>
+
             <script>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                 console.log("testing");
-            jQuery.ajax({
-            url: "prob_population.php",
-            type: "GET",
-            dataType: "json",
-            success: function(data) {
-                // Create a JavaScript array and fill it with the data from the PHP array
-                var probs = [];
-                for (var i = 0; i < data.length; i++) {
-                probs.push({
-                    title: data[i].title,
-                    description: data[i].description
-                });
+               <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                console.log("testing");
+                jQuery.ajax({
+                url: "prob_population.php",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    // Create a JavaScript array and fill it with the data from the PHP array
+                    var probs = [];
+                    for (var i = 0; i < data.length; i++) {
+                    probs.push({
+                        title: data[i].title,
+                        description: data[i].description
+                    });
+                    }
+                    // Use the JavaScript array as needed
+                    console.log(probs);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
                 }
-                // Use the JavaScript array as needed
-                console.log(probs);
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
-            }
-            });
-
-
-
-
-
-
-
-
-
+                });
                
                 console.log("testing2");
              
@@ -141,8 +133,8 @@ if(!isset($_SESSION['loggedin'])) {
                                         <a class="portfolio-item" href="#!">
                                             <div class="caption">
                                                 <div class="caption-content">
-                                                    <div class="h2">${probs[i].problem}</div>
-                                                        <p class="mb-0">${probs[i].desc}</p>
+                                                    <div class="h2">${probs[i].title}</div>
+                                                        <p class="mb-0">${probs[i].description}</p>
                                                 </div>
                                             </div>
                                             <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
