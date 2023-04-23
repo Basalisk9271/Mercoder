@@ -93,7 +93,7 @@ if(!isset($_SESSION['loggedin'])) {
             ?>
             <script>
             // Make an AJAX call to retrieve the PHP array
-            $.ajax({
+            jQuery.ajax({
             url: "prob_population.php",
             type: "GET",
             dataType: "json",
