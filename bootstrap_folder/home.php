@@ -88,7 +88,7 @@ if(!isset($_SESSION['loggedin'])) {
                        
             <script>
                 console.log("testing");
-                <?php include 'prob_population.php'; ?>;
+                <?php include 'prob_population.php'; ?>
      //               $problems = $_SESSION["problems"];
       //              var_dump($problems);
                 console.log("testing2");
