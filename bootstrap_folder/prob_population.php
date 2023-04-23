@@ -20,7 +20,8 @@
     while ($row = mysqli_fetch_assoc($result)) {
         $problems[] = array("problem" => $row["title"], "desc" => $row["description"]);
     }
-
+    print_r($problems);
+    
     session_start();
     $_SESSION["problems"] = $problems;
 
