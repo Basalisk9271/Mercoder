@@ -92,7 +92,7 @@ if(!isset($_SESSION['loggedin'])) {
                        <script>
 
                             <?php 
-                                include 'prob_poplation.php'; 
+                                include 'prob_population.php'; 
                                 session_start();
                                 $problems = $_SESSION["problems"];
                                 var_dump($problems);
