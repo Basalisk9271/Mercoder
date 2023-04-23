@@ -18,7 +18,7 @@
 
     // Loop through the results and add them to the array
     while ($row = mysqli_fetch_assoc($result)) {
-        $problems[] = $row;
+        $problems[] = array("problem" => $row["title"], "desc" => $row["description"]);
     }
 
     session_start();
