@@ -85,10 +85,11 @@ if(!isset($_SESSION['loggedin'])) {
                                        <h2 class="mb-5">All currently available problems:</h2>
                                    </div>
                             <div id="loop"></div>
-                       
+
+            <?php include 'prob_population.php'; ?>
             <script>
                 console.log("testing");
-                <?php include 'prob_population.php'; ?>
+                
      //               $problems = $_SESSION["problems"];
       //              var_dump($problems);
                 console.log("testing2");
