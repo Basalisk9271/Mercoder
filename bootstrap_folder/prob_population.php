@@ -15,7 +15,7 @@
     $result = mysqli_query($con, $sql);
     // Loop through the results and add them to the array
     while ($row = mysqli_fetch_assoc($result)) {
-        $problems[] = $row;
+        $problems[] = array("title" => $row["title"], "description" => $row["description"]);
     }
     
     // Close the database connection
