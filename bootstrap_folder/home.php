@@ -88,11 +88,7 @@ if(!isset($_SESSION['loggedin'])) {
                        
             <script>
                 console.log("testing");
-                <?php 
-                    include 'prob_population.php'; 
-                    $problems = $_SESSION["problems"];
-                    var_dump($problems);
-                ?>
+                
                     var probs = <?php echo json_encode($problems); ?>;
                     console.log(probs);
             
