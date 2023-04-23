@@ -137,6 +137,7 @@ if(!isset($_SESSION['loggedin'])) {
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);
+                    console.log("ERROR");
                 }
                 });
                
