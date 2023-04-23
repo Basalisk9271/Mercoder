@@ -93,10 +93,8 @@ if(!isset($_SESSION['loggedin'])) {
             ?>
             <script>
                 console.log("testing");
-               
-                 
                 console.log("testing2");
-                var probs = <?php echo json_encode($problems); ?>;
+                var probs = <?php echo json_encode($problems); ?>
                 console.log(probs);
             
             //initialize variable htmlCode with Bootstrap Grid row gutters
