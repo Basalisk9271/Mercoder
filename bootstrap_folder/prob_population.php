@@ -24,6 +24,8 @@
     session_start();
     $_SESSION["problems"] = $problems;
 
+    var_dump($problems);
+
     // Close the database connection
     mysqli_close($con);
 
