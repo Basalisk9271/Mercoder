@@ -25,7 +25,7 @@
     
     $_SESSION["problems"] = $problems;
     echo "test5";
-    var_dump($problems);
+    //var_dump($problems); this is working
     // Close the database connection
     mysqli_close($con);
 ?>

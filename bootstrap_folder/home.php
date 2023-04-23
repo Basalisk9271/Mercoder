@@ -86,12 +86,15 @@ if(!isset($_SESSION['loggedin'])) {
                                    </div>
                             <div id="loop"></div>
 
-            <?php include 'prob_population.php'; ?>
+            <?php 
+                include 'prob_population.php';
+                $problems = $_SESSION["problems"];
+                var_dump($problems);
+            ?>
             <script>
                 console.log("testing");
-                
-     //               $problems = $_SESSION["problems"];
-      //              var_dump($problems);
+               
+                 
                 console.log("testing2");
                 var probs = <?php echo json_encode($problems); ?>;
                 console.log(probs);
