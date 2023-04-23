@@ -94,9 +94,9 @@ if(!isset($_SESSION['loggedin'])) {
                             <?php 
                                 include 'prob_poplation.php'; 
                                 session_start();
-                                $data = $_SESSION["data"];
+                                $problems = $_SESSION["problems"];
                             ?>
-                             var probs =  $data;
+                             var probs =  $problems;
                        
                         //initialize variable htmlCode with Bootstrap Grid row gutters
                         let htmlCode = `
