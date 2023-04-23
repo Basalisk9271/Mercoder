@@ -91,22 +91,12 @@ if(!isset($_SESSION['loggedin'])) {
                        
                        <script>
 
-                        
-                         var probs =  [
-                                           { problem: "Problem 1", desc: "Description for Problem 1" },
-                                           { problem: "Problem 2", desc: "Description for Problem 2" },
-                                           { problem: "Problem 3", desc: "Description for Problem 3" },
-                                           { problem: "Problem 4", desc: "Description for Problem 4" },
-                                           { problem: "Problem 5", desc: "Description for Problem 5" },
-                                           { problem: "Problem 6", desc: "Description for Problem 6" },
-                                           { problem: "Problem 7", desc: "Description for Problem 7" },
-                                           { problem: "Problem 8", desc: "Description for Problem 8" },
-                                           { problem: "Problem 9", desc: "Description for Problem 9" },
-                                           { problem: "Problem 10", desc: "Description for Problem 10" },
-                                           
-                                       ];
-                       
-                       
+                            <?php 
+                                include 'prob_poplation.php'; 
+                                session_start();
+                                $data = $_SESSION["data"];
+                            ?>
+                             var probs =  $data;
                        
                         //initialize variable htmlCode with Bootstrap Grid row gutters
                         let htmlCode = `

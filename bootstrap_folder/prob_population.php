@@ -21,13 +21,11 @@
         $problems[] = $row;
     }
 
-    // Encode the array as a JSON string
-    $problems_json = json_encode($problems);
+    session_start();
+    $_SESSION["problems"] = $problems;
 
     // Close the database connection
     mysqli_close($con);
-
-    echo '<script>const item = ' . $problems_json . ';</script>';
 
  /*   
     // Retrieve the PROBLEM TITLE from the database
