@@ -88,7 +88,6 @@ if(!isset($_SESSION['loggedin'])) {
                        
             <script>
                 <?php 
-                    session_start();
                     include 'prob_population.php'; 
                     $problems = $_SESSION["problems"];
                     var_dump($problems);
