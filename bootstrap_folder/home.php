@@ -91,7 +91,8 @@ if(!isset($_SESSION['loggedin'])) {
                 //$problems = $_SESSION["problems"];
                 //var_dump($problems);
             ?>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+            <script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                  console.log("testing");
             jQuery.ajax({
             url: "prob_population.php",
