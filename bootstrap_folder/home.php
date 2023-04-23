@@ -95,12 +95,13 @@ if(!isset($_SESSION['loggedin'])) {
                                 include 'prob_poplation.php'; 
                                 session_start();
                                 $problems = $_SESSION["problems"];
+                                var_dump($problems);
                             ?>
                              var probs = <?php echo json_encode($problems); ?>;
                        
                         //initialize variable htmlCode with Bootstrap Grid row gutters
                         let htmlCode = `
-<div class="row gx-5 justify-content-center">
+                                        <div class="row gx-5 justify-content-center">
                                             <div class="row gy-4">` ;
                             
                         const div = document.createElement('div');
