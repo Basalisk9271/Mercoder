@@ -11,7 +11,7 @@
     // Define an empty array to store the results
     $problems = array();
     // Select the titles and descriptions from the database
-    $sql = "SELECT title, description FROM problems";
+    $sql = "SELECT title, description FROM probs";
     $result = mysqli_query($con, $sql);
     // Loop through the results and add them to the array
     while ($row = mysqli_fetch_assoc($result)) {
