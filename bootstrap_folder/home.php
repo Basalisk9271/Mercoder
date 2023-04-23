@@ -87,6 +87,7 @@ if(!isset($_SESSION['loggedin'])) {
                             <div id="loop"></div>
                        
             <script>
+                console.log("testing");
                 <?php 
                     include 'prob_population.php'; 
                     $problems = $_SESSION["problems"];
