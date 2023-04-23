@@ -111,6 +111,30 @@ if(!isset($_SESSION['loggedin'])) {
                     }
                     // Use the JavaScript array as needed
                     console.log(probs);
+                    let htmlCode = `
+                            <div class="row gx-5 justify-content-center">
+                                <div class="row gy-4">` ;
+
+                     const div = document.createElement('div');
+            
+                    for (let i = 0; i < probs.length; i++)
+                        {
+                            htmlCode += `<div class="col-lg-6">
+                                                <a class="portfolio-item" href="#!">
+                                                    <div class="caption">
+                                                        <div class="caption-content">
+                                                            <div class="h2">${probs[i].title}</div>
+                                                                <p class="mb-0">${probs[i].description}</p>
+                                                        </div>
+                                                    </div>
+                                                    <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                                                </a>
+                                            </div>`;
+                        
+                        div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
+                        document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
+                        }
+
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);
@@ -119,33 +143,6 @@ if(!isset($_SESSION['loggedin'])) {
                
                 console.log("testing2");
              
-                //console.log(probs);
-            
-            //initialize variable htmlCode with Bootstrap Grid row gutters
-         let htmlCode = `
-                            <div class="row gx-5 justify-content-center">
-                                <div class="row gy-4">` ;
-                
-            const div = document.createElement('div');
-            
-            for (let i = 0; i < probs.length; i++)
-                {
-                    htmlCode += `<div class="col-lg-6">
-                                        <a class="portfolio-item" href="#!">
-                                            <div class="caption">
-                                                <div class="caption-content">
-                                                    <div class="h2">${probs[i].title}</div>
-                                                        <p class="mb-0">${probs[i].description}</p>
-                                                </div>
-                                            </div>
-                                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                                        </a>
-                                    </div>`;
-                
-                div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
-                document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
-                }
-                
             </script>
         </section>
     
