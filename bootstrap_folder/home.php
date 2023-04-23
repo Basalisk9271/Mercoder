@@ -77,44 +77,65 @@ if(!isset($_SESSION['loggedin'])) {
             </div>
         </section>
 
-        <!-- Portfolio-->
-        <section class="content-section" id="problems">
-            <div class="container px-4 px-lg-5">
-                <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">Problems</h3>
-                    <h2 class="mb-5">Recent Projects</h2>
-                </div>
-                <div class="row gx-0">
-                    <!-- Add php code to insert problems from database here with a loop -->
-                    <div class="col-lg-4">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!-- Importing the JQuery Library for data insertion -->
-                                   
-                                    <div class="h2">Problem title</div> 
-                                    <div class="title"></div> <!-- Title insert -->
-                                    <p class="mb-0">Problem description</p> <!-- Description insert -->
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                        </a>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-        
-    <?php 
-        include 'prob_population.php'; 
-    ?> 
+         <!-- Portfolio-->
+         <section class="content-section" id="problems">
+                               <div class="container px-4 px-xl-5">
+                                   <div class="content-section-heading text-center">
+                                       <h3 class="text-secondary mb-0">Problems</h3>
+                                       <h2 class="mb-5">All currently available problems:</h2>
+                                   </div>
+                         
+                         
+                            <div id="loop"></div>
+                           
+                       
+                       <script>
 
-    <script>
-        console.log(item);
-    </script>
-
-
-
+                        
+                         var probs =  [
+                                           { problem: "Problem 1", desc: "Description for Problem 1" },
+                                           { problem: "Problem 2", desc: "Description for Problem 2" },
+                                           { problem: "Problem 3", desc: "Description for Problem 3" },
+                                           { problem: "Problem 4", desc: "Description for Problem 4" },
+                                           { problem: "Problem 5", desc: "Description for Problem 5" },
+                                           { problem: "Problem 6", desc: "Description for Problem 6" },
+                                           { problem: "Problem 7", desc: "Description for Problem 7" },
+                                           { problem: "Problem 8", desc: "Description for Problem 8" },
+                                           { problem: "Problem 9", desc: "Description for Problem 9" },
+                                           { problem: "Problem 10", desc: "Description for Problem 10" },
+                                           
+                                       ];
+                       
+                       
+                       
+                        //initialize variable htmlCode with Bootstrap Grid row gutters
+                        let htmlCode = `
+<div class="row gx-5 justify-content-center">
+                                            <div class="row gy-4">` ;
+                            
+                        const div = document.createElement('div');
+                       
+                        for (let i = 0; i < probs.length; i++)
+                         {
+                             htmlCode += `<div class="col-lg-6">
+                                                    <a class="portfolio-item" href="#!">
+                                                        <div class="caption">
+                                                            <div class="caption-content">
+                                                                <div class="h2">${probs[i].problem}</div>
+                                                                 <p class="mb-0">${probs[i].desc}</p>
+                                                            </div>
+                                                        </div>
+                                                        <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                                                    </a>
+                                                </div>`;
+                           
+                           div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
+                           document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
+                         }
+                         
+                       </script>
+                   </section>
+    
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
