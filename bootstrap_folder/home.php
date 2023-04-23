@@ -91,8 +91,7 @@ if(!isset($_SESSION['loggedin'])) {
                 //$problems = $_SESSION["problems"];
                 //var_dump($problems);
             ?>
-            <script>
-            // Make an AJAX call to retrieve the PHP array
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js">
             jQuery.ajax({
             url: "prob_population.php",
             type: "GET",
