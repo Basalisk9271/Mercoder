@@ -77,81 +77,71 @@ if(!isset($_SESSION['loggedin'])) {
             </div>
         </section>
 
-         <!-- Portfolio-->
+         <!-- Beginning Problem Population -->
          <section class="content-section" id="problems">
                                <div class="container px-4 px-xl-5">
                                    <div class="content-section-heading text-center">
                                        <h3 class="text-secondary mb-0">Problems</h3>
-                                       <h2 class="mb-5">All currently available problems:</h2>
+                                       <h2 class="mb-5">Available Problems to Complete:</h2>
                                    </div>
                             <div id="loop"></div>
 
-            <?php 
-                //  include 'prob_population.php';
-                //$problems = $_SESSION["problems"];
-                //var_dump($problems);
-            ?>
-
-            
+            <!-- Making AJAX and Displaing div elements -->
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                <script>
-                console.log("testing");
+                //Create AJAX Request to accept PHP JSON Array
                 jQuery.ajax({
-                url: "prob_population.php",
+                url: "prob_population.php", //PHP FILE WITH JSON DECLARATION
                 type: "GET",
                 dataType: "json",
                 success: function(problems) {
                     // Create a JavaScript array and fill it with the data from the PHP array
-                    var probs = [];
-                    for (var i = 0; i < problems.length; i++) {
+                    var probs = []; //Array of problems
+                    for (var i = 0; i < problems.length; i++) { //filling array of problems from JSON array
                         probs.push({
                             title: problems[i].title,
                             description: problems[i].description
                         });
                     }
-                    console.log("testing_post");
-                    console.log(probs);
-                    let htmlCode = `
+                        let htmlCode = `
                             <div class="row gx-5 justify-content-center">
                                 <div class="row gy-4">` ;
-
                     const div = document.createElement('div');
             
+                    //Displaying first 10 problems on the main page
                     for (let i = 0; i < 10; i++) {
+
+                        //Trimming description to fit in display box
                         var description = " ";
                         if (probs[i].description.length <= 100) {
                             description = probs[i].description + "...";
                         } else {
                             description = probs[i].description.substring(0, 200) + "...";
                         }
-                            htmlCode += `<div class="col-lg-6">
-                                                <a class="portfolio-item" href="#!">
-                                                    <div class="caption">
-                                                        <div class="caption-content">
-                                                            <div class="h2">${probs[i].title}</div>
-                                                                <p class="mb-0">${description}</p>
-                                                        </div>
-                                                    </div>
-                                                    <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                                                </a>
-                                            </div>`;
                         
+                        //Create div element for each problem
+                        htmlCode += `<div class="col-lg-6">
+                                            <a class="portfolio-item" href="#!">
+                                                <div class="caption">
+                                                    <div class="caption-content">
+                                                        <div class="h2">${probs[i].title}</div>
+                                                            <p class="mb-0">${description}</p>
+                                                    </div>
+                                                </div>
+                                                <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                                            </a>
+                                        </div>`;
                         div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
                         document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
                         }
-
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);
-                    console.log("ERROR");
-                }
-                });
-               
-                console.log("testing2");
-             
+                }});
             </script>
         </section>
-    
+        <!-- End Problem Population -->
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
