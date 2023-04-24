@@ -12,7 +12,7 @@ $description_input = $_POST['description_input'];
 $description_output = $_POST['description_output'];
 
 // Insert data into database
-$sql = "INSERT INTO problems (title, author, date_created, description, sample_input, sample_output, description_input, description_output) VALUES ('$title', '$author', '$date_created', '$description', '$sample_input', '$sample_output', '$description_input', '$description_output')";
+$sql = "INSERT INTO probs (title, author, date_created, description, sample_input, sample_output, description_input, description_output) VALUES ('$title', '$author', '$date_created', '$description', '$sample_input', '$sample_output', '$description_input', '$description_output')";
 
 if ($con->query($sql) === TRUE) {
     // echo "New record created successfully";

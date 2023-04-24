@@ -1,3 +1,7 @@
+<?php
+
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,12 +25,20 @@
     <body id="page-top">
         <!-- Navigation-->
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
-        <nav id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="../../bootstrap_folder/index.php">Home</a></li>
-                <li class="sidebar-nav-item"><a href="logout.php">Logout</a></li>
-            </ul>
-        </nav>
+            <nav id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"><a href="../index.php">Home</a></li>
+                    <?php
+                        if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == 0) {
+                            echo '<li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>';
+                        } else {
+                            echo '<li class="sidebar-nav-item"><a href="./PHP/logout.php">Logout</a></li>';
+                        }
+                    ?>
+                    <li class="sidebar-nav-item"><a href="prob_landing.php">Problems</a></li>
+                </ul>
+                
+            </nav>
 
         <section class="content-section bg-light" id="submit">
             <div class="container px-4 px-lg-5">
