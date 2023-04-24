@@ -122,7 +122,7 @@ if(!isset($_SESSION['loggedin'])) {
                         if (probs[i].description.length <= 100) {
                             description = probs[i].description + "...";
                         } else {
-                            description = probs[i].description.substring(0, 100) + "...";
+                            description = probs[i].description.substring(0, 200) + "...";
                         }
                             htmlCode += `<div class="col-lg-6">
                                                 <a class="portfolio-item" href="#!">
