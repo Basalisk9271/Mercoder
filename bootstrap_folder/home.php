@@ -117,13 +117,19 @@ if(!isset($_SESSION['loggedin'])) {
 
                     const div = document.createElement('div');
             
-                    for (let i = 0; i < probs.length; i++) {
+                    for (let i = 0; i < 10; i++) {
+                        var description = " ";
+                        if (probs[i].description.length <= 100) {
+                            description = probs[i].description + "...";
+                        } else {
+                            description = probs[i].description.substring(0, 100) + "...";
+                        }
                             htmlCode += `<div class="col-lg-6">
                                                 <a class="portfolio-item" href="#!">
                                                     <div class="caption">
                                                         <div class="caption-content">
                                                             <div class="h2">${probs[i].title}</div>
-                                                                <p class="mb-0">${probs[i].description}</p>
+                                                                <p class="mb-0">${description}</p>
                                                         </div>
                                                     </div>
                                                     <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
