@@ -46,17 +46,7 @@ require_once ('probQuery.php');
             align-items: center;
         }
         </style>
-This will center the icon within the menu-toggle element.
-
-
-
-
-
-
-
-
-
-    
+        
         <!-- Portfolio-->
         <section class="content-section bg-light" id="problems">
             <div class="container px-4 px-lg-5">
