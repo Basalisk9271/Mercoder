@@ -3,7 +3,7 @@
     include 'error_handling.php';
     
     //Connect to the database
-    $con = mysqli_connect("localhost","root","Rayr3qNxsYT3iG","mercoder");
+    $con = mysqli_connect("localhost","root","wWpmX3wgUpArsP","mercoder");
     // Check connection
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());

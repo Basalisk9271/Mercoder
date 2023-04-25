@@ -91,7 +91,7 @@ if(!isset($_SESSION['loggedin'])) {
                <script>
                 //Create AJAX Request to accept PHP JSON Array
                 jQuery.ajax({
-                url: "prob_population.php", //PHP FILE WITH JSON DECLARATION
+                url: "PHP/prob_population.php", //PHP FILE WITH JSON DECLARATION
                 type: "GET",
                 dataType: "json",
                 success: function(problems) {
