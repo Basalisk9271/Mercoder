@@ -34,7 +34,7 @@ if(!isset($_SESSION['loggedin'])) {
                 <li class="sidebar-brand"><a href="#page-top">Home</a></li>
                 <li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>
                 <li class="sidebar-nav-item"><a href="#about">About</a></li>
-                <li class="sidebar-nav-item"><a href="#portfolio">Problems</a></li>
+                <li class="sidebar-nav-item"><a href="#portfolio">All Problems</a></li>
             </ul>
         </nav>
         <!-- Header-->
@@ -82,7 +82,7 @@ if(!isset($_SESSION['loggedin'])) {
         <section class="content-section" id="problems">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
-                    <h2 class="mb-5">Problems</h2>
+                    <h2 class="mb-5">Most Recent Problems</h2>
                 </div>
                 <div class="row gx-0">
                     <!-- Add php code to insert problems from database here with a loop -->
