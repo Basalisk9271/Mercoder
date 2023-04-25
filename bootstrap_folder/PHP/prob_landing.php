@@ -66,8 +66,8 @@ require_once ('probQuery.php');
                 
                 for (let i = 0; i < probs.length; i++)
                     {
-                    var description = probs[i].description.substr(0, 50);
-                    if (probs[i].description.length > 50) {
+                    var description = probs[i].description.substr(0, 200);
+                    if (probs[i].description.length > 200) {
                     description += '...';
                     }
                         htmlCode += `<div class="col-lg-6">
