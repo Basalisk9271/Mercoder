@@ -31,7 +31,7 @@ if(!isset($_SESSION['loggedin'])) {
     <body id="page-top">
         <!-- Navigation-->
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
-            <nav id="sidebar-wrapper">
+        <nav id="sidebar-wrapper">
                 <ul class="sidebar-nav">
                     
                     <?php
@@ -40,7 +40,13 @@ if(!isset($_SESSION['loggedin'])) {
                             <li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>
                             <li class="sidebar-nav-item"><a href="#about">About</a></li>
                             <li class="sidebar-nav-item"><a href="./PHP/prob_landing.php">Problems</a></li>';
-                        } else {
+                        } else if(isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == 2){
+                            echo '<li class="sidebar-brand"><a href="#page-top">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="./PHP/logout.php">Logout</a></li>
+                            <li class="sidebar-nav-item"><a href="#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="./PHP/prob_landing.php">Problems</a></li>
+                            <li class="sidebar-nav-item"><a href="./PHP/problem_form.php">New Problem</a></li>';
+                        }else {
                             echo '<li class="sidebar-brand"><a href="#page-top">Home</a></li>
                             <li class="sidebar-nav-item"><a href="./PHP/logout.php">Logout</a></li>
                             <li class="sidebar-nav-item"><a href="#about">About</a></li>
