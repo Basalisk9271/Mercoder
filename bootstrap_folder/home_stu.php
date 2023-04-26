@@ -1,5 +1,7 @@
 <?php 
 session_start();
+require_once 'PHP/probQuery.php';
+
 if(!isset($_SESSION['loggedin'])) {
     $_SESSION['loggedin'] = 0;
     header('Location: index.php'); // don't redirect same page
@@ -30,16 +32,20 @@ if(!isset($_SESSION['loggedin'])) {
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
             <nav id="sidebar-wrapper">
                 <ul class="sidebar-nav">
-                    <li class="sidebar-brand"><a href="#page-top">Home</a></li>
+                    
                     <?php
                         if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == 0) {
-                            echo '<li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>';
+                            echo '<li class="sidebar-brand"><a href="#page-top">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="./PHP/index.php">Login</a></li>
+                            <li class="sidebar-nav-item"><a href="#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="./PHP/prob_landing.php">Problems</a></li>';
                         } else {
-                            echo '<li class="sidebar-nav-item"><a href="./PHP/logout.php">Logout</a></li>';
+                            echo '<li class="sidebar-brand"><a href="#page-top">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="./PHP/logout.php">Logout</a></li>
+                            <li class="sidebar-nav-item"><a href="#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="./PHP/prob_landing.php">Problems</a></li>';
                         }
                     ?>
-                    <li class="sidebar-nav-item"><a href="#about">About</a></li>
-                    <li class="sidebar-nav-item"><a href="./PHP/prob_landing.php">Problems</a></li>
                 </ul>
                 
             </nav>
@@ -87,24 +93,41 @@ if(!isset($_SESSION['loggedin'])) {
         <section class="content-section" id="problems">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
-                    <h2 class="mb-5">Recent Projects</h2>
-                </div>
-                <div class="row gx-0">
-                    <!-- Add php code to insert problems from database here with a loop -->
-                    <div class="col-lg-4">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Problem title</div> <!-- Title insert -->
-                                    <p class="mb-0">Problem description</p> <!-- Description insert -->
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                        </a>
-                    </div>
+                <h2 class="mb-5">Recently Added Projects</h2>
+                    <div id="loop"></div>
                     
-                </div>
-            </div>
+                
+                    <script>
+        
+                        //initialize variable htmlCode with Bootstrap Grid row gutters
+                        let htmlCode = `<div class="row gx-5 justify-content-center">
+                                            <div class="row gy-4">` ;
+                            
+                        const div = document.createElement('div');
+                        
+                        for (let i = 0; i < 4; i++)
+                            {
+                            var description = probs[i].description.substr(0, 200);
+                            if (probs[i].description.length > 200) {
+                            description += '...';
+                            }
+                                htmlCode += `<div class="col-lg-6">
+                                                    <a class="portfolio-item" href="#!">
+                                                        <div class="caption">
+                                                            <div class="caption-content">
+                                                                <div class="h2">${probs[i].title}</div>
+                                                                    <p class="mb-0">${description}</p>
+                                                            </div>
+                                                        </div>
+                                                        <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                                                    </a>
+                                                </div>`;
+                            
+                            div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
+                            document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
+                            }
+                        
+                    </script>
         </section>
         
         <!-- Footer-->
