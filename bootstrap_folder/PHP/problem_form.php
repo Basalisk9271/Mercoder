@@ -70,10 +70,10 @@ session_start();
                                 <input class="form-control" id="author" name="author" type="text" placeholder="Author" required />
                                 <label for="author">Author</label>
                             </div>
-                            <div class="form-floating mb-3">
+                            <!-- <div class="form-floating mb-3">
                                 <input class="form-control" id="date_created" name="date_created" type="date" placeholder="Date" required />
                                 <label for="date_created">Date Created</label>
-                            </div>
+                            </div> -->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="description" name="description" placeholder="Description" style="height: 10rem;" required></textarea>
                                 <label for="description">Description</label>
