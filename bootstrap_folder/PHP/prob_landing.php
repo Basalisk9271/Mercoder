@@ -44,13 +44,6 @@ require_once ('probQuery.php');
                 </ul>
                 
             </nav>
-        <style>
-        .menu-toggle {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        </style>
         
         <!-- Portfolio-->
         <section class="content-section bg-light" id="problems">
