@@ -88,7 +88,7 @@ session_start();
                             </div>
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="description_input" name="description_input"" placeholder="Description of Input" style="height: 10rem;" required></textarea>
-                                <label for="description_input"">Input Description</label>
+                                <label for="description_input">Input Description</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="description_output" name="description_output" placeholder="Description of Output" style="height: 10rem;" required></textarea>
