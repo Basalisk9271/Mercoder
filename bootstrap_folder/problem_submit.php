@@ -129,12 +129,16 @@
         </div>
    </section>
 
+  <?php
+    include_once('add_submission.php');
+  ?>
+
   <div class="row justify-content-center">
     <div class="col-lg-8">
-        <form action="submit.php" method="post">
+        <form action="add_submission.php" method="post">
             <div class="form-floating mb-3">
-                <input class="form-control" id="title" name="title" type="text" placeholder="Title" required />
-                <label for="title">Your Answer</label>
+                <input class="form-control" id="link" name="link" type="text" placeholder="Link" required />
+                <label for="title">Your Answer / Link</label>
             </div>
             <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Submit</button></div>
         </form>
