@@ -5,7 +5,7 @@
     //Connect to the database
     $con = mysqli_connect("localhost","root","wWpmX3wgUpArsP","mercoder");
     //Check the connection
-    if(isset($_POST['submit'])) {
+   
         //Check if the link box is empty
         if(!empty($_POST['link'])) {
             //setting link to a variable
@@ -27,7 +27,6 @@
             //Display message if the link is not there
             echo "please submit a link";
         }
-    }
     //returning to page after submission
     header("Location: index.php");    
 ?>
