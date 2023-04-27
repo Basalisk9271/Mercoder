@@ -43,7 +43,9 @@
 <div class = "container">
 
   <?php
-    require_once('prob_pop.php');
+    $problemId = $_GET['id'];
+    include '/mercoder/boostrap_folder/prob_pop.php';
+    $row = getProbDetails($problemId);
   ?>
 
     <section class="content-section" id="submit">

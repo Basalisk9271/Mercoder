@@ -24,7 +24,7 @@
 require_once ('database_op.php');
  
 // If file upload form is submitted 
-$stmt = $con->query("SELECT title, description FROM probs ORDER BY id DESC");
+$stmt = $con->query("SELECT title, description, id FROM probs ORDER BY id DESC");
 // Create a PHP array to hold the data
 $data = array();
     while ($row = mysqli_fetch_assoc($stmt)) {

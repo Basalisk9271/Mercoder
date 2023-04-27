@@ -80,7 +80,7 @@ require_once ('probQuery.php');
                     description += '...';
                     }
                         htmlCode += `<div class="col-lg-6">
-                                            <a class="portfolio-item" href="#!">
+                                            <a class="portfolio-item" href="#" onclick="redirectToProblem(${probs[i].id})">
                                                 <div class="caption">
                                                     <div class="caption-content">
                                                         <div class="h2">${probs[i].title}</div>
@@ -93,6 +93,10 @@ require_once ('probQuery.php');
                     
                     div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
                     document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
+                    }
+
+                    function redirectToProblem(problemId) {
+                        window.location.href = `/mercoder/bootstrap_folder/problem_submit.php?id=${problemId}`;
                     }
                 
             </script>
