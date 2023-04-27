@@ -3,7 +3,7 @@
     include 'error_handling.php';
     
     //Connect to the database
-    $con = mysqli_connect("localhost","root","wWpmX3wgUpArsP","mercoder");
+    $con = mysqli_connect("localhost","root","Rayr3qNxsYT3iG","mercoder");
     //Check the connection
    
         //Check if the link box is empty
