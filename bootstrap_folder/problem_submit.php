@@ -42,17 +42,21 @@
 
 <div class = "container">
 
+  <?php
+    require_once('prob_pop.php');
+  ?>
 
     <section class="content-section" id="submit">
         <div class="container px-4 px-lg-5">
         <div class="content-section-heading text-center">
-        <h2 class="mb-5">Problem title</h2>
+          <!-- <h2 class="mb-5">Problem title</h2> -->
+        <h2 class="mb-5"><?php echo $row['title']; ?></h2>
         </div>
   <div class= "text">
         <div class="container d-flex flex-column align-items-Left" >
           <div class="mt-2" >
             <div style="font-size:25px;">
-            Problem Description
+            <?php echo $row['description']; ?>
           </div>
             </div>
         </div>
@@ -60,8 +64,7 @@
         <div class="container d-flex flex-column align-items-Left" >
           <div class="mt-2">
             <div style="font-size:25px;">
-
-            Sample input
+              <?php echo $row['sample_input']; ?>
             </div>
           </div>
         </div>
@@ -69,8 +72,7 @@
         <div class="container d-flex flex-column align-items-Left" >
           <div class="mt-2">
             <div style="font-size:25px;">
-
-             input description
+            <?php echo $row['description_input']; ?>
             </div>
           </div>
         </div>
@@ -78,8 +80,7 @@
         <div class="container d-flex flex-column align-items-Left" >
           <div class="mt-2">
             <div style="font-size:25px;">
-
-            Sample output
+              <?php echo $row['sample_output']; ?>
             </div>
           </div>
         </div>
@@ -87,8 +88,7 @@
         <div class="container d-flex flex-column align-items-Left" >
           <div class="mt-2">
             <div style="font-size:25px;">
-
-             output description
+              <?php echo $row['description_output']; ?>
             </div>
           </div>
         </div>
