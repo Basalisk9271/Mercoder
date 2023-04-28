@@ -1,9 +1,6 @@
 <?php
 
-    include 'error_handling.php';
-    
-    //Connect to the database
-    $con = mysqli_connect("localhost","root","Rayr3qNxsYT3iG","mercoder");
+    require 'database_op.php';
     //Check the connection
    
         //Check if the link box is empty
@@ -25,7 +22,7 @@
                 }
         } else {
             //Display message if the link is not there
-            echo "please submit a link";
+            echo "Please submit a link";
         }
     //returning to page after submission
     header("Location: index.php");    
