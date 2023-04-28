@@ -16,8 +16,15 @@
 	$result2 = mysqli_query($con, $query2);
 	$rows = mysqli_num_rows($result);
 	$rows2 = mysqli_num_rows($result2);
-        if ($rows == 1 || $rows2 == 1) {
+        if ($rows == 1 xor $rows2 == 1) {
             $_SESSION['username'] = $username;
+            if ($rows == 1){
+                $_SESSION['loggedin'] = 2;
+            }
+            else {
+                $_SESSION['loggedin'] = 1;
+            }
+            // $_SESSION['loggedin'] = 1;
             // Redirect to user dashboard page
            header("Location: ../index.php");
         } else {
