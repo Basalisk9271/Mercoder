@@ -21,7 +21,7 @@ require_once ('probQuery.php');
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../css/styles.css" rel="stylesheet" />
+        <link href="/mercoder/bootstrap_folder/css/styles.css" rel="stylesheet" />
         </head>
     
         <body id="page-top">
@@ -80,7 +80,7 @@ require_once ('probQuery.php');
                     description += '...';
                     }
                         htmlCode += `<div class="col-lg-6">
-                                            <a class="portfolio-item" href="#!">
+                                            <a class="portfolio-item" href="#" onclick="redirectToProblem(${probs[i].id})">
                                                 <div class="caption">
                                                     <div class="caption-content">
                                                         <div class="h2">${probs[i].title}</div>
@@ -94,6 +94,10 @@ require_once ('probQuery.php');
                     div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
                     document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
                     }
+
+                    function redirectToProblem(problemId) {
+                        window.location.href = `/mercoder/bootstrap_folder/PHP/problem_submit.php?id=${problemId}`;
+                    }
                 
             </script>
         </section>
@@ -101,6 +105,11 @@ require_once ('probQuery.php');
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
+            <?php
+            if(isset($_SESSION['username'])) { 
+                echo '<p>'. $_SESSION['username'] .'<p>';
+            }
+            ?>
                 <p class="text-muted small mb-0">Copyright &copy; Table of Lords</p>
             </div>
         </footer>
@@ -109,9 +118,9 @@ require_once ('probQuery.php');
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="../js/scripts.js"></script>
+        <script src="/mercoder/bootstrap_folder/js/scripts.js"></script>
 
         
-    </head>
+    </body>
 </html>
 
