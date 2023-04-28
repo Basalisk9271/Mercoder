@@ -96,7 +96,7 @@ require_once ('probQuery.php');
                     }
 
                     function redirectToProblem(problemId) {
-                        window.location.href = `/mercoder/bootstrap_folder/problem_submit.php?id=${problemId}`;
+                        window.location.href = `/mercoder/bootstrap_folder/PHP/problem_submit.php?id=${problemId}`;
                     }
                 
             </script>
@@ -105,6 +105,11 @@ require_once ('probQuery.php');
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
+            <?php
+            if(isset($_SESSION['username'])) { 
+                echo '<p>'. $_SESSION['username'] .'<p>';
+            }
+            ?>
                 <p class="text-muted small mb-0">Copyright &copy; Table of Lords</p>
             </div>
         </footer>
@@ -113,9 +118,9 @@ require_once ('probQuery.php');
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="../js/scripts.js"></script>
+        <script src="js/scripts.js"></script>
 
         
-    </head>
+    </body>
 </html>
 
