@@ -157,20 +157,37 @@
    </section>
 
   <?php
-    include_once('add_submission.php');
+    
+      //if they are not logged in or have not been assigned a token
+      if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 1) {   //Student View
+        include_once('add_submission.php');
+          echo '<div class="row justify-content-center">
+          <div class="col-lg-8">
+              <form action="add_submission.php" method="post">
+                  <div class="form-floating mb-3">
+                      <input class="form-control" id="link" name="link" type="text" placeholder="Link" required />
+                      <label form="title">Your Answer / Link</label>
+                  </div>
+                  <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Submit</button></div>
+              </form>
+          </div>
+        </div>';
+        }
+      if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 2){     //Teacher View
+        include_once('add_submission.php');
+              echo '<div class="row justify-content-center">
+              <div class="col-lg-8">
+                  <form action="add_submission.php" method="post">
+                      <div class="form-floating mb-3">
+                          <input class="form-control" id="link" name="link" type="text" placeholder="Link" required />
+                          <label form="title">Your Answer / Link</label>
+                      </div>
+                      <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Submit</button></div>
+                  </form>
+              </div>
+            </div>';
+            }
   ?>
-
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-        <form action="add_submission.php" method="post">
-            <div class="form-floating mb-3">
-                <input class="form-control" id="link" name="link" type="text" placeholder="Link" required />
-                <label form="title">Your Answer / Link</label>
-            </div>
-            <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Submit</button></div>
-        </form>
-    </div>
-  </div>
   </main>
   <!-- End #main -->
 
