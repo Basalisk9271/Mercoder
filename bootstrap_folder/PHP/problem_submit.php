@@ -72,42 +72,39 @@
         <div class="container px-4 px-lg-5">
         <div class="content-section-heading text-center">
           <!-- <h2 class="mb-5">Problem title</h2> -->
-        <h2 class="mb-5"><?php echo $row['title']; ?></h2>
+        <h2 class="mb-5"><?php echo nl2br($row['title']); ?></h2>
         </div>
-        <div class= "text">
-        <div class="container d-flex flex-column align-items-Left" >
-          <div class="mt-2" >
-            <div style="font-size:25px;">
-            <?php echo $row['description']; ?>
-          </div>
-            </div>
-        </div>
+        <div class="text">
 
-        <div class="container d-flex flex-column align-items-Left" >
+        <div class="container d-flex flex-column align-items-left mb-4">
+          <h2>Description</h2>
           <div class="mt-2">
             <div style="font-size:25px;">
-              <?php echo $row['sample_input']; ?>
+              <?php echo nl2br($row['description']); ?>
             </div>
           </div>
         </div>
 
-        <div class="container d-flex flex-column align-items-Left" >
+        <div class="container d-flex flex-column align-items-left mb-4">
+          <h2>Description Input</h2>
           <div class="mt-2">
             <div style="font-size:25px;">
-            <?php echo $row['description_input']; ?>
+              <?php echo nl2br($row['description_input']); ?>
             </div>
           </div>
         </div>
 
-        <div class="container d-flex flex-column align-items-Left" >
+        <div class="container d-flex flex-column align-items-left mb-4">
+          <h2>Sample Input</h2>
           <div class="mt-2">
             <div style="font-size:25px;">
-              <?php echo $row['sample_output']; ?>
+              <?php echo nl2br($row['sample_input']); ?>
             </div>
           </div>
         </div>
 
-        <div class="container d-flex flex-column align-items-Left" >
+        <div class="container d-flex flex-column align-items-left mb-4">
+          <h2>Description Output</h2>
           <div class="mt-2">
             <div style="font-size:25px;">
               <?php echo $row['description_output']; ?>
@@ -115,7 +112,17 @@
           </div>
         </div>
 
+        <div class="container d-flex flex-column align-items-left mb-4">
+          <h2>Sample Output</h2>
+          <div class="mt-2">
+            <div style="font-size:25px;">
+              <?php echo nl2br($row['sample_output']); ?>
+            </div>
+          </div>
+        </div>
+
       </div>
+
 
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">

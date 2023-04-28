@@ -82,7 +82,7 @@ require_once ('probQuery.php');
                         htmlCode += `<div class="col-lg-6">
                                             <a class="portfolio-item" href="#" onclick="redirectToProblem(${probs[i].id})">
                                                 <div class="caption">
-                                                    <div class="caption-content">
+                                                    <div class="caption-content mx-auto text-center px-4 py-2">
                                                         <div class="h2">${probs[i].title}</div>
                                                             <p class="mb-0">${description}</p>
                                                     </div>

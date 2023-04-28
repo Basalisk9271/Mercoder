@@ -132,27 +132,33 @@ if(!isset($_SESSION['loggedin'])) {
                             
                         const div = document.createElement('div');
                         
-                        for (let i = 0; i < 4; i++)
-                            {
-                            var description = probs[i].description.substr(0, 200);
-                            if (probs[i].description.length > 200) {
-                            description += '...';
-                            }
-                                htmlCode += `<div class="col-lg-6">
-                                                    <a class="portfolio-item" href="#!">
-                                                        <div class="caption">
-                                                            <div class="caption-content">
-                                                                <div class="h2">${probs[i].title}</div>
-                                                                    <p class="mb-0">${description}</p>
-                                                            </div>
-                                                        </div>
-                                                        <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                                                    </a>
-                                                </div>`;
-                            
-                            div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
-                            document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
-                            }
+                    for (let i = 0; i < 4; i++)
+                    {
+                    var description = probs[i].description.substr(0, 200);
+                    if (probs[i].description.length > 200) {
+                    description += '...';
+                    }
+                    htmlCode += `<div class="col-lg-6 ">
+                                    <a class="portfolio-item" href="#" onclick="redirectToProblem(${probs[i].id})">
+                                    <div class="caption">
+                                        <div class="caption-content mx-auto text-center px-4 py-2">
+                                        <div class="h2">${probs[i].title}</div>
+                                        <p class="mb-0">${description}</p>
+                                        </div>
+                                    </div>
+                                    <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                                    </a>
+                                </div>
+                                `;
+
+                    
+                    div.innerHTML = htmlCode;    //fill the new div element with the variable htmlCode
+                    document.getElementById("loop").appendChild(div);    //append new div element to div with id "loop"
+                    }
+
+                    function redirectToProblem(problemId) {
+                        window.location.href = `/mercoder/bootstrap_folder/PHP/problem_submit.php?id=${problemId}`;
+                    }
                         
                     </script>
         </section>
