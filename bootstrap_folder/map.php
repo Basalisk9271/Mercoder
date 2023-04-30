@@ -163,6 +163,40 @@ if(!isset($_SESSION['loggedin'])) {
                     </script>
         </section>
         
+        <!-- Map -->
+        <section>
+            <div class="container px-4 px-lg-5">
+                       <div class="row gx-4 gx-lg-5 justify-content-center">
+                           <div class="col-lg-8">
+                               <h2 class="text-white mb-4"></h2>
+                               <div id="googleMap" style="width:100%;height:650px;"></div>
+                               <script>
+                               function myMap() {
+                               var mapProp= {
+                                 center:new google.maps.LatLng(33.264080,-82.763100),
+                                 zoom:3.75,
+                               };
+                               var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+                               //make const
+
+                               const lat = [32.832102];
+                               const lang = [-83.648181];
+                               const info = ["Mercer University"]
+
+                               for (let i = 0; i < lat.length; i++)
+                                 {
+                                   var marker = new google.maps.Marker({position: new google.maps.LatLng(lat[i],lang[i])});
+                                   marker.setMap(map);
+                                   var infowindow = new google.maps.InfoWindow({content:info[i]});
+                                   infowindow.open(map,marker);
+                                 }
+                               }
+                               </script>
+                               <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfhDoPuP4Hkf_nis_oKqwol7Tk5TuzJA8&callback=myMap"></script>
+                   </div>
+        </section>
+        
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
