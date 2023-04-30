@@ -3,6 +3,8 @@
     $problemId = $_GET['id'];
     require_once 'prob_pop.php';
     $row = getProbDetails($problemId);
+    require_once 'sub_pop.php';
+    $table = getSubs($problemId);
     ?>
   
 <!DOCTYPE html>
@@ -175,19 +177,7 @@
         </div>';
         }
       if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 2){     //Teacher View
-        include_once('add_submission.php');
-              echo '<div class="row justify-content-center">
-              <div class="col-lg-8">
-                  <form action="add_submission.php" method="post">
-                      <div class="form-floating mb-3">
-                          <input class="form-control" id="link" name="link" type="text" placeholder="Link" required />
-                          <label form="link">Your Answer / Link</label>
-                      </div>
-                      <input type="hidden" name="problemId" value="' . $problemId . '">
-                      <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Submit</button></div>
-                  </form>
-              </div>
-            </div>';
+          echo $table;
             }
   ?>
   </main>
