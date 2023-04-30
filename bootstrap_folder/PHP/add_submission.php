@@ -23,9 +23,6 @@
                     echo " Error in form submission ";
                     echo "Error: " . $query . "<br>" . $con->error;
                 }
-        } else {
-            //Display message if the link is not there
-            echo "Please submit a link";
         }
     //returning to page after submission
     header("Location: ../index.php");    
