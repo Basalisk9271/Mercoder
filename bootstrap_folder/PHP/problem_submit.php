@@ -166,8 +166,9 @@
               <form action="add_submission.php" method="post">
                   <div class="form-floating mb-3">
                       <input class="form-control" id="link" name="link" type="text" placeholder="Link" required />
-                      <label form="title">Your Answer / Link</label>
+                      <label form="link">Your Answer / Link</label>
                   </div>
+                  <input type="hidden" name="problemId" value="' . $problemId . '">
                   <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Submit</button></div>
               </form>
           </div>
@@ -180,8 +181,9 @@
                   <form action="add_submission.php" method="post">
                       <div class="form-floating mb-3">
                           <input class="form-control" id="link" name="link" type="text" placeholder="Link" required />
-                          <label form="title">Your Answer / Link</label>
+                          <label form="link">Your Answer / Link</label>
                       </div>
+                      <input type="hidden" name="problemId" value="' . $problemId . '">
                       <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Submit</button></div>
                   </form>
               </div>
