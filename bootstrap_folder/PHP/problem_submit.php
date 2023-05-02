@@ -5,6 +5,7 @@
     $row = getProbDetails($problemId);
     require_once 'sub_pop.php';
     $table = getSubs($problemId);
+    
     ?>
   
 <!DOCTYPE html>
