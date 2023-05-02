@@ -11188,3 +11188,9 @@ footer.footer .social-link:hover {
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+/* Add an orange outline to dropdown menu for map on landing page */
+select {
+    border: 1px solid orange;
+    
+}

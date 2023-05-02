@@ -163,8 +163,45 @@ if(!isset($_SESSION['loggedin'])) {
                     </script>
         </section>
         
-        <!-- Map -->
+        <!-- Map and Dropdown Menu-->
         <section>
+            <!-- Drop down menu that will show different map markers depending on which problem is chosen-->
+            <!-- All map markers will be shown by default -->
+            <div align="center">
+                <select id="dropDown" name="list" size="1"></select>
+                <span id="tag"></span>
+            </div>
+            
+            <script>
+                const probArr = [
+                                { title: "Problem 1", details: "Description for Problem 1" },
+                                { title: "Problem 2", details: "Description for Problem 2" },
+                                { title: "Problem 3", details: "Description for Problem 3" },
+                                { title: "Problem 4", details: "Description for Problem 4" },
+                                { title: "Problem 5", details: "Description for Problem 5" }
+                                ];
+                
+                var select = document.getElementById("dropDown");
+                
+                //Create and append options elements to the select element with the id "dropDown"
+                for (let i = 0; i < probArr.length; i++)
+                {
+                    var option = document.createElement("option");
+                    option.value = probArr[i].details;
+                    option.text = probArr[i].title;
+                    select.appendChild(option);
+                }
+                
+                tag = document.getElementById("tag");
+
+                //Function that changes the content of the tag
+                select.onchange = function()
+                {
+                   tag.innerHTML = select.value;
+                }
+            </script>
+            
+            
             <div class="container px-4 px-lg-5">
                        <div class="row gx-4 gx-lg-5 justify-content-center">
                            <div class="col-lg-8">
@@ -194,7 +231,8 @@ if(!isset($_SESSION['loggedin'])) {
                                }
                                </script>
                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfhDoPuP4Hkf_nis_oKqwol7Tk5TuzJA8&callback=myMap"></script>
-                   </div>
+            </div>
+            
         </section>
         
         <!-- Footer-->
