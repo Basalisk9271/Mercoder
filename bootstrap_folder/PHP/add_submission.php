@@ -9,8 +9,8 @@
         if(!empty($_POST['link'])) {
             //setting link to a variable
             //Find a way to get the session username 
-            //$user_name = $_SESSION['username'];
-            $user_name = 'Bob';
+            $user_name = $_SESSION['username'];
+            //$user_name = 'Bob';
             //$placeholder_username = 'TEST';
             $date = date('Y-m-d');
             $query = "INSERT into problem_attempts (user_name, probId, date, submission_link) 
