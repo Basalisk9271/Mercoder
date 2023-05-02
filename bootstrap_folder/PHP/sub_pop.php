@@ -20,7 +20,7 @@ function getSubs($problemId){
             $table .= '<tr>';
             $table .= '<td>' . $row['user_name'] . '</td>';
             $table .= '<td>' . $row['date'] . '</td>';
-            $table .= '<td><a href="https://' . $row['submission_link'] . '">' . $row['submission_link'] . '</a></td>';
+            $table .= '<td><a href="'. $row['submission_link'] . '">' . $row['submission_link'] . '</a></td>';
             $table .= '</tr>';
         }
         $table .= '</tbody>';
