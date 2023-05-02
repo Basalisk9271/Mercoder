@@ -1,7 +1,7 @@
 <?php
 
 // Replace YOUR_API_KEY with your actual API key
-$api_key = 'YOURAPIKEY';
+$api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
 
 function geocode($location){
     
@@ -26,3 +26,4 @@ function geocode($location){
             // Output the latitude and longitude to the user
             return $latLng;
         }
+    }
