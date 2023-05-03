@@ -9,8 +9,10 @@
     //Geocode API Key for function params
     $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
     $mapmarkers = getSubmissions($problemId, $api_key);
+
     '<script> 
-      var locations = '. json_encode($mapmarkers, JSON_NUMERIC_CHECK) .';
+      var locations = [];
+      locations = '. json_encode($mapmarkers, JSON_NUMERIC_CHECK) .';
     </script>'
     ?>
   
