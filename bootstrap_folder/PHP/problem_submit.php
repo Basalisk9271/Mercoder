@@ -10,10 +10,12 @@
     $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
     $mapmarkers = getSubmissions($problemId, $api_key);
 
+    echo
     '<script> 
       var locations = [];
       locations = '. json_encode($mapmarkers, JSON_NUMERIC_CHECK) .';
-    </script>'
+    </script>';
+
     ?>
   
 <!DOCTYPE html>
