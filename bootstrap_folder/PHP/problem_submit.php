@@ -153,7 +153,7 @@
 
                         var mapProp= {
                           center:new google.maps.LatLng(32.840694,-83.632401),
-                          zoom:11,
+                          zoom:5,
                         };
                         var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
@@ -184,7 +184,7 @@
                                 var markerListener = function() {
                                     infoWindow.open(map, this);
                                     var pos = map.getZoom();
-                                    map.setZoom(2);
+                                    map.setZoom(12);
                                     map.setCenter(this.getPosition());
                                     window.setTimeout(function() {
                                         map.setZoom(pos);
