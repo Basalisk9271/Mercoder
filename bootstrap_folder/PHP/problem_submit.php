@@ -5,7 +5,6 @@
     $row = getProbDetails($problemId);
     require_once 'sub_pop.php';
     $table = getSubs($problemId);
-    
     ?>
   
 <!DOCTYPE html>
@@ -133,6 +132,9 @@
                     <h2 class="text-white mb-4"></h2>
                     <div id="googleMap" style="width:100%;height:650px;"></div>
                     <script>
+
+                  
+
                     function myMap() {
                     var mapProp= {
                       center:new google.maps.LatLng(33.264080,-82.763100),
@@ -144,7 +146,7 @@
 
                     const lat = [32.832102];
                     const lang = [-83.648181];
-                    const info = ["Mercer University:2022-2024"]
+                    const info = ["Mercer University Macon, Georgia"]
 
                     for (let i = 0; i < lat.length; i++)
                       {

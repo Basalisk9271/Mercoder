@@ -1,9 +1,10 @@
 <?php
 
 // Replace YOUR_API_KEY with your actual API key
+//added $api_key to the parameter list, needed to be included in scope of function
 $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
 
-function geocode($location){
+function geocode($location, $api_key){
     
     // Get the location to search for from the user
     //$location = isset($_GET['location']) ? $_GET['location'] : '';
