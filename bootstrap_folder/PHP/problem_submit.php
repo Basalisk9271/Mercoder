@@ -184,7 +184,7 @@
                                 var markerListener = function() {
                                     infoWindow.open(map, this);
                                     var pos = map.getZoom();
-                                    map.setZoom(12);
+                                    map.setZoom(5);
                                     map.setCenter(this.getPosition());
                                     window.setTimeout(function() {
                                         map.setZoom(pos);
