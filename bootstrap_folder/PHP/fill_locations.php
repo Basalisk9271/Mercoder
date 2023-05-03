@@ -23,7 +23,7 @@
                 $row = mysqli_fetch_assoc($locations);
                 $location = $row['school'] . ', ' . $row['city'];
             } else {
-                $location = '';
+                $location = '--error--';
             }
             //Using Geocode location
             require_once('geocode.php');
