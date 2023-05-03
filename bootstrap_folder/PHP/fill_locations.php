@@ -11,10 +11,7 @@
         $user_locations = array();
 
         //for each username
-        mysqli_close($con);
-
         foreach ($result as $row) {
-            require('database_op.php');
             $username = $row['user_name'];
             
             echo $username;
@@ -22,8 +19,8 @@
 
             //gather their school, city
             //this code below displays
-            //$query = "SELECT school, city FROM student_login WHERE username = " . $username;
-            $query = "SELECT school, city FROM student_login WHERE username = '" . $username . "'";
+            $query = "SELECT school, city FROM student_login WHERE username = " . $username;
+            //$query = "SELECT school, city FROM student_login WHERE username = '" . $username . "'";
             $locations = mysqli_query($con, $query);
 
             echo $locations;
@@ -47,7 +44,6 @@
                 'lng' => $latLng['lng']
             );
         }
-        mysqli_close($con);
         //set json to string 
         $user_locations_json = json_encode($user_locations);
         return $user_locations_json;
