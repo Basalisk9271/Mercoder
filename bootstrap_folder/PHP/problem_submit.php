@@ -13,7 +13,7 @@
     echo
     '<script> 
       var locations = [];
-      locations = '. json_encode($mapmarkers, JSON_NUMERIC_CHECK) .';
+      locations = '. $mapmarkers .';
     </script>';
 
     ?>
