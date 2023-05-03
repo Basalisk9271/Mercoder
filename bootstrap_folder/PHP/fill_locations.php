@@ -4,7 +4,8 @@
         require('database_op.php');
 
         //gathers all usernames that have create submission for the problem
-        $sql = "SELECT user_name FROM problem_attempts WHERE probId = " . $problemId; //think about preventing injection attacks
+        $sql = "SELECT user_name FROM problem_attempts WHERE probId = '" . $problemId . "'";
+         //think about preventing injection attacks
         $result = mysqli_query($con, $sql);
 
         //define array for user locations
@@ -18,7 +19,6 @@
             echo "test1 "; //getting usernames well
 
             //gather their school, city
-            require_once('database_op.php');
             //$query = "SELECT school, city FROM student_login WHERE username = " . $username;
             $query = "SELECT school, city FROM student_login WHERE username = '" . $username . "'";
             $locations = mysqli_query($con, $query);
