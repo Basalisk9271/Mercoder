@@ -4,7 +4,7 @@
     $user_locations = array();
 
     function getSubmissions($problemId, $api_key) {
-        $con = mysqli_connect("localhost","root","Rayr3qNxsYT3iG","mercoder");
+        require 'database_op.php';
         //gathers all usernames that have create submission for the problem
         $sql1 = "SELECT user_name FROM problem_attempts WHERE probId = '" . $problemId . "'";
         $result1 = mysqli_query($con, $sql1);
@@ -28,7 +28,7 @@
             //if there are values...
             if (mysqli_num_rows($locations) > 0) {
                 $row = mysqli_fetch_assoc($locations);
-                $location = $row['school'] . $row['city'];
+                $location = $row['school'] . " " . $row['city'];
             } else {
                 $location = '--error--';
             }
