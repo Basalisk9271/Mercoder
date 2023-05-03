@@ -11,7 +11,10 @@
         $user_locations = array();
 
         //for each username
+        mysqli_close($con);
+
         foreach ($result as $row) {
+            require('database_op.php');
             $username = $row['user_name'];
             
             echo $username;
@@ -44,6 +47,7 @@
                 'lng' => $latLng['lng']
             );
         }
+        mysqli_close($con);
         //set json to string 
         $user_locations_json = json_encode($user_locations);
         return $user_locations_json;
