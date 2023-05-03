@@ -13,7 +13,7 @@
     echo
     '<script> 
       var locations = [];
-      locations = '. $mapmarkers .';
+      locations = ' . $mapmarkers .';
     </script>';
 
     ?>
@@ -144,8 +144,6 @@
                     <div id="googleMap" style="width:100%;height:650px;"></div>
                     <script>
 
-                  
-
                     function myMap() {
                     var mapProp= {
                       center:new google.maps.LatLng(33.264080,-82.763100),
@@ -155,9 +153,11 @@
 
                     //make const
 
-                    //const lat = [32.832102];
-                    //const lang = [-83.648181];
-                    //const info = ["Mercer University Macon, Georgia"]
+                    const lat = [32.832102];
+                    const lang = [-83.648181];
+                    const info = ["Mercer University Macon, Georgia"]
+
+                    console.log(locations);
 
                     for (var i = 0; i < locations.length; i++) {
                       var marker = new google.maps.Marker({position: new google.maps.LatLng(locations[i].lat, locations[i].lng)});
