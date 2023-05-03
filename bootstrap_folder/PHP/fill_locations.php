@@ -14,29 +14,29 @@
         //for each username
         foreach ($result1 as $row) {
             $username = strtolower(trim($row['user_name']));
-            
-            echo $username;
-            echo "test1 "; //getting usernames well
-
+        
             //gather their school, city
             //$sql2 = "SELECT school, city FROM student_login WHERE username = " . $username;
             $sql2 = "SELECT school, city FROM student_login WHERE username = '" . $username . "'";
             $locations = mysqli_query($con, $sql2);
-
-            echo $locations;
-            echo "test2 ";
-
+        
+            if (!$locations) {
+                echo "Error executing query: " . mysqli_error($con) . "\n";
+                continue; // skip to next row if there was an error
+            }
+        
+        
             //if there are values...
             if (mysqli_num_rows($locations) > 0) {
                 $row = mysqli_fetch_assoc($locations);
-                $location = $row['school'] . ', ' . $row['city'];
+                $location = $row['school'] . $row['city'];
             } else {
                 $location = '--error--';
             }
             //Using Geocode location
             require_once('geocode.php');
             $latLng = geocode($location, $api_key);
-
+        
             //place the location, lat, long into json
             $user_locations[$username] = array(
                 'location' => $location,

@@ -9,7 +9,6 @@
     //Geocode API Key for function params
     $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
     $mapmarkers = getSubmissions($problemId, $api_key);
-    echo $mapmarkers;
     ?>
   
 <!DOCTYPE html>
