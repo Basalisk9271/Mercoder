@@ -15,15 +15,16 @@
             $username = $row['user_name'];
             
             echo $username;
-            echo "test1";
+            echo "test1 "; //getting usernames well
 
             //gather their school, city
+            require_once('database_op.php');
             $query = "SELECT school, city FROM student_login WHERE username = " . $username;
             $locations = mysqli_query($con, $query);
 
             echo $locations;
-            echo "test2";
-            
+            echo "test2 ";
+
             //if there are values...
             if (mysqli_num_rows($locations) > 0) {
                 $row = mysqli_fetch_assoc($locations);
