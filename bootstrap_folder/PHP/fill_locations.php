@@ -37,14 +37,14 @@
             $latLng = geocode($location, $api_key);
         
             //place the location, lat, long into json
-            $user_locations[$username] = array(
+            $user_locations[] = array(
                 'location' => $location,
                 'lat' => $latLng['lat'],
                 'lng' => $latLng['lng']
             );
         }
         //set json to string 
-        $user_locations_json = json_encode($user_locations);
+        $user_locations_json = json_encode($user_locations, JSON_NUMERIC_CHECK);
         return $user_locations_json;
     }
 ?>
