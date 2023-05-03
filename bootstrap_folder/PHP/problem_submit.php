@@ -176,6 +176,7 @@
                                     title:"Location " + (index + 1)
                                 });
 
+                               /* 
                                 var infoWindow = new google.maps.InfoWindow({
                                     content:location.location
                                 });
@@ -189,6 +190,7 @@
                                         map.setZoom(pos);
                                     },5000);
                                 };
+                                */
 
                                 marker.addListener('click', markerListener);
                                 
