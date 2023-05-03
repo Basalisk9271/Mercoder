@@ -5,6 +5,11 @@
     $row = getProbDetails($problemId);
     require_once 'sub_pop.php';
     $table = getSubs($problemId);
+    require_once('fill_locations.php');
+    //Geocode API Key for function params
+    $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
+    $mapmarkers = getSubmissions($problemId, $api_key);
+    echo $mapmarkers;
     ?>
   
 <!DOCTYPE html>
