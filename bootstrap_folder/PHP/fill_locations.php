@@ -1,6 +1,6 @@
 <?php
     function getSubmissions($problemId, $api_key) {
-        require_once('database_op.php');
+        require('database_op.php');
 
         //gathers all usernames that have create submission for the problem
         $sql = "SELECT user_name FROM problem_attempts WHERE probId = '" . $problemId . "'";
@@ -18,8 +18,6 @@
             echo "test1 "; //getting usernames well
 
             //gather their school, city
-
-            require_once('database_op.php');
             //this code below displays
             //$query = "SELECT school, city FROM student_login WHERE username = " . $username;
             $query = "SELECT school, city FROM student_login WHERE username = '" . $username . "'";
