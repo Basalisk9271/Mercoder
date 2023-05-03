@@ -1,10 +1,10 @@
 <?php
-
+    require('database_op.php');
     //define array for user locations
     $user_locations = array();
 
     function getSubmissions($problemId, $api_key) {
-        require_once('database_op.php');
+        
 
         //gathers all usernames that have create submission for the problem
         $sql1 = "SELECT user_name FROM problem_attempts WHERE probId = '" . $problemId . "'";
