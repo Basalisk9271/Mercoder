@@ -9,6 +9,9 @@
     //Geocode API Key for function params
     $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
     $mapmarkers = getSubmissions($problemId, $api_key);
+    '<script> 
+      var locations = '. json_encode($mapmarkers, JSON_NUMERIC_CHECK) .';
+    </script>'
     ?>
   
 <!DOCTYPE html>
@@ -151,8 +154,6 @@
                     //const lat = [32.832102];
                     //const lang = [-83.648181];
                     //const info = ["Mercer University Macon, Georgia"]
-
-                    var locations = <?php echo $mapmarkers ?>;
 
                     for (var i = 0; i < locations.length; i++) {
                       var marker = new google.maps.Marker({position: new google.maps.LatLng(locations[i].lat, locations[i].lng)});
