@@ -19,8 +19,8 @@
 
             //gather their school, city
             require_once('database_op.php');
-            $sql = "SELECT school, city FROM student_login WHERE username = " . $username;
-            $locations = mysqli_query($con, $sql);
+            $query = "SELECT school, city FROM student_login WHERE username = " . $username;
+            $locations = mysqli_query($con, $query);
 
             echo $locations;
             echo "test2 ";
