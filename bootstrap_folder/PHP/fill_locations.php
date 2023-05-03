@@ -13,7 +13,7 @@
 
         //for each username
         foreach ($result1 as $row) {
-            $username = $row['user_name'];
+            $username = trim($row['user_name']);
             
             echo $username;
             echo "test1 "; //getting usernames well
