@@ -1,27 +1,27 @@
 <?php
+
+    //define array for user locations
+    $user_locations = array();
+
     function getSubmissions($problemId, $api_key) {
         require('database_op.php');
 
         //gathers all usernames that have create submission for the problem
-        $sql = "SELECT user_name FROM problem_attempts WHERE probId = '" . $problemId . "'";
+        $sql1 = "SELECT user_name FROM problem_attempts WHERE probId = '" . $problemId . "'";
          //think about preventing injection attacks
-        $result = mysqli_query($con, $sql);
-
-        //define array for user locations
-        $user_locations = array();
+        $result1 = mysqli_query($con, $sql1);
 
         //for each username
-        foreach ($result as $row) {
+        foreach ($result1 as $row) {
             $username = $row['user_name'];
             
             echo $username;
             echo "test1 "; //getting usernames well
 
             //gather their school, city
-            //this code below displays
-            $query = "SELECT school, city FROM student_login WHERE username = " . $username;
+            $sql2 = "SELECT school, city FROM student_login WHERE username = " . $username;
             //$query = "SELECT school, city FROM student_login WHERE username = '" . $username . "'";
-            $locations = mysqli_query($con, $query);
+            $locations = mysqli_query($con, $sql2);
 
             echo $locations;
             echo "test2 ";
