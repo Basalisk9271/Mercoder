@@ -18,6 +18,7 @@
             $query = "SELECT school, city FROM student_login WHERE username = " . $username;
             $locations = mysqli_query($con, $query);
 
+            echo $locations;
             //if there are values...
             if (mysqli_num_rows($locations) > 0) {
                 $row = mysqli_fetch_assoc($locations);
