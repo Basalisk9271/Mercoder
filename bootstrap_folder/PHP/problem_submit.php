@@ -148,16 +148,17 @@
 
                     //make const
 
-                    const lat = [32.832102];
-                    const lang = [-83.648181];
-                    const info = ["Mercer University Macon, Georgia"]
+                    //const lat = [32.832102];
+                    //const lang = [-83.648181];
+                    //const info = ["Mercer University Macon, Georgia"]
 
-                    for (let i = 0; i < lat.length; i++)
-                      {
-                        var marker = new google.maps.Marker({position: new google.maps.LatLng(lat[i],lang[i])});
-                        marker.setMap(map);
-                        var infowindow = new google.maps.InfoWindow({content:info[i]});
-                        infowindow.open(map,marker);
+                    var locations = <?php echo $mapmarkers ?>;
+
+                    for (var i = 0; i < locations.length; i++) {
+                      var marker = new google.maps.Marker({position: new google.maps.LatLng(locations[i].lat, locations[i].lng)});
+                      marker.setMap(map);
+                      var infowindow = new google.maps.InfoWindow({content: locations[i].info});
+                      infowindow.open(map, marker);
                       }
                     }
                     </script>
