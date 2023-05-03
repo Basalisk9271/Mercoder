@@ -8,8 +8,8 @@
 
         //gathers all usernames that have create submission for the problem
         $sql1 = "SELECT user_name FROM problem_attempts WHERE probId = '" . $problemId . "'";
-         //think about preventing injection attacks
         $result1 = mysqli_query($con, $sql1);
+        //think about preventing injection attacks
 
         //for each username
         foreach ($result1 as $row) {
@@ -19,8 +19,8 @@
             echo "test1 "; //getting usernames well
 
             //gather their school, city
-            $sql2 = "SELECT school, city FROM student_login WHERE username = " . $username;
-            //$query = "SELECT school, city FROM student_login WHERE username = '" . $username . "'";
+            //$sql2 = "SELECT school, city FROM student_login WHERE username = " . $username;
+            $sql2 = "SELECT school, city FROM student_login WHERE username = '" . $username . "'";
             $locations = mysqli_query($con, $sql2);
 
             echo $locations;
