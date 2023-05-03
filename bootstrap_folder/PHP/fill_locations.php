@@ -14,11 +14,16 @@
         foreach ($result as $row) {
             $username = $row['user_name'];
             
+            echo $username;
+            echo "test1";
+
             //gather their school, city
             $query = "SELECT school, city FROM student_login WHERE username = " . $username;
             $locations = mysqli_query($con, $query);
 
             echo $locations;
+            echo "test2";
+            
             //if there are values...
             if (mysqli_num_rows($locations) > 0) {
                 $row = mysqli_fetch_assoc($locations);
