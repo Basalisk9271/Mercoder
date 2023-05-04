@@ -7,14 +7,8 @@ if(!isset($_SESSION['loggedin'])) {
     header('Location: index.php'); // don't redirect same page
 } 
 
-//Error catching
-    ini_set("display_errors", "1");
-    ini_set("display_startup_errors", 1);
-    error_reporting(E_ALL);
-    require_once 'PHP/get_prob_titles.php';
-    $probArr = getProbTitles();
-    echo $probArr;
-
+    //Error catching
+    require_once 'PHP/error_handling.php';
     require_once 'PHP/get_all_markers.php';
     //Geocode API Key for function params
     $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
@@ -175,22 +169,21 @@ if(!isset($_SESSION['loggedin'])) {
                     </script>
         </section>
         
-        <!-- Map and Dropdown Menu-->
+        <!-- Map with Markers -->
         <section>              
-                    <?php
-                      echo '<script> 
-                          var locations = [];
-                          locations = ' . $mapmarkers . ';
-                          console.log(locations);
-                        </script>';
-                    ?>
-                
-            <div class="container px-4 px-lg-5">
-                       <div class="row gx-4 gx-lg-5 justify-content-center">
-                           <div class="col-lg-8">
-                               <h2 class="text-white mb-4"></h2>
-                               <div id="googleMap" style="width:100%;height:650px;"></div>
-                               <script>
+                <?php
+                    echo '<script> 
+                        var locations = [];
+                        locations = ' . $mapmarkers . ';
+                        console.log(locations);
+                    </script>';
+                ?>
+                <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 justify-content-center">
+                            <div class="col-lg-8">
+                                <h2 class="text-white mb-4"></h2>
+                                <div id="googleMap" style="width:100%;height:650px;"></div>
+                <script>
                               
                     function myMap() {
                         
@@ -219,7 +212,6 @@ if(!isset($_SESSION['loggedin'])) {
                                     title:"Location " + (index + 1)
                                 });
 
-                               
                                 var infoWindow = new google.maps.InfoWindow({
                                     content:location.location
                                 });
@@ -233,16 +225,12 @@ if(!isset($_SESSION['loggedin'])) {
                                         map.setZoom(pos);
                                     },5000);
                                 };
-                                
-
                                 marker.addListener('click', markerListener);
-                                
                                 marker.setMap(map);
                             });
                         }
-
-                        }
-                               </script>  
+                    }
+                </script>  
             </div>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfhDoPuP4Hkf_nis_oKqwol7Tk5TuzJA8&callback=myMap"></script>
         </section>
