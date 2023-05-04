@@ -180,7 +180,7 @@ $mapmarkers = getSubmissions(12, $api_key);
             <!-- Drop down menu that will show different map markers depending on which problem is chosen-->
             <!-- All map markers will be shown by default -->
             <div align="center">
-                <select id="dropDown" name="list" size="2"></select>
+                <select id="dropDown" name="list" size="1"></select>
                 <span id="tag"></span>
             </div>
             
