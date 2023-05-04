@@ -10,6 +10,7 @@
             //setting link to a variable
             //Find a way to get the session username 
             $user_name = $_SESSION['username'];
+            //$user_name = 'Bob';
             //$placeholder_username = 'TEST';
             $date = date('Y-m-d');
             $query = "INSERT into problem_attempts (user_name, probId, date, submission_link) 
@@ -22,9 +23,6 @@
                     echo " Error in form submission ";
                     echo "Error: " . $query . "<br>" . $con->error;
                 }
-        } else {
-            //Display message if the link is not there
-            echo "Please submit a link";
         }
     //returning to page after submission
     header("Location: ../index.php");    

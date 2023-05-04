@@ -21,7 +21,7 @@ require_once ('probQuery.php');
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="/mercoder/bootstrap_folder/css/styles.css" rel="stylesheet" />
+        <link href="/mercoder/css/styles.css" rel="stylesheet" />
         </head>
     
         <body id="page-top">
@@ -33,22 +33,22 @@ require_once ('probQuery.php');
             <?php
                     //if they are not logged in or have not been assigned a token
                     if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == 0) { 
-                        echo '<li class="sidebar-brand"><a href="/mercoder/bootstrap_folder/index.php">Home</a></li>
-                        <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/index.php">Login</a></li>
-                        <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/index.php#about">About</a></li>
-                        <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/prob_landing.php">Problems</a></li>';
+                        echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/PHP/index.php">Login</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">Problems</a></li>';
                     } else {   //else they are logged in
                         if($_SESSION['loggedin'] == 2){     //Teacher menu
-                            echo '<li class="sidebar-brand"><a href="/mercoder/bootstrap_folder/index.php">Home</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/logout.php">Logout</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/index.php#about">About</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/prob_landing.php">Problems</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/problem_form.php">New Problem</a></li>';
+                            echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/logout.php">Logout</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">Problems</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/problem_form.php">New Problem</a></li>';
                         } else {    //Student menu
-                            echo '<li class="sidebar-brand"><a href="/mercoder/bootstrap_folder/index.php">Home</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/logout.php">Logout</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/index.php#about">About</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/prob_landing.php">Problems</a></li>';
+                            echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/logout.php">Logout</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">Problems</a></li>';
                     }
                     }
                 ?>
@@ -96,7 +96,7 @@ require_once ('probQuery.php');
                     }
 
                     function redirectToProblem(problemId) {
-                        window.location.href = `/mercoder/bootstrap_folder/PHP/problem_submit.php?id=${problemId}`;
+                        window.location.href = `/mercoder/PHP/problem_submit.php?id=${problemId}`;
                     }
                 
             </script>
@@ -118,7 +118,7 @@ require_once ('probQuery.php');
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="/mercoder/bootstrap_folder/js/scripts.js"></script>
+        <script src="/mercoder/js/scripts.js"></script>
 
         
     </body>
