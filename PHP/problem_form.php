@@ -31,22 +31,22 @@ session_start();
             <?php
                     //if they are not logged in or have not been assigned a token
                     if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == 0) { 
-                        echo '<li class="sidebar-brand"><a href="/mercoder/bootstrap_folder/index.php">Home</a></li>
-                        <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/index.php">Login</a></li>
-                        <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/index.php#about">About</a></li>
-                        <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/prob_landing.php">Problems</a></li>';
+                        echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/PHP/index.php">Login</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">Problems</a></li>';
                     } else {   //else they are logged in
                         if($_SESSION['loggedin'] == 2){     //Teacher menu
-                            echo '<li class="sidebar-brand"><a href="/mercoder/bootstrap_folder/index.php">Home</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/logout.php">Logout</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/index.php#about">About</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/prob_landing.php">Problems</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/problem_form.php">New Problem</a></li>';
+                            echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/logout.php">Logout</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">Problems</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/problem_form.php">New Problem</a></li>';
                         } else {    //Student menu
-                            echo '<li class="sidebar-brand"><a href="/mercoder/bootstrap_folder/index.php">Home</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/logout.php">Logout</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/index.php#about">About</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/prob_landing.php">Problems</a></li>';
+                            echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/logout.php">Logout</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">Problems</a></li>';
                     }
                     }
                 ?>

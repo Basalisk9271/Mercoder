@@ -244,7 +244,7 @@ img{
                                 </head>
 
                 <div class="img">
-                    <img src="/mercoder/bootstrap_folder/assets/img/campus.jpeg" class="mx-auto d-block" alt="Your image">
+                    <img src="/mercoder/assets/img/campus.jpeg" class="mx-auto d-block" alt="Your image">
                 </div>
 				<body className='snippet-body'>
 				<?php require "reg.php"; 
