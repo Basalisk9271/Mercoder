@@ -182,7 +182,7 @@ $mapmarkers = getSubmissions(12, $api_key);
                 var dropdown = document.getElementById("dropdown");
 
                 // Retrieve the problem titles from the PHP file and add them to the dropdown
-                fetch('get_prop_titles.php')
+                fetch('get_prob_titles.php')
                     .then(response => response.json())
                     .then(titles => {
                         titles.forEach(title => {
