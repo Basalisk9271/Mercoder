@@ -234,10 +234,9 @@ if(!isset($_SESSION['loggedin'])) {
                     // Define a function to handle the response
                     xhr.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
-                            // Get the response text
                             var response = this.responseText;
                             //THIS IS WHERE THE RETURN WILL BE
-                            console.log(response);
+                            console.log("Problem ID is" + response);
                         }
                     };
                 }

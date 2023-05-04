@@ -1,4 +1,6 @@
 <?php
+
+    echo "TESTING";
     $probName = $_POST['probName'];
     require('database_op.php');
     // Retrieve the information from the database
