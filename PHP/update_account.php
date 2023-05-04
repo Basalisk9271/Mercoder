@@ -26,7 +26,7 @@ $stmt->free_result();
 // check if the password is correct
 if ($count > 0) {
     // construct a SQL query2 to update the user's account details
-    $query2 = "UPDATE " . $acctType . "_login SET password = '" . md5($newPass) . "', school = '" . $school . "', city = '" . $city . "' WHERE username = '" . $username . "'";
+    $query2 = "UPDATE " . $acctType . "_login SET password = '" . md5($newPass) . "', school = '" . addslashes($school) . "', city = '" . addslashes($city) . "' WHERE username = '" . $username . "'";
 
     // execute the query2
     if ($con->query($query2) === TRUE) {

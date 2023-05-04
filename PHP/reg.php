@@ -45,7 +45,7 @@
 
 	if ($teach_rows == 0 && $stu_rows == 0){
         $query    = "INSERT into `teacher_login` (name, username, school, classcode, password, city)
-                     VALUES ('$name', '$username', '$school', '$classCode', '" . md5($password) . "', '$city')";
+                     VALUES ('addslashes($name)', 'addslashes($username)', 'addslashes($school)', '$classCode', '" . md5($password) . "', '$city')";
 		$result   = mysqli_query($con, $query);
 	} else{
 		header("Location: index.php");
