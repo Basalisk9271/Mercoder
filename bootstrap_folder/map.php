@@ -185,6 +185,7 @@ $mapmarkers = getSubmissions(12, $api_key);
                 fetch('get_prob_titles.php')
                     .then(response => response.json())
                     .then(titles => {
+                        console.log(titles);
                         titles.forEach(title => {
                             var option = document.createElement("option");
                             option.text = title;
