@@ -6,14 +6,8 @@ if(!isset($_SESSION['loggedin'])) {
     $_SESSION['loggedin'] = 0;
     header('Location: index.php'); // don't redirect same page
 } 
-require_once 'PHP/get_prob_titles.php';
-echo 'Test 1';
-$probArr = getProbTitles();
 
-echo 'Test 2';
-echo getProbTitles();
 
-echo 'Test 3';
 require_once 'PHP/fill_locations.php';
 //Geocode API Key for function params
 $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
@@ -182,33 +176,37 @@ $mapmarkers = getSubmissions(12, $api_key);
                 <select id="dropDown" name="list" size="1"></select>
                 <span id="tag"></span>
             </div>
-            
-                    <?php 
-                        echo '<script> 
-                          var probArr = [];
-                          probArr = ' . $probArr . ';
-                          console.log(probArr);
-                        </script>';
-                    ?>
 
             <script>
 
+                var dropdown = document.getElementById("dropdown");
 
-                var select = document.getElementById("dropDown");
-                
+                // Retrieve the problem titles from the PHP file and add them to the dropdown
+                fetch('get_prop_titles.php')
+                    .then(response => response.json())
+                    .then(titles => {
+                        titles.forEach(title => {
+                            var option = document.createElement("option");
+                            option.text = title;
+                            dropdown.add(option);
+                        });
+                    });
+
+                    /*
                 //Create and append options elements to the select element with the id "dropDown"
                 for (let i = 0; i < probArr.length; i++)
                 {
                     var option = document.createElement("option");
                     option.value = probArr[i].details;
                     option.text = probArr[i].title;
-                    select.appendChild(option);
+                    dropdown.appendChild(option);
                 }
+                */
                 
                 tag = document.getElementById("tag");
 
                 //Function that changes the content of the tag
-                select.onchange = function()
+                dropdown.onchange = function()
                 {
                    tag.innerHTML = select.value;
                 }
