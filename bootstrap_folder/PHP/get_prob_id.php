@@ -11,7 +11,7 @@
     $row = mysqli_fetch_assoc($result);
 
     echo $row;
-    $probId = (int) $row['id'];
+    $probId = (int) $row;
 
     mysqli_close($con);
 
