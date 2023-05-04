@@ -186,9 +186,9 @@ $mapmarkers = getSubmissions(12, $api_key);
             
             <?php
                 echo '<script> 
-                    var probArr = [];
-                    probArr = ' . $probArr . ';
-                </script>';
+                        var probArr = [];
+                        probArr = ' . $probArr . ';
+                      </script>';
             ?>
 
             <script>
@@ -213,16 +213,18 @@ $mapmarkers = getSubmissions(12, $api_key);
                 for (let i = 0; i < probArr.length; i++)
                 {
                     var option = document.createElement("option");
-                    option.value = probArr[i].title;
-                    option.text = probArr[i].title;
+                    option.value = probArr[i];
+                    option.text = probArr[i];
                     select.appendChild(option);
                 }
                 
                 tag = document.getElementById("tag");
 
+                var probName;
                 //Function that changes the content of the tag
                 select.onchange = function()
                 {
+                   probName = select.value;
                    tag.innerHTML = select.value;
                 }
             </script>
