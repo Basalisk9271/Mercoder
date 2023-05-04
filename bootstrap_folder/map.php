@@ -217,9 +217,9 @@ $mapmarkers = getSubmissions(12, $api_key);
             </script>
 
 
-
+<script>
 /*
-                var titles_json = '<?php echo $probArr; ?>';
+                
 
                 console.log('TEST');
                 console.log(titles_json);
