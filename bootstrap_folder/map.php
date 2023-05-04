@@ -212,34 +212,35 @@ if(!isset($_SESSION['loggedin'])) {
                 {
                    probName = select.value;
                    tag.innerHTML = select.value;
+
+                        // Create an XMLHttpRequest object
+                    var xhr = new XMLHttpRequest();
+
+                    // Set the URL of the PHP script
+                    var url = "PHP/get_prob_id.php";
+
+                    // Create a FormData object and add the variable to it
+                    var formData = new FormData();
+                    formData.append("myVar", probName);
+
+                    // Set the request method and URL
+                    xhr.open("POST", url, true);
+
+                    // Send the FormData object as the request body
+                    xhr.send(formData);
+
+                    // Define a function to handle the response
+                    xhr.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            // Get the response text
+                            var response = this.responseText;
+                            //THIS IS WHERE THE RETURN WILL BE
+                            console.log(response);
+                        }
+                    };
                 }
 
-                // Create an XMLHttpRequest object
-                var xhr = new XMLHttpRequest();
-
-                // Set the URL of the PHP script
-                var url = "PHP/get_prob_id.php";
-
-                // Create a FormData object and add the variable to it
-                var formData = new FormData();
-                formData.append("myVar", probName);
-
-                // Set the request method and URL
-                xhr.open("POST", url, true);
-
-                // Send the FormData object as the request body
-                xhr.send(formData);
-
-                // Define a function to handle the response
-                xhr.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        // Get the response text
-                        var response = this.responseText;
-                        //THIS IS WHERE THE RETURN WILL BE
-                        console.log(response);
-                    }
-                };
-
+               
             </script>
 
                       
