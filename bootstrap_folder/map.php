@@ -176,6 +176,14 @@ $probArr = getProbTitles();
 
             <script>
 
+                    <?php 
+                        echo '<script> 
+                          var probArr = [];
+                          probArr = ' . $probArr . ';
+                          console.log(probArr);
+                        </script>';
+                    ?>
+
                  
 
                 var probArr = <?php echo json_encode($myArray); ?>;
