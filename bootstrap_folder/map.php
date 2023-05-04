@@ -193,9 +193,34 @@ $mapmarkers = getSubmissions(12, $api_key);
                         </script>';
                     ?>
             <script>
+                // Define the function to populate the dropdown menu
+                function populateDropdown(dropdownId, options) {
+                    var dropdown = document.getElementById(dropdownId);
+                    options.forEach(function(option) {
+                        var optionElement = document.createElement("option");
+                        optionElement.text = option;
+                        dropdown.add(optionElement);
+                    });
+                }
 
-                var dropdown = document.getElementById("dropdown");
+                // Use AJAX to call the getProbTitles function and populate the dropdown menu
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var titles = JSON.parse(this.responseText);
+                        populateDropdown("probDropdown", titles);
+                    }
+                };
+                xmlhttp.open("GET", "get_prob_titles.php", true);
+                xmlhttp.send();
+
+
+
+
+
 /*
+                var dropdown = document.getElementById("dropdown");
+
                 // Retrieve the problem titles from the PHP file and add them to the dropdown
                 fetch('get_prob_titles.php')
                     .then(response => response.json())
@@ -208,7 +233,7 @@ $mapmarkers = getSubmissions(12, $api_key);
                     });
 */
                     
-                    
+                    /*
                 //Create and append options elements to the select element with the id "dropDown"
                 for (let i = 0; i < probArr.length; i++)
                 {
@@ -226,6 +251,7 @@ $mapmarkers = getSubmissions(12, $api_key);
                 {
                    tag.innerHTML = select.value;
                 }
+                */
             </script>
 
                       <?php
