@@ -6,11 +6,9 @@ function getProbTitles(){
     $sql = "SELECT title FROM probs";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_assoc($result);
-    
-    echo $row;
 
     mysqli_close($con);
-    //$row_json = json_encode($row, JSON_NUMERIC_CHECK);
-    return $row;
+    $row_json = json_encode($row, JSON_NUMERIC_CHECK);
+    return $row_json;
 }
 ?>
