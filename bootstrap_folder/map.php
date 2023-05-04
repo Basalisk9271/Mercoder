@@ -9,6 +9,10 @@ if(!isset($_SESSION['loggedin'])) {
 require_once 'PHP/get_prob_titles.php';
 $probArr = getProbTitles();
 
+echo 'Test Feature';
+echo getProbTitles();
+
+
 require_once 'PHP/fill_locations.php';
 //Geocode API Key for function params
 $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
