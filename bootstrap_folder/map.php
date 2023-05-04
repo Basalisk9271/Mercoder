@@ -178,16 +178,20 @@ $mapmarkers = getSubmissions(12, $api_key);
                  </select>
             </div>
 
-<?php 
-   //Error catching
-    ini_set("display_errors", "1");
-    ini_set("display_startup_errors", 1);
-    error_reporting(E_ALL);
-    require_once 'PHP/get_prob_titles.php';
-    $probArr =  getProbTitles();
-    echo $probArr;
-?>
-
+                    <?php 
+                    //Error catching
+                        ini_set("display_errors", "1");
+                        ini_set("display_startup_errors", 1);
+                        error_reporting(E_ALL);
+                        require_once 'PHP/get_prob_titles.php';
+                        $probArr =  getProbTitles();
+                        echo $probArr;
+                        echo '<script> 
+                          var probArr = [];
+                          probArr = ' . $probArr . ';
+                          console.log(probArr);
+                        </script>';
+                    ?>
             <script>
 
                 var dropdown = document.getElementById("dropdown");
