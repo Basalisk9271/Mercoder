@@ -9,7 +9,7 @@ if(!isset($_SESSION['loggedin'])) {
 require_once 'PHP/get_prob_titles.php';
 $probArr = getProbTitles();
 
-require_once('fill_locations.php');
+require_once 'PHP/fill_locations.php';
 //Geocode API Key for function params
 $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
 $mapmarkers = getSubmissions(5, $api_key);
