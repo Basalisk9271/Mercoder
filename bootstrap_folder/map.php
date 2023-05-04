@@ -15,10 +15,10 @@ if(!isset($_SESSION['loggedin'])) {
     $probArr = getProbTitles();
     echo $probArr;
 
-    require_once 'PHP/fill_locations.php';
+    require_once 'PHP/get_all_markers.php';
     //Geocode API Key for function params
     $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
-    $mapmarkers = getSubmissions(12, $api_key);
+    $mapmarkers = getAllMarkers($api_key);
 ?>
 
 <!DOCTYPE html>
@@ -176,76 +176,7 @@ if(!isset($_SESSION['loggedin'])) {
         </section>
         
         <!-- Map and Dropdown Menu-->
-        <section>
-            <!-- Drop down menu that will show different map markers depending on which problem is chosen-->
-            <!-- All map markers will be shown by default -->
-            <div align="center">
-                <select id="dropDown" name="list" size="1"></select>
-                <span id="tag"></span>
-            </div>
-            
-            <?php
-                echo '<script> 
-                        var probArr = [];
-                        probArr = ' . $probArr . ';
-                      </script>';
-            ?>
-
-            <script>
-                
-                var select = document.getElementById("dropDown");
-                
-                //Create and append options elements to the select element with the id "dropDown"
-                for (let i = 0; i < probArr.length; i++)
-                {
-                    var option = document.createElement("option");
-                    option.value = probArr[i];
-                    option.text = probArr[i];
-                    select.appendChild(option);
-                }
-                
-                tag = document.getElementById("tag");
-
-                var probName;
-                //Function that changes the content of the tag
-                select.onchange = function()
-                {
-                   probName = select.value;
-                   tag.innerHTML = select.value;
-
-                        // Create an XMLHttpRequest object
-                    var xhr = new XMLHttpRequest();
-
-                    console.log(probName);
-
-                    // Set the URL of the PHP script
-                    var url = "PHP/get_prob_id.php";
-
-                    // Create a FormData object and add the variable to it
-                    var formData = new FormData();
-                    formData.append("probName", probName);
-
-                    // Set the request method and URL
-                    xhr.open("POST", url, true);
-
-                    // Send the FormData object as the request body
-                    xhr.send(formData);
-
-                    // Define a function to handle the response
-                    xhr.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            var response = this.responseText;
-                            //THIS IS WHERE THE RETURN WILL BE
-                            console.log("Problem ID is" + response);
-                        }
-                    };
-                }
-
-               
-            </script>
-
-                      
-
+        <section>              
                     <?php
                       echo '<script> 
                           var locations = [];
