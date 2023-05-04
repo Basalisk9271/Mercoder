@@ -1,18 +1,17 @@
 <?php
-function getProblemTitles() {
-    require_once 'database_op.php'; 
-    
-    $sql = "SELECT title FROM probs"; 
-    $result = mysqli_query($con, $sql);
+function getProbTitles() {
+    require_once('database_op.php');
+    // Retrieve the information from the database
+    $sql = "SELECT title FROM probs";
+    $result = mysqli_query($con, mysqli_real_escape_string($con, $sql));
+    $rows = array();
 
-    $titles = array();
     while ($row = mysqli_fetch_assoc($result)) {
-        $titles[] = $row['title'];
+        $rows[] = $row['title'];
     }
 
-    mysqli_close($con); 
+    mysqli_close($con);
 
-    $titles_json = json_encode($titles, JSON_NUMERIC_CHECK);
-    return $titles_json;
+    return json_encode($rows, JSON_NUMERIC_CHECK);
 }
 ?>
