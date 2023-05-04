@@ -203,7 +203,7 @@
                     
         </div>
         
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXR2EwI9oG9iB6F-M8AQDtYcT7a6KHyxg&callback=myMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfhDoPuP4Hkf_nis_oKqwol7Tk5TuzJA8&callback=myMap"></script>
    </section>
 
   <?php
