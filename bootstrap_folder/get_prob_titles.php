@@ -8,7 +8,7 @@ function getProbTitles(){
     $row = mysqli_fetch_assoc($result);
     
     mysqli_close($con);
-    $row_json = json_encode($row, JSON_NUMERIC_CHECK);
-    return $row_json;
+    //$row_json = json_encode($row, JSON_NUMERIC_CHECK);
+    return $row;
 }
 ?>
