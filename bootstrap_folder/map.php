@@ -12,7 +12,7 @@ $probArr = getProbTitles();
 require_once 'PHP/fill_locations.php';
 //Geocode API Key for function params
 $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
-$mapmarkers = getSubmissions(5, $api_key);
+$mapmarkers = getSubmissions(12, $api_key);
 ?>
 
 <!DOCTYPE html>
