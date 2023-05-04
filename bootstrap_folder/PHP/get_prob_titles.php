@@ -1,14 +1,17 @@
 <?php
-function getProbTitles(){
+function getProbTitles() {
     require_once('database_op.php');
-    
-    // Step 2: Retrieve the information from the database
+    // Retrieve the information from the database
     $sql = "SELECT title FROM probs";
     $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($result);
+    $rows = array();
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row['title'];
+    }
 
     mysqli_close($con);
-    $row_json = json_encode($row, JSON_NUMERIC_CHECK);
-    return $row_json;
+
+    return json_encode($rows, JSON_NUMERIC_CHECK);
 }
 ?>
