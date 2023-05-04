@@ -180,43 +180,15 @@ $mapmarkers = getSubmissions(12, $api_key);
 
 <?php 
    //Error catching
-   ini_set("display_errors", "1");
-   ini_set("display_startup_errors", 1);
-   error_reporting(E_ALL);
-require_once 'PHP/get_prob_titles.php';
-$probArr =  getProbTitles();
-echo $probArr;
+    ini_set("display_errors", "1");
+    ini_set("display_startup_errors", 1);
+    error_reporting(E_ALL);
+    require_once 'PHP/get_prob_titles.php';
+    $probArr =  getProbTitles();
+    echo $probArr;
 ?>
 
             <script>
-// Define the function to populate the dropdown menu
-                function populateDropdown(dropdownId, options) {
-                            var dropdown = document.getElementById(dropdownId);
-                            options.forEach(function(option) {
-                                var optionElement = document.createElement("option");
-                                optionElement.text = option;
-                                dropdown.add(optionElement);
-                            });
-                        }
-
-                        // Use AJAX to call the getProbTitles function and populate the dropdown menu
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.onreadystatechange = function() {
-                            if (this.readyState == 4 && this.status == 200) {
-                                var titles = JSON.parse(this.responseText);
-                                populateDropdown("probDropdown", titles);
-                            }
-                        };
-                        xmlhttp.open("GET", "get_prob_titles.php", true);
-                        xmlhttp.send();
-
-
-
-
-
-
-
-                            /*
 
                 var dropdown = document.getElementById("dropdown");
 
@@ -224,7 +196,6 @@ echo $probArr;
                 fetch('get_prob_titles.php')
                     .then(response => response.json())
                     .then(titles => {
-                        console.log(titles);
                         titles.forEach(title => {
                             var option = document.createElement("option");
                             option.text = title;
@@ -232,6 +203,7 @@ echo $probArr;
                         });
                     });
 
+                    /*
                     
                 //Create and append options elements to the select element with the id "dropDown"
                 for (let i = 0; i < probArr.length; i++)
