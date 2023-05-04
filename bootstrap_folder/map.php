@@ -6,7 +6,6 @@ if(!isset($_SESSION['loggedin'])) {
     $_SESSION['loggedin'] = 0;
     header('Location: index.php'); // don't redirect same page
 } 
-
     //Error catching
     require_once 'PHP/error_handling.php';
     require_once 'PHP/get_all_markers.php';
@@ -171,18 +170,20 @@ if(!isset($_SESSION['loggedin'])) {
         
         <!-- Map with Markers -->
         <section>              
-                <?php
-                    echo '<script> 
-                        var locations = [];
-                        locations = ' . $mapmarkers . ';
-                        console.log(locations);
-                    </script>';
-                ?>
+               
                 <div class="container px-4 px-lg-5">
                         <div class="row gx-4 gx-lg-5 justify-content-center">
                             <div class="col-lg-8">
                                 <h2 class="text-white mb-4"></h2>
-                                <div id="googleMap" style="width:100%;height:650px;"></div>
+                                <div id="googleMap" style="width:800px;height:650px;"></div>
+            <?php
+                echo '<script> 
+                    var locations = [];
+                    locations = ' . $mapmarkers . ';
+                    console.log(locations);
+                </script>';
+            ?>
+
                 <script>
                               
                     function myMap() {

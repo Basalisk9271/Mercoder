@@ -10,7 +10,6 @@
     $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
     $mapmarkers = getSubmissions($problemId, $api_key);
 
-    
     ?>
   
 <!DOCTYPE html>
@@ -137,6 +136,7 @@
                 <div class="col-lg-8">
                     <h2 class="text-white mb-4"></h2>
                     <div id="googleMap" style="width:100%;height:650px;"></div>
+
                     <?php
                       echo '<script> 
                           var locations = [];
@@ -148,7 +148,6 @@
                       
                     function myMap() {
                         
-
                         var mapProp= {
                           center:new google.maps.LatLng(32.840694,-83.632401),
                           zoom:5,
