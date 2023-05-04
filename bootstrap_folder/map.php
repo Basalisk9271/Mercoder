@@ -173,13 +173,16 @@ if(!isset($_SESSION['loggedin'])) {
             </div>
             
             <script>
-                const probArr = [
-                                { title: "Problem 1", details: "Description for Problem 1" },
-                                { title: "Problem 2", details: "Description for Problem 2" },
-                                { title: "Problem 3", details: "Description for Problem 3" },
-                                { title: "Problem 4", details: "Description for Problem 4" },
-                                { title: "Problem 5", details: "Description for Problem 5" }
-                                ];
+                <?php 
+                        require_once('get_prob_titles.php');
+                        $probArr = getProbTitles();
+                        echo '<script> 
+                          var probArr = [];
+                          probArr = ' . $probArr . ';
+                          console.log(probArr);
+                        </script>';
+                    ?>
+
                 
                 var select = document.getElementById("dropDown");
                 
