@@ -178,6 +178,11 @@ $mapmarkers = getSubmissions(12, $api_key);
                  </select>
             </div>
 
+<?php 
+require_once 'get_prob_titles.php';
+echo getProbTitles();
+?>
+
             <script>
 // Define the function to populate the dropdown menu
                 function populateDropdown(dropdownId, options) {
