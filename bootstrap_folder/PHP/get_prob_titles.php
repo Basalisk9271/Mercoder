@@ -10,8 +10,9 @@ function getProblemTitles() {
         $titles[] = $row['title'];
     }
 
-    mysqli_close($con);
+    mysqli_close($con); 
 
-    return $titles;
+    $titles_json = json_encode($titles, JSON_NUMERIC_CHECK);
+    return $titles_json;
 }
 ?>
