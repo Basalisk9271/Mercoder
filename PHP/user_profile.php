@@ -31,8 +31,24 @@ if ($stmt->fetch()) {
 ?>
 
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>MERCODER</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+    </head>
 
 <style>
 body{
@@ -130,6 +146,38 @@ body{
 </style>
 </head>
 <body>
+    <!-- Navigation-->
+    <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                
+            <?php
+                    //if they are not logged in or have not been assigned a token
+                    if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == 0) { 
+                        echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/PHP/index.php">Login</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">All Problems</a></li>';
+                    } else {   //else they are logged in
+                        if($_SESSION['loggedin'] == 2){     //Teacher menu
+                            echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/logout.php">Logout</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">All Problems</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/problem_form.php">New Problem</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/user_profile.php">View Account</a></li>';
+                        } else {    //Student menu
+                            echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/logout.php">Logout</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">All Problems</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/user_profile.php">View Account</a></li>';
+                    }
+                    }
+                ?>
+            </ul>
+            
+        </nav>
 <div class="container mt-0">
     
     <div class="row d-flex justify-content-center">
@@ -166,7 +214,7 @@ body{
                     
                     <div class="buttons mt-5">
                         
-                    <a class="btn btn-good btn-xl" href="/mercoder/PHP/prob_landing.php">Edit Profile</a>
+                    <a class="btn btn-good btn-xl" href="/mercoder/PHP/update_form.php">Edit Profile</a>
                     <a class="btn btn-good btn-xl ms-3" href="/mercoder/index.php">Home</a>
                     </div>
                     
@@ -187,5 +235,6 @@ body{
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../js/scripts.js"></script>
 </body>
 </html>

@@ -43,12 +43,14 @@ require_once ('probQuery.php');
                             <li class="sidebar-nav-item"><a href="/mercoder/PHP/logout.php">Logout</a></li>
                             <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
                             <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">Problems</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/problem_form.php">New Problem</a></li>';
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/problem_form.php">New Problem</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/user_profile.php">View Account</a></li>';
                         } else {    //Student menu
                             echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
                             <li class="sidebar-nav-item"><a href="/mercoder/PHP/logout.php">Logout</a></li>
                             <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">Problems</a></li>';
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">Problems</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/user_profile.php">View Account</a></li>';
                     }
                     }
                 ?>
