@@ -159,8 +159,6 @@ if(!isset($_SESSION['loggedin'])) {
                     function redirectToProblem(problemId) {
                         window.location.href = `/mercoder/bootstrap_folder/PHP/problem_submit.php?id=${problemId}`;
                     }
-                        
-                    console.log('TEST');
 
                     </script>
         </section>
@@ -169,7 +167,7 @@ if(!isset($_SESSION['loggedin'])) {
         <section>
             <!-- Drop down menu that will show different map markers depending on which problem is chosen-->
             <!-- All map markers will be shown by default -->
-            <div align="center">
+            <div class=".dropdown">
                 <select id="dropDown" name="list" size="1"></select>
                 <span id="tag"></span>
             </div>
