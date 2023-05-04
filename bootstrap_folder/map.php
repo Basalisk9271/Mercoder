@@ -209,8 +209,14 @@ $mapmarkers = getSubmissions(5, $api_key);
                 }
             </script>
 
+                      <?php
+                      echo '<script> 
+                          var locations = [];
+                          locations = ' . $mapmarkers . ';
+                          console.log(locations);
+                        </script>';
+                      ?>
                 
-            
             <div class="container px-4 px-lg-5">
                        <div class="row gx-4 gx-lg-5 justify-content-center">
                            <div class="col-lg-8">
