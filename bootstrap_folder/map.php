@@ -173,9 +173,6 @@ $probArr = getProbTitles();
                 <span id="tag"></span>
             </div>
             
-
-            <script>
-
                     <?php 
                         echo '<script> 
                           var probArr = [];
@@ -184,7 +181,9 @@ $probArr = getProbTitles();
                         </script>';
                     ?>
 
-                 
+            <script>
+
+
 
                 var probArr = <?php echo json_encode($myArray); ?>;
 
