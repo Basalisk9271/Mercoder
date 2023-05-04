@@ -1,17 +1,15 @@
 <?php
 $probName = $_POST['probName'];
 require 'error_handling.php';
-
+require_once'database_op.php';
 
 echo 'Test';
 echo $probName;
 echo 'Test2';
 
-require_once'database_op.php';
 // Retrieve the information from the database
 $sql = "SELECT id FROM probs WHERE title = '" . $probName . "'";
-echo 'Test3';
-$result = mysqli_query($con, mysqli_real_escape_string($con, $sql));
+$result = mysqli_query($con, $sql);
 echo $result;
 echo 'Test4';
 if (!$result) {
