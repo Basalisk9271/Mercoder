@@ -191,7 +191,7 @@ $mapmarkers = getSubmissions(12, $api_key);
             <script>
 
                 var dropdown = document.getElementById("dropdown");
-
+/*
                 // Retrieve the problem titles from the PHP file and add them to the dropdown
                 fetch('get_prob_titles.php')
                     .then(response => response.json())
@@ -202,8 +202,8 @@ $mapmarkers = getSubmissions(12, $api_key);
                             dropdown.add(option);
                         });
                     });
-
-                    /*
+*/
+                    
                     
                 //Create and append options elements to the select element with the id "dropDown"
                 for (let i = 0; i < probArr.length; i++)
@@ -213,7 +213,7 @@ $mapmarkers = getSubmissions(12, $api_key);
                     option.text = probArr[i].title;
                     dropdown.appendChild(option);
                 }
-                */
+                
                 
                 tag = document.getElementById("tag");
 
