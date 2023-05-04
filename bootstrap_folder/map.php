@@ -6,7 +6,7 @@ if(!isset($_SESSION['loggedin'])) {
     $_SESSION['loggedin'] = 0;
     header('Location: index.php'); // don't redirect same page
 } 
-require_once('get_prob_titles.php');
+require_once 'PHP/get_prob_titles.php';
 $row = getProbTitles();
 ?>
 
