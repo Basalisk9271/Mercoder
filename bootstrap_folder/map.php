@@ -184,9 +184,6 @@ $probArr = getProbTitles();
             <script>
 
 
-
-                var probArr = <?php echo json_encode($myArray); ?>;
-
                 var select = document.getElementById("dropDown");
                 
                 //Create and append options elements to the select element with the id "dropDown"
