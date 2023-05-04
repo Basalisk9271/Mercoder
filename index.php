@@ -6,7 +6,12 @@ if(!isset($_SESSION['loggedin'])) {
     $_SESSION['loggedin'] = 0;
     header('Location: index.php'); // don't redirect same page
 } 
-
+    //Error catching
+    require_once 'PHP/error_handling.php';
+    require_once 'PHP/get_all_markers.php';
+    //Geocode API Key for function params
+    $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
+    $mapmarkers = getAllMarkers($api_key);
 ?>
 
 <!DOCTYPE html>
@@ -163,6 +168,74 @@ if(!isset($_SESSION['loggedin'])) {
                     }
                         
                     </script>
+        </section>
+        
+        <!-- Map with Markers -->
+        <section>              
+               
+                <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 justify-content-center">
+                            <div class="col-lg-8">
+                                <h2 class="text-white mb-4"></h2>
+                                <div id="googleMap" style="width:100%;height:650px;"></div>
+            <?php
+                echo '<script> 
+                    var locations = [];
+                    locations = ' . $mapmarkers . ';
+                    console.log(locations);
+                </script>';
+            ?>
+
+                <script>
+                              
+                    function myMap() {
+                        
+                        var mapProp= {
+                          center:new google.maps.LatLng(32.840694,-83.632401),
+                          zoom:5,
+                        };
+                        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+                        var i, myLatLng, message, marker;
+                        if (locations.length !== 0) {
+
+                          for (var i = 0; i < locations.length; i++) {
+                          console.log(locations[i].location);
+                          console.log(locations[i].lat);
+                          console.log(locations[i].lng);
+                          }
+
+                            // Function that runs the amount of times that there are items in the array
+                            // This allows each marker to get it's own listeniers as well as be plotted on the map.  
+                            locations.forEach(function(location, index) {
+                                myLatLng = {lat: location.lat, lng:location.lng}
+                                marker = new google.maps.Marker({
+                                    position: myLatLng, 
+                                    map: map, 
+                                    title:"Location " + (index + 1)
+                                });
+
+                                var infoWindow = new google.maps.InfoWindow({
+                                    content:location.location
+                                });
+                                
+                                var markerListener = function() {
+                                    infoWindow.open(map, this);
+                                    var pos = map.getZoom();
+                                    map.setZoom(12);
+                                    map.setCenter(this.getPosition());
+                                    window.setTimeout(function() {
+                                        map.setZoom(pos);
+                                    },5000);
+                                };
+                                marker.addListener('click', markerListener);
+                                marker.setMap(map);
+                            });
+                        }
+                    }
+                </script>  
+            </div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfhDoPuP4Hkf_nis_oKqwol7Tk5TuzJA8&callback=myMap"></script>
         </section>
         
         <!-- Footer-->
