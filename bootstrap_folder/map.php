@@ -213,7 +213,7 @@ $mapmarkers = getSubmissions(12, $api_key);
                 for (let i = 0; i < probArr.length; i++)
                 {
                     var option = document.createElement("option");
-                    option.value = probArr[i].details;
+                    //option.value = probArr[i].details;
                     option.text = probArr[i].title;
                     dropdown.appendChild(option);
                 }
