@@ -1,3 +1,35 @@
+<?php
+session_start();
+$username = $_SESSION['username'];
+require_once 'database_op.php';
+//gathers details for user profile
+$sql = "SELECT city, school
+        FROM (
+          SELECT city, school
+          FROM student_login
+          WHERE username = ?
+          UNION
+          SELECT city, school
+          FROM teacher_login
+          WHERE username = ?
+        ) combined_login
+        LIMIT 1";
+
+$stmt = $con->prepare($sql);
+$stmt->bind_param("ss", $username, $username);
+// Execute the statement
+$stmt->execute();
+
+// Bind the result to variables
+$stmt->bind_result($city, $school);
+// Fetch the result
+if ($stmt->fetch()) {
+    // The city and school variables are bound here
+  } else {
+    // No result found
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,19 +143,31 @@ body{
                 </div>
                 
                 <div class="text-center mt-3">
-                    <h5 class="mt-0 mb-0" style="font-size:25px;">Username</h5>
-                    <div class="px-2 mt-2">
 
-                        <span style="font-size:20px; -top:5px;">Student/Teacher</span>
-         
-                        <p class="fonts mt-2">School</p>
-                        <p class="fonts">City</p>
-                    
+                <?php
+                    if(isset($_SESSION['username'])) { 
+                        echo '<h5 class="mt-0 mb-0" style="font-size:25px;">'. $_SESSION['username'] .'</h5>
+                        <div class="px-2 mt-2">';
+                    }
+                    if($_SESSION['loggedin'] == 2){     //Teacher menu
+                        echo '<span style="font-size:20px; -top:5px;">Teacher</span>';
+                    } else {    //Student menu
+                            echo '<span style="font-size:20px; -top:5px;">Student</span>';
+                    }
+
+                    if (!empty($school)){
+
+                        echo '<p class="fonts mt-2">' . $school . '</p>';
+                    }
+                    echo '<p class="fonts mt-2">' . $city . '</p>';
+
+                    ?>
                     </div>
                     
                     <div class="buttons mt-5">
                         
-                        <button class="btn btn-outline-primary px-4">Back</button>
+                    <a class="btn btn-good btn-xl" href="/mercoder/PHP/prob_landing.php">Edit Profile</a>
+                    <a class="btn btn-good btn-xl ms-3" href="/mercoder/index.php">Home</a>
                     </div>
                     
                     
