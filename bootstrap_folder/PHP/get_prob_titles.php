@@ -12,6 +12,6 @@ function getProbTitles() {
 
     mysqli_close($con);
 
-    return json_encode($rows, JSON_NUMERIC_CHECK);
+    return json_encode($rows);
 }
 ?>
