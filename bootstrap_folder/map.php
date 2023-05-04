@@ -173,6 +173,20 @@ if(!isset($_SESSION['loggedin'])) {
             </div>
             
             <script>
+
+                    <?php 
+                        require_once('get_prob_titles.php');
+
+                        $probArr = getProbTitles();
+
+                        echo '<script> 
+                          var probArr = [];
+                          probArr = ' . $probArr . ';
+                          console.log(probArr);
+                        </script>';
+                    ?>
+
+                    /*
                 const probArr = [
                                 { title: "Problem 1", details: "Description for Problem 1" },
                                 { title: "Problem 2", details: "Description for Problem 2" },
@@ -180,14 +194,16 @@ if(!isset($_SESSION['loggedin'])) {
                                 { title: "Problem 4", details: "Description for Problem 4" },
                                 { title: "Problem 5", details: "Description for Problem 5" }
                                 ];
+                    */
                 
+
                 var select = document.getElementById("dropDown");
                 
                 //Create and append options elements to the select element with the id "dropDown"
                 for (let i = 0; i < probArr.length; i++)
                 {
                     var option = document.createElement("option");
-                    option.value = probArr[i].details;
+                    //option.value = probArr[i].details;
                     option.text = probArr[i].title;
                     select.appendChild(option);
                 }
