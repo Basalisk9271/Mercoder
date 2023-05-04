@@ -180,7 +180,8 @@ $mapmarkers = getSubmissions(12, $api_key);
 
 <?php 
 require_once 'get_prob_titles.php';
-echo getProbTitles();
+$probArr =  getProbTitles();
+echo $probArr;
 ?>
 
             <script>
