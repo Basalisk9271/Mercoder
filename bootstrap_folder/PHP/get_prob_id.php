@@ -1,5 +1,8 @@
 <?php
     $probName = $_POST['probName'];
+
+    echo $probName;
+    
     require('database_op.php');
     // Retrieve the information from the database
     $sql = "SELECT id FROM probs WHERE title = '" . $probName . "'";
