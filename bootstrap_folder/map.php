@@ -223,7 +223,7 @@ if(!isset($_SESSION['loggedin'])) {
 
                     // Create a FormData object and add the variable to it
                     var formData = new FormData();
-                    formData.append("myVar", probName);
+                    formData.append("probName", probName);
 
                     // Set the request method and URL
                     xhr.open("POST", url, true);
