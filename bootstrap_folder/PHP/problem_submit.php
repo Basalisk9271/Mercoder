@@ -3,6 +3,14 @@
     $problemId = $_GET['id'];
     require_once 'prob_pop.php';
     $row = getProbDetails($problemId);
+    require_once 'sub_pop.php';
+    $table = getSubs($problemId);
+    require_once('fill_locations.php');
+    //Geocode API Key for function params
+    $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
+    $mapmarkers = getSubmissions($problemId, $api_key);
+
+    
     ?>
   
 <!DOCTYPE html>
@@ -129,31 +137,74 @@
                 <div class="col-lg-8">
                     <h2 class="text-white mb-4"></h2>
                     <div id="googleMap" style="width:100%;height:650px;"></div>
-                    <script>
+                    <?php
+                      echo '<script> 
+                          var locations = [];
+                          locations = ' . $mapmarkers . ';
+                          console.log(locations);
+                        </script>';
+                      ?>
+                      <script>
+                      
+                  
+
                     function myMap() {
-                    var mapProp= {
-                      center:new google.maps.LatLng(33.264080,-82.763100),
-                      zoom:8,
-                    };
-                    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                        
 
-                    //make const
+                        var mapProp= {
+                          center:new google.maps.LatLng(32.840694,-83.632401),
+                          zoom:5,
+                        };
+                        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-                    const lat = [32.832102];
-                    const lang = [-83.648181];
-                    const info = ["Mercer University:2022-2024"]
+                        var i, myLatLng, message, marker;
+                        if (locations.length !== 0) {
 
-                    for (let i = 0; i < lat.length; i++)
-                      {
-                        var marker = new google.maps.Marker({position: new google.maps.LatLng(lat[i],lang[i])});
-                        marker.setMap(map);
-                        var infowindow = new google.maps.InfoWindow({content:info[i]});
-                        infowindow.open(map,marker);
-                      }
-                    }
+                          for (var i = 0; i < locations.length; i++) {
+                          console.log(locations[i].location);
+                          console.log(locations[i].lat);
+                          console.log(locations[i].lng);
+                          }
+
+                            // Function that runs the amount of times that there are items in the array
+                            // This allows each marker to get it's own listeniers as well as be plotted on the map.  
+                            locations.forEach(function(location, index) {
+                                myLatLng = {lat: location.lat, lng:location.lng}
+                                marker = new google.maps.Marker({
+                                    position: myLatLng, 
+                                    map: map, 
+                                    title:"Location " + (index + 1)
+                                });
+
+                               
+                                var infoWindow = new google.maps.InfoWindow({
+                                    content:location.location
+                                });
+                                
+                                var markerListener = function() {
+                                    infoWindow.open(map, this);
+                                    var pos = map.getZoom();
+                                    map.setZoom(12);
+                                    map.setCenter(this.getPosition());
+                                    window.setTimeout(function() {
+                                        map.setZoom(pos);
+                                    },5000);
+                                };
+                                
+
+                                marker.addListener('click', markerListener);
+                                
+                                marker.setMap(map);
+                            });
+                        }
+
+                        
+                        }
                     </script>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfhDoPuP4Hkf_nis_oKqwol7Tk5TuzJA8&callback=myMap"></script>
+                    
         </div>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXR2EwI9oG9iB6F-M8AQDtYcT7a6KHyxg&callback=myMap"></script>
    </section>
 
   <?php
@@ -175,19 +226,7 @@
         </div>';
         }
       if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 2){     //Teacher View
-        include_once('add_submission.php');
-              echo '<div class="row justify-content-center">
-              <div class="col-lg-8">
-                  <form action="add_submission.php" method="post">
-                      <div class="form-floating mb-3">
-                          <input class="form-control" id="link" name="link" type="text" placeholder="Link" required />
-                          <label form="link">Your Answer / Link</label>
-                      </div>
-                      <input type="hidden" name="problemId" value="' . $problemId . '">
-                      <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Submit</button></div>
-                  </form>
-              </div>
-            </div>';
+          echo $table;
             }
   ?>
   </main>
