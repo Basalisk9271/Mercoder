@@ -6,6 +6,7 @@ if(!isset($_SESSION['loggedin'])) {
     $_SESSION['loggedin'] = 0;
     header('Location: index.php'); // don't redirect same page
 } 
+require_once('get_prob_titles.php');
 ?>
 
 <!DOCTYPE html>
@@ -174,6 +175,10 @@ if(!isset($_SESSION['loggedin'])) {
 
             <script>
 
+                 
+
+                var probArr = <?php echo json_encode($myArray); ?>;
+
                 var select = document.getElementById("dropDown");
                 
                 //Create and append options elements to the select element with the id "dropDown"
@@ -193,7 +198,8 @@ if(!isset($_SESSION['loggedin'])) {
                    tag.innerHTML = select.value;
                 }
             </script>
-            
+
+                
             
             <div class="container px-4 px-lg-5">
                        <div class="row gx-4 gx-lg-5 justify-content-center">
