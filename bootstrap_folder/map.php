@@ -163,6 +163,8 @@ if(!isset($_SESSION['loggedin'])) {
                     </script>
         </section>
         
+        
+
         <!-- Map and Dropdown Menu-->
         <section>
             <!-- Drop down menu that will show different map markers depending on which problem is chosen-->

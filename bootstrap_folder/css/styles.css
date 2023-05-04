@@ -11052,7 +11052,7 @@ footer.footer .social-link:hover {
   top: 0;
   bottom: 0;
   z-index: 1;
-  //border: 5px solid #000000;
+  border: 5px solid #000000;
 }
 .portfolio-item .caption .caption-content {
   color: #fff;
