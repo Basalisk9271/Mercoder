@@ -1,5 +1,6 @@
 <?php
 
+    require 'error_handling.php';
     echo "TESTING ";
     $probName = $_POST['probName'];
     echo  $probName ;
