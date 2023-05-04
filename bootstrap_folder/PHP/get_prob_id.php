@@ -3,10 +3,15 @@ $probName = $_POST['probName'];
 require 'error_handling.php';
 require 'database_op.php';
 
+echo 'Test';
+echo $probName;
+echo 'Test2';
+
 // Retrieve the information from the database
 $sql = "SELECT id FROM probs WHERE title = '" . $probName . "'";
+echo 'Test3';
 $result = mysqli_query($con, mysqli_real_escape_string($con, $sql));
-
+echo 'Test4';
 if (!$result) {
     printf("Error: %s\n", mysqli_error($con));
     exit();
