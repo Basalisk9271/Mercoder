@@ -37,22 +37,24 @@ if(!isset($_SESSION['loggedin'])) {
             <?php
                     //if they are not logged in or have not been assigned a token
                     if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == 0) { 
-                        echo '<li class="sidebar-brand"><a href="/mercoder/bootstrap_folder/index.php">Home</a></li>
-                        <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/index.php">Login</a></li>
-                        <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/index.php#about">About</a></li>
-                        <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/prob_landing.php">All Problems</a></li>';
+                        echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/PHP/index.php">Login</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                        <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">All Problems</a></li>';
                     } else {   //else they are logged in
                         if($_SESSION['loggedin'] == 2){     //Teacher menu
-                            echo '<li class="sidebar-brand"><a href="/mercoder/bootstrap_folder/index.php">Home</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/logout.php">Logout</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/index.php#about">About</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/prob_landing.php">All Problems</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/problem_form.php">New Problem</a></li>';
+                            echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/logout.php">Logout</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">All Problems</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/problem_form.php">New Problem</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/user_profile.php">View Account</a></li>';
                         } else {    //Student menu
-                            echo '<li class="sidebar-brand"><a href="/mercoder/bootstrap_folder/index.php">Home</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/logout.php">Logout</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/index.php#about">About</a></li>
-                            <li class="sidebar-nav-item"><a href="/mercoder/bootstrap_folder/PHP/prob_landing.php">All Problems</a></li>';
+                            echo '<li class="sidebar-brand"><a href="/mercoder/index.php">Home</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/logout.php">Logout</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/index.php#about">About</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/prob_landing.php">All Problems</a></li>
+                            <li class="sidebar-nav-item"><a href="/mercoder/PHP/user_profile.php">View Account</a></li>';
                     }
                     }
                 ?>
@@ -68,17 +70,17 @@ if(!isset($_SESSION['loggedin'])) {
                         //if they are not logged in or have not been assigned a token
                         if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == 0) { 
                             echo '<h3 class="mb-5"><em> </em></h3>
-                            <a class="btn btn-primary btn-xl" href="/mercoder/bootstrap_folder/PHP/index.php">Login</a>';
+                            <a class="btn btn-primary btn-xl" href="/mercoder/PHP/index.php">Login</a>';
                         } else {   //else they are logged in
                             if($_SESSION['loggedin'] == 2){     //Teacher view
                                 echo '<h1 class="mt-5" style="font-family: Rufina ">Welcome, ' . $_SESSION['username'] . ' </h1>
                                 <h3 class="mb-5"><em> </em></h3>
-                                <a class="btn btn-primary btn-xl" href="/mercoder/bootstrap_folder/PHP/prob_landing.php">View Problems</a>
-                                <a class="btn btn-secondary btn-xl ms-3" href="/mercoder/bootstrap_folder/PHP/problem_form.php">New Problem</a>';
+                                <a class="btn btn-primary btn-xl" href="/mercoder/PHP/prob_landing.php">View Problems</a>
+                                <a class="btn btn-secondary btn-xl ms-3" href="/mercoder/PHP/problem_form.php">New Problem</a>';
                             } else {    //Student view
                                 echo '<h1 class="mt-5" style="font-family: Rufina ">Welcome, ' . $_SESSION['username'] . ' </h1>
                                 <h3 class="mb-5"><em> </em></h3>
-                                <a class="btn btn-primary btn-xl" href="/mercoder/bootstrap_folder/PHP/prob_landing.php">View Problems</a>';
+                                <a class="btn btn-primary btn-xl" href="/mercoder/PHP/prob_landing.php">View Problems</a>';
                         }
                         }
                     ?>
@@ -157,7 +159,7 @@ if(!isset($_SESSION['loggedin'])) {
                     }
 
                     function redirectToProblem(problemId) {
-                        window.location.href = `/mercoder/bootstrap_folder/PHP/problem_submit.php?id=${problemId}`;
+                        window.location.href = `/mercoder/PHP/problem_submit.php?id=${problemId}`;
                     }
                         
                     </script>
