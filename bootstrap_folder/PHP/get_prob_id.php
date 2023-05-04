@@ -11,6 +11,7 @@ echo 'Test2';
 $sql = "SELECT id FROM probs WHERE title = '" . $probName . "'";
 echo 'Test3';
 $result = mysqli_query($con, mysqli_real_escape_string($con, $sql));
+echo $result;
 echo 'Test4';
 if (!$result) {
     printf("Error: %s\n", mysqli_error($con));
