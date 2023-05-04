@@ -193,26 +193,25 @@ $mapmarkers = getSubmissions(12, $api_key);
                         </script>';
                     ?>
             <script>
-                // Define the function to populate the dropdown menu
-                function populateDropdown(dropdownId, options) {
-                    var dropdown = document.getElementById(dropdownId);
-                    options.forEach(function(option) {
-                        var optionElement = document.createElement("option");
-                        optionElement.text = option;
-                        dropdown.add(optionElement);
-                    });
-                }
-
-                // Use AJAX to call the getProbTitles function and populate the dropdown menu
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
+                        // Parse the JSON array of titles
                         var titles = JSON.parse(this.responseText);
-                        populateDropdown("probDropdown", titles);
+                        
+                        // Get the select element
+                        var select = document.getElementById("probdropdown");
+                        
+                        // Populate the select element with the options
+                        for (var i = 0; i < titles.length; i++) {
+                            var option = document.createElement("option");
+                            option.text = titles[i];
+                            select.add(option);
+                        }
                     }
                 };
-                xmlhttp.open("GET", "get_prob_titles.php", true);
-                xmlhttp.send();
+                xhr.open("GET", "get_prob_titles.php", true);
+                xhr.send();
 
 
 
