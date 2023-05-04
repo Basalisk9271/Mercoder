@@ -174,15 +174,19 @@ if(!isset($_SESSION['loggedin'])) {
             
             <script>
 
+                    console.log('TEST1');
+
                     <?php 
                         require_once('get_prob_titles.php');
                         $probArr = getProbTitles();
                         echo '<script> 
                           var probArr = [];
                           probArr = ' . $probArr . ';
-                          
+                          console.log(probArr);
                         </script>';
                     ?>
+
+                    console.log('TEST2');
 
                     /*
                 const probArr = [
@@ -224,7 +228,7 @@ if(!isset($_SESSION['loggedin'])) {
                     $probID = mysqli_fetch_assoc($result);
                 ?>
 
-
+                console.log('TEST3');
 
             </script>
             
