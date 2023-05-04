@@ -160,10 +160,10 @@ if(!isset($_SESSION['loggedin'])) {
                         window.location.href = `/mercoder/bootstrap_folder/PHP/problem_submit.php?id=${problemId}`;
                     }
                         
+                    console.log('TEST');
+
                     </script>
         </section>
-        
-        
 
         <!-- Map and Dropdown Menu-->
         <section>
