@@ -216,6 +216,8 @@ if(!isset($_SESSION['loggedin'])) {
                         // Create an XMLHttpRequest object
                     var xhr = new XMLHttpRequest();
 
+                    console.log(probName);
+
                     // Set the URL of the PHP script
                     var url = "PHP/get_prob_id.php";
 
