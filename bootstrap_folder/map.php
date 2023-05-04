@@ -12,8 +12,8 @@ if(!isset($_SESSION['loggedin'])) {
     ini_set("display_startup_errors", 1);
     error_reporting(E_ALL);
     require_once 'PHP/get_prob_titles.php';
-//    $probArr =  getProbTitles();
-//    echo $probArr;
+    $probArr =  getProbTitles();
+    echo $probArr;
 
 require_once 'PHP/fill_locations.php';
 //Geocode API Key for function params
@@ -184,8 +184,17 @@ $mapmarkers = getSubmissions(12, $api_key);
                 <span id="tag"></span>
             </div>
             
+            <?php
+                echo '<script> 
+                    var probArr = [];
+                    probArr = ' . $probArr . ';
+                    console.log(probArr);
+                </script>';
+            ?>
+
             <script>
-                    
+
+                    /*
                 const probArr = [
                                 { title: "Problem 1", details: "Description for Problem 1" },
                                 { title: "Problem 2", details: "Description for Problem 2" },
@@ -193,7 +202,7 @@ $mapmarkers = getSubmissions(12, $api_key);
                                 { title: "Problem 4", details: "Description for Problem 4" },
                                 { title: "Problem 5", details: "Description for Problem 5" }
                                 ];
-                    
+                    */
                 
 
                 var select = document.getElementById("dropDown");
