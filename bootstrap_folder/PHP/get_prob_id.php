@@ -1,19 +1,27 @@
 <?php
+$probName = $_POST['probName'];
+require 'error_handling.php';
+require 'database_op.php';
 
-    require 'error_handling.php';
-    echo "TESTING ";
-    $probName = $_POST['probName'];
-    echo  $probName ;
-    require('database_op.php');
-    // Retrieve the information from the database
-    $sql = "SELECT id FROM probs WHERE title = '" . $probName . "'";
-    $result = mysqli_query($con, mysqli_real_escape_string($con, $sql));
-    $row = mysqli_fetch_assoc($result);
+// Retrieve the information from the database
+$sql = "SELECT id FROM probs WHERE title = '" . $probName . "'";
+$result = mysqli_query($con, mysqli_real_escape_string($con, $sql));
 
-    echo $row;
-    $probId = (int) $row;
+if (!$result) {
+    printf("Error: %s\n", mysqli_error($con));
+    exit();
+}
 
-    mysqli_close($con);
+$rows = array();
+while ($row = mysqli_fetch_assoc($result)) {
+    $rows[] = $row['id'];
+}
 
-    echo $probId;
+mysqli_close($con);
+echo $rows[0];
 ?>
+
+
+
+
+
