@@ -186,35 +186,18 @@ $mapmarkers = getSubmissions(12, $api_key);
                         require_once 'PHP/get_prob_titles.php';
                         $probArr =  getProbTitles();
                         echo $probArr;
-                        echo '<script> 
-                          var probArr = [];
-                          probArr = ' . $probArr . ';
-                          console.log(probArr);
-                        </script>';
                     ?>
             <script>
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        // Parse the JSON array of titles
-                        var titles = JSON.parse(this.responseText);
-                        
-                        // Get the select element
-                        var select = document.getElementById("probdropdown");
-                        
-                        // Populate the select element with the options
-                        for (var i = 0; i < titles.length; i++) {
-                            var option = document.createElement("option");
-                            option.text = titles[i];
-                            select.add(option);
-                        }
-                    }
-                };
-                xhr.open("GET", "get_prob_titles.php", true);
-                xhr.send();
+                var titles_json = '<?php echo $probArr; ?>';
+                var titles = JSON.parse(titles_json);
+                var dropdown = document.getElementById("dropdown");
 
-
-
+                for (var i = 0; i < titles.length; i++) {
+                var option = document.createElement("option");
+                option.value = titles[i];
+                option.text = titles[i];
+                dropdown.add(option);
+                }
 
 
 /*
