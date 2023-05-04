@@ -6,10 +6,6 @@ if(!isset($_SESSION['loggedin'])) {
     $_SESSION['loggedin'] = 0;
     header('Location: index.php'); // don't redirect same page
 } 
-
-require_once 'get_prob_titles.php';
-$probArr = getProbTitles();
-
 ?>
 
 <!DOCTYPE html>
@@ -175,16 +171,9 @@ $probArr = getProbTitles();
                 <span id="tag"></span>
             </div>
             
-            
-                
-           
 
             <script>
 
-
-                
-
-                
                 var select = document.getElementById("dropDown");
                 
                 //Create and append options elements to the select element with the id "dropDown"
