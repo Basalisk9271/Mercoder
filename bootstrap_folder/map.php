@@ -184,11 +184,14 @@ $mapmarkers = getSubmissions(12, $api_key);
                 <span id="tag"></span>
             </div>
             
-           
+            <?php
+                echo '<script> 
+                    var probArr = [];
+                    probArr = ' . $probArr . ';
+                </script>';
+            ?>
 
             <script>
-
-                    var myArray = JSON.parse('<?php echo $probArr; ?>');
 
                     console.log('TEST');
                     console.log(probArr);
