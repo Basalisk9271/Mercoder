@@ -12,8 +12,8 @@ if(!isset($_SESSION['loggedin'])) {
     ini_set("display_startup_errors", 1);
     error_reporting(E_ALL);
     require_once 'PHP/get_prob_titles.php';
-    $probArr =  getProbTitles();
-    echo $probArr;
+//    $probArr =  getProbTitles();
+//    echo $probArr;
 
 require_once 'PHP/fill_locations.php';
 //Geocode API Key for function params
@@ -180,18 +180,51 @@ $mapmarkers = getSubmissions(12, $api_key);
             <!-- Drop down menu that will show different map markers depending on which problem is chosen-->
             <!-- All map markers will be shown by default -->
             <div align="center">
-                <select id="probDropdown">
-                     <option value="">--Select a problem--</option>
-                 </select>
+                <select id="dropDown" name="list" size="1"></select>
+                <span id="tag"></span>
             </div>
-
+            
             <script>
+                    
+                const probArr = [
+                                { title: "Problem 1", details: "Description for Problem 1" },
+                                { title: "Problem 2", details: "Description for Problem 2" },
+                                { title: "Problem 3", details: "Description for Problem 3" },
+                                { title: "Problem 4", details: "Description for Problem 4" },
+                                { title: "Problem 5", details: "Description for Problem 5" }
+                                ];
+                    
+                
+
+                var select = document.getElementById("dropDown");
+                
+                //Create and append options elements to the select element with the id "dropDown"
+                for (let i = 0; i < probArr.length; i++)
+                {
+                    var option = document.createElement("option");
+                    //option.value = probArr[i].details;
+                    option.text = probArr[i].title;
+                    select.appendChild(option);
+                }
+                
+                tag = document.getElementById("tag");
+
+                //Function that changes the content of the tag
+                select.onchange = function()
+                {
+                   tag.innerHTML = select.value;
+                }
+            </script>
+
+
+
+/*
                 var titles_json = '<?php echo $probArr; ?>';
 
                 console.log('TEST');
                 console.log(titles_json);
                 console.log('TEST');
-                
+
                 var titles = JSON.parse(titles_json);
                 var dropdown = document.getElementById("dropdown");
 
@@ -202,7 +235,7 @@ $mapmarkers = getSubmissions(12, $api_key);
                 dropdown.add(option);
                 }
 
-
+*/
 /*
                 var dropdown = document.getElementById("dropdown");
 
