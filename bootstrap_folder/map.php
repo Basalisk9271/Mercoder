@@ -193,6 +193,9 @@ $mapmarkers = getSubmissions(12, $api_key);
             ?>
 
             <script>
+                    console.log('TEST');
+                    console.log(probArr);
+                    console.log('TEST');
 
                     /*
                 const probArr = [
