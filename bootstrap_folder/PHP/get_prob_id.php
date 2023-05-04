@@ -1,17 +1,14 @@
 <?php
-function getProbID($probName) {
+    $probName = $_POST['probName'];
     require('database_op.php');
     // Retrieve the information from the database
     $sql = "SELECT probid FROM probs WHERE title = '" . $probName . "'";
     $result = mysqli_query($con, mysqli_real_escape_string($con, $sql));
-    $rows = array();
+    $row = mysqli_fetch_assoc($result);
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row['title'];
-    }
+    $probId = (int) $row['probid'];
 
     mysqli_close($con);
-
-    return json_encode($rows);
-}
+    
+    echo $probId;
 ?>

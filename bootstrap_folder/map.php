@@ -15,10 +15,10 @@ if(!isset($_SESSION['loggedin'])) {
     $probArr = getProbTitles();
     echo $probArr;
 
-require_once 'PHP/fill_locations.php';
-//Geocode API Key for function params
-$api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
-$mapmarkers = getSubmissions(12, $api_key);
+    require_once 'PHP/fill_locations.php';
+    //Geocode API Key for function params
+    $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
+    $mapmarkers = getSubmissions(12, $api_key);
 ?>
 
 <!DOCTYPE html>
@@ -192,20 +192,6 @@ $mapmarkers = getSubmissions(12, $api_key);
             ?>
 
             <script>
-
-                    console.log('TEST');
-                    console.log(probArr);
-                    console.log('TEST');
-
-                    /*
-                const probArr = [
-                                { title: "Problem 1", details: "Description for Problem 1" },
-                                { title: "Problem 2", details: "Description for Problem 2" },
-                                { title: "Problem 3", details: "Description for Problem 3" },
-                                { title: "Problem 4", details: "Description for Problem 4" },
-                                { title: "Problem 5", details: "Description for Problem 5" }
-                                ];
-                    */
                 
                 var select = document.getElementById("dropDown");
                 
@@ -227,15 +213,44 @@ $mapmarkers = getSubmissions(12, $api_key);
                    probName = select.value;
                    tag.innerHTML = select.value;
                 }
+
+                // Create an XMLHttpRequest object
+                var xhr = new XMLHttpRequest();
+
+                // Set the URL of the PHP script
+                var url = "PHP/get_prob_id.php";
+
+                // Create a FormData object and add the variable to it
+                var formData = new FormData();
+                formData.append("myVar", probName);
+
+                // Set the request method and URL
+                xhr.open("POST", url, true);
+
+                // Send the FormData object as the request body
+                xhr.send(formData);
+
+                // Define a function to handle the response
+                xhr.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        // Get the response text
+                        var response = this.responseText;
+                        //THIS IS WHERE THE RETURN WILL BE
+                        console.log(response);
+                    }
+                };
+
             </script>
 
-                      <?php
+                      
+
+                    <?php
                       echo '<script> 
                           var locations = [];
                           locations = ' . $mapmarkers . ';
                           console.log(locations);
                         </script>';
-                      ?>
+                    ?>
                 
             <div class="container px-4 px-lg-5">
                        <div class="row gx-4 gx-lg-5 justify-content-center">
