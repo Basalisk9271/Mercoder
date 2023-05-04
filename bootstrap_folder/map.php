@@ -7,6 +7,9 @@ if(!isset($_SESSION['loggedin'])) {
     header('Location: index.php'); // don't redirect same page
 } 
 
+require_once('get_prob_titles.php');
+$probArr = getProbTitles();
+
 ?>
 
 <!DOCTYPE html>
@@ -173,14 +176,14 @@ if(!isset($_SESSION['loggedin'])) {
             </div>
             
             <?php 
-                        require_once('get_prob_titles.php');
-                        $probArr = getProbTitles();
-                        echo '<script> 
-                          var probArr = [];
-                          probArr = ' . $probArr . ';
-                          console.log(probArr);
-                        </script>';
-                    ?>
+                echo '<script> 
+                var probArr = [];
+                probArr = ' . $probArr . ';
+                console.log(probArr);
+                </script>';
+            ?>
+                
+           
 
             <script>
 
