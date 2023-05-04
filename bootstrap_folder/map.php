@@ -172,8 +172,7 @@ if(!isset($_SESSION['loggedin'])) {
                 <span id="tag"></span>
             </div>
             
-            <script>
-                <?php 
+            <?php 
                         require_once('get_prob_titles.php');
                         $probArr = getProbTitles();
                         echo '<script> 
@@ -182,6 +181,11 @@ if(!isset($_SESSION['loggedin'])) {
                           console.log(probArr);
                         </script>';
                     ?>
+
+            <script>
+
+
+                
 
                 
                 var select = document.getElementById("dropDown");
