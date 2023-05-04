@@ -12,7 +12,7 @@ if(!isset($_SESSION['loggedin'])) {
     ini_set("display_startup_errors", 1);
     error_reporting(E_ALL);
     require_once 'PHP/get_prob_titles.php';
-    $probArr =  getProbTitles();
+    $probArr = getProbTitles();
     echo $probArr;
 
 require_once 'PHP/fill_locations.php';
@@ -204,14 +204,13 @@ $mapmarkers = getSubmissions(12, $api_key);
                                 ];
                     */
                 
-
                 var select = document.getElementById("dropDown");
                 
                 //Create and append options elements to the select element with the id "dropDown"
                 for (let i = 0; i < probArr.length; i++)
                 {
                     var option = document.createElement("option");
-                    //option.value = probArr[i].details;
+                    option.value = probArr[i].title;
                     option.text = probArr[i].title;
                     select.appendChild(option);
                 }
@@ -223,62 +222,6 @@ $mapmarkers = getSubmissions(12, $api_key);
                 {
                    tag.innerHTML = select.value;
                 }
-            </script>
-
-
-<script>
-/*
-                
-
-                console.log('TEST');
-                console.log(titles_json);
-                console.log('TEST');
-
-                var titles = JSON.parse(titles_json);
-                var dropdown = document.getElementById("dropdown");
-
-                for (var i = 0; i < titles.length; i++) {
-                var option = document.createElement("option");
-                option.value = titles[i];
-                option.text = titles[i];
-                dropdown.add(option);
-                }
-
-*/
-/*
-                var dropdown = document.getElementById("dropdown");
-
-                // Retrieve the problem titles from the PHP file and add them to the dropdown
-                fetch('get_prob_titles.php')
-                    .then(response => response.json())
-                    .then(titles => {
-                        titles.forEach(title => {
-                            var option = document.createElement("option");
-                            option.text = title;
-                            dropdown.add(option);
-                        });
-                    });
-*/
-                    
-                    /*
-                //Create and append options elements to the select element with the id "dropDown"
-                for (let i = 0; i < probArr.length; i++)
-                {
-                    var option = document.createElement("option");
-                    //option.value = probArr[i].details;
-                    option.text = probArr[i].title;
-                    dropdown.appendChild(option);
-                }
-                
-                
-                tag = document.getElementById("tag");
-
-                //Function that changes the content of the tag
-                dropdown.onchange = function()
-                {
-                   tag.innerHTML = select.value;
-                }
-                */
             </script>
 
                       <?php

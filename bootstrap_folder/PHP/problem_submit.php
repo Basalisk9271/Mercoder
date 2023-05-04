@@ -146,8 +146,6 @@
                       ?>
                       <script>
                       
-                  
-
                     function myMap() {
                         
 
