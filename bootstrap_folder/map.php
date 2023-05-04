@@ -175,13 +175,7 @@ $probArr = getProbTitles();
                 <span id="tag"></span>
             </div>
             
-            <?php 
-                echo '<script> 
-                var probArr = [];
-                probArr = ' . $probArr . ';
-                console.log(probArr);
-                </script>';
-            ?>
+            
                 
            
 
