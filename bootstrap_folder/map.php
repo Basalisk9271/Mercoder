@@ -7,12 +7,13 @@ if(!isset($_SESSION['loggedin'])) {
     header('Location: index.php'); // don't redirect same page
 } 
 require_once 'PHP/get_prob_titles.php';
+echo 'Test 1';
 $probArr = getProbTitles();
 
-echo 'Test Feature';
+echo 'Test 2';
 echo getProbTitles();
 
-
+echo 'Test 3';
 require_once 'PHP/fill_locations.php';
 //Geocode API Key for function params
 $api_key = 'AIzaSyAV2jXEkwfKvpehW3TGhQMu8FXQrZ16sNQ';
