@@ -8,7 +8,7 @@ $school = $_POST['school'];
 $city = $_POST['city'];
 
 // construct a SQL query to update the user's account details
-$query = "UPDATE users SET password = '$password', school = '$school', city = '$city' WHERE username = '$username'";
+$query = "UPDATE student_login SET password = '$password', school = '$school', city = '$city' WHERE username = '$username'";
 
 // execute the query
 $conn->query($query);
